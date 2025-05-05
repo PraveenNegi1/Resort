@@ -77,15 +77,6 @@ export default function RoomsPage() {
               </div>
             )}
           </div>
-          <div className="flex justify-between items-center pt-4 border-t border-gray-100 mt-4">
-            <span className="text-2xl font-bold text-blue-600">
-              ₹{price.toLocaleString()}
-              <span className="text-sm font-normal text-gray-500">/night</span>
-            </span>
-            <button className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-300 font-medium">
-              Book Now
-            </button>
-          </div>
         </div>
       </div>
     );

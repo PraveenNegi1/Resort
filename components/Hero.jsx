@@ -1,87 +1,76 @@
+import Image from "next/image";
 import Link from "next/link";
-import { FaShieldAlt, FaWallet, FaHeadset } from "react-icons/fa";
-import RoomsPage from "./Rooms";
 
-export default function Hero() {
+export default function Home() {
   return (
-    <div className="min-h-screen bg-white">
+    <div className="font-sans text-gray-800">
       {/* Hero Section */}
-      <section className="relative bg-blue-400 text-white py-24 px-4 sm:px-6 lg:px-8 overflow-hidden">
-        <div className="absolute inset-0">
-          <img
-            src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=1950&q=80"
-            alt="room rental"
-            className="w-full h-full object-cover opacity-30"
-          />
-          <div className="absolute inset-0 bg-blue-800 opacity-60" />
-        </div>
-        <div className="relative z-10 max-w-5xl mx-auto text-center">
-          <h1 className="text-4xl sm:text-5xl font-extrabold mb-4 drop-shadow-lg">
-            Find Your Perfect Room Today
+      <section
+        className="relative h-screen bg-cover bg-center"
+        style={{
+          backgroundImage:
+            "url('https://images.unsplash.com/photo-1606402179428-a57976d71fa4?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')",
+        }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-black/30 flex flex-col justify-center items-center text-white px-4 text-center">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-serif mb-4 drop-shadow-lg">
+            Welcome to Tranquil Stay
           </h1>
-          <p className="text-lg sm:text-xl mb-8 drop-shadow-md">
-            Hassle-free rentals for students, professionals, and travelers.
+          <p className="text-lg sm:text-xl md:text-2xl mb-6 max-w-xl font-sans">
+            Experience luxury and comfort in the heart of nature
           </p>
           <Link
             href="/listings"
-            className="inline-block bg-white text-blue-700 font-semibold px-6 py-3 rounded-full shadow-lg hover:bg-blue-50 transition"
+            className="mt-4 inline-block px-6 py-3 bg-white text-blue-600 font-semibold rounded-full hover:bg-blue-600 hover:text-white transition duration-300"
           >
-            Browse Listings
+            Explore Rooms
           </Link>
         </div>
       </section>
 
-      {/* Features Section */}
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-gray-100">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-3xl md:text-4xl font-bold text-center text-gray-800 mb-14">
-            Why Choose <span className="text-blue-600">RoomRental</span>?
-          </h2>
-          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8">
-            <div className="bg-white p-8 rounded-2xl shadow hover:shadow-xl transition text-center">
-              <FaShieldAlt className="text-blue-600 text-4xl mb-4 mx-auto" />
-              <h3 className="text-xl font-semibold mb-2">Verified Listings</h3>
-              <p className="text-gray-600">
-                All rooms are checked to ensure you get exactly what you see.
-              </p>
-            </div>
-            <div className="bg-white p-8 rounded-2xl shadow hover:shadow-xl transition text-center">
-              <FaWallet className="text-blue-600 text-4xl mb-4 mx-auto" />
-              <h3 className="text-xl font-semibold mb-2">Affordable Prices</h3>
-              <p className="text-gray-600">
-                A wide range of budget-friendly options that suit your needs.
-              </p>
-            </div>
-            <div className="bg-white p-8 rounded-2xl shadow hover:shadow-xl transition text-center">
-              <FaHeadset className="text-blue-600 text-4xl mb-4 mx-auto" />
-              <h3 className="text-xl font-semibold mb-2">24/7 Support</h3>
-              <p className="text-gray-600">
-                We're always available to help you through chat, email, or
-                phone.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <div>
-        <RoomsPage />
-      </div>
-
-      <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-2xl sm:text-3xl font-bold text-gray-800 mb-4">
-            Ready to rent your next room?
-          </h2>
-          <p className="text-gray-600 mb-6 text-lg">
-            Start browsing and discover the place you’ll love to call home.
-          </p>
-          <Link
-            href="/services"
-            className="inline-block px-6 py-3 bg-blue-600 text-white font-medium rounded-full hover:bg-blue-700 transition"
-          >
-            View Our Services
-          </Link>
+      {/* Rooms Preview Section */}
+      <section className="py-16 px-4 sm:px-8 md:px-16 bg-gray-50">
+        <h2 className="text-3xl md:text-4xl font-serif text-center mb-12 text-gray-800">
+          Our Rooms
+        </h2>
+        <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-3">
+          {[
+            {
+              title: "Deluxe Room",
+              image: "https://source.unsplash.com/400x300/?hotel-room",
+              desc: "Modern room with king-size bed, balcony & great views.",
+            },
+            {
+              title: "Suite",
+              image: "https://source.unsplash.com/400x300/?suite,luxury-room",
+              desc: "Spacious suite with living area, luxury bath & amenities.",
+            },
+            {
+              title: "Family Room",
+              image: "https://source.unsplash.com/400x300/?family-room",
+              desc: "Comfortable room perfect for families, with extra beds.",
+            },
+          ].map((room, index) => (
+            <Link
+              href="/listings"
+              key={index}
+              className="group block bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition"
+            >
+              <div className="overflow-hidden">
+                <img
+                  src={room.image}
+                  alt={room.title}
+                  className="w-full h-60 object-cover transform group-hover:scale-105 transition duration-300"
+                />
+              </div>
+              <div className="p-5">
+                <h3 className="text-xl font-semibold mb-2 text-gray-800 group-hover:text-blue-600 transition">
+                  {room.title}
+                </h3>
+                <p className="text-gray-600">{room.desc}</p>
+              </div>
+            </Link>
+          ))}
         </div>
       </section>
     </div>

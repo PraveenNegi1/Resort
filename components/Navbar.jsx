@@ -30,6 +30,13 @@ export default function Navbar() {
             >
               About
             </Link>
+
+            <Link
+              href="/gallery"
+              className="hover:bg-gray-700 px-3 py-2 rounded-md"
+            >
+              Gallery
+            </Link>
             <Link
               href="/services"
               className="hover:bg-gray-700 px-3 py-2 rounded-md"
@@ -106,6 +113,13 @@ export default function Navbar() {
               onClick={toggleMenu}
             >
               About
+            </Link>
+            <Link
+              href="/gallery"
+              className="hover:bg-gray-700 px-3 py-2 rounded-md"
+              onClick={toggleMenu}
+            >
+              Gallery
             </Link>
             <Link
               href="/services"

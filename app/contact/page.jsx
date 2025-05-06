@@ -1,8 +1,20 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useRouter } from "next/navigation";
+import toast from "react-hot-toast";
 
 const ContactPage = () => {
+  const router = useRouter();
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    toast.success("Query sent successfully!");
+    setTimeout(() => {
+      router.push("/");
+    }, 1500);
+  };
+
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-100 via-white to-blue-50 py-12 px-6">
       <motion.div
@@ -18,7 +30,7 @@ const ContactPage = () => {
           We'd love to help you find the perfect stay. Reach out with any
           questions or requests.
         </p>
-        <form className="space-y-6">
+        <form className="space-y-6" onSubmit={handleSubmit}>
           <div>
             <label className="block mb-1 font-medium text-gray-700">
               Full Name

@@ -4,16 +4,14 @@ import Image from "next/image";
 import { rooms } from "@/lib/roomData";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
+import Link from "next/link";
 
-// Animation variants
+// Animation Variants
 const containerVariants = {
   hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    transition: {
-      staggerChildren: 0.2,
-      delayChildren: 0.3,
-    },
+    transition: { staggerChildren: 0.2, delayChildren: 0.3 },
   },
 };
 
@@ -22,11 +20,7 @@ const itemVariants = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: {
-      type: "spring",
-      damping: 20,
-      stiffness: 100,
-    },
+    transition: { type: "spring", damping: 20, stiffness: 100 },
   },
 };
 
@@ -47,73 +41,73 @@ const RoomDetails = () => {
   }
 
   return (
-    <div className=" min-h-screen pb-20">
+    <div className="min-h-screen pb-20 font-sans bg-gray-50 text-gray-800">
       {/* Hero Section */}
       <motion.div
-  initial={{ opacity: 0 }}
-  animate={{ opacity: 1 }}
-  transition={{ duration: 1 }}
-  className="relative w-full h-screen overflow-hidden"
->
-  <Image
-    src={room.image}
-    alt={room.name}
-    fill
-    className="object-cover brightness-75 transition-transform duration-700 hover:scale-105"
-    priority
-  />
-
-  <div className="absolute inset-0 bg-gradient-to-t to-transparent" />
-
-  <motion.div
-    initial={{ opacity: 0, y: 50 }}
-    animate={{ opacity: 1, y: 0 }}
-    transition={{ delay: 0.5, duration: 0.8 }}
-    className="absolute inset-0 flex items-center justify-center"
-  >
-    <h1 className="text-white text-4xl sm:text-5xl lg:text-6xl font-extrabold drop-shadow-xl text-center px-4 tracking-tight">
-      {room.name}
-    </h1>
-  </motion.div>
-</motion.div>
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 1 }}
+        className="relative w-full h-[60vh] sm:h-[70vh] md:h-screen overflow-hidden"
+      >
+        <Image
+          src={room.image}
+          alt={room.name}
+          fill
+          className="object-cover brightness-75 transition-transform duration-700 hover:scale-105"
+          priority
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
+        <motion.div
+          initial={{ opacity: 0, y: 50 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.5, duration: 0.8 }}
+          className="absolute inset-0 flex items-center justify-center"
+        >
+          <h1 className="text-white font-serif text-3xl sm:text-5xl lg:text-6xl text-center px-4 drop-shadow-2xl">
+            {room.name}
+          </h1>
+        </motion.div>
+      </motion.div>
 
       {/* Main Content */}
       <motion.div
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="max-w-6xl mx-auto px-6  z-50"
+        className="max-w-6xl mx-auto px-4 sm:px-6 md:px-10"
       >
         <motion.div
           variants={itemVariants}
-          className="bg-white rounded-2xl shadow-2xl p-8 sm:p-10 transform transition-all duration-300 hover:shadow-3xl"
+          className="bg-white rounded-3xl shadow-2xl p-8 sm:p-12 -mt-24 sm:-mt-32 relative z-10"
         >
+          {/* Description */}
           <motion.p
             variants={itemVariants}
-            className="text-gray-600 text-lg leading-relaxed mb-8 font-light"
+            className="text-gray-700 text-lg sm:text-xl leading-relaxed mb-8 font-sans"
           >
             {room.detailedDescription || room.description}
           </motion.p>
 
+          {/* Price */}
           <motion.p
             variants={itemVariants}
-            className="text-2xl font-bold text-indigo-600 mb-8 bg-indigo-50 px-4 py-2 rounded-lg inline-block"
+            className="text-2xl sm:text-3xl font-bold text-blue-700 mb-10 bg-blue-50 px-5 py-3 rounded-xl inline-block shadow-inner"
           >
-            ₹{room.price} / night
+            ₹{room.price} <span className="text-lg font-medium">/ night</span>
           </motion.p>
 
           {/* Amenities */}
           <motion.div variants={itemVariants}>
-            <h3 className="text-2xl font-semibold mb-4 text-gray-800">
+            <h3 className="text-2xl font-semibold text-slate-800 mb-5">
               Amenities
             </h3>
-            <ul className="flex flex-wrap gap-3 mb-8">
+            <ul className="flex flex-wrap gap-3 mb-10">
               {room.amenities.map((item, index) => (
                 <motion.li
                   key={index}
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
-                  className="bg-indigo-100 text-indigo-700 px-4 py-2 rounded-full text-sm font-medium shadow-sm hover:bg-indigo-200 transition-colors"
+                  className="bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-medium shadow hover:bg-blue-200 transition"
                 >
                   {item}
                 </motion.li>
@@ -124,17 +118,17 @@ const RoomDetails = () => {
           {/* Features */}
           {room.features && (
             <motion.div variants={itemVariants}>
-              <h3 className="text-2xl font-semibold mb-4 text-gray-800">
+              <h3 className="text-2xl font-semibold text-slate-800 mb-5">
                 Features
               </h3>
-              <ul className="list-none text-gray-600 mb-8 space-y-3">
+              <ul className="space-y-4 text-base text-gray-700">
                 {room.features.map((feature, index) => (
                   <motion.li
                     key={index}
                     variants={itemVariants}
-                    className="flex items-center gap-2"
+                    className="flex items-start gap-3"
                   >
-                    <span className="w-2 h-2 bg-indigo-500 rounded-full" />
+                    <div className="w-2 h-2 mt-2 bg-blue-500 rounded-full" />
                     {feature}
                   </motion.li>
                 ))}
@@ -143,31 +137,41 @@ const RoomDetails = () => {
           )}
 
           {/* Gallery */}
-          {room.images && room.images.length > 0 && (
+          {room.images?.length > 0 && (
             <motion.div variants={itemVariants}>
-              <h3 className="text-2xl font-semibold mb-6 text-gray-800">
+              <h3 className="text-2xl font-semibold text-slate-800 mb-6 mt-12">
                 Gallery
               </h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {room.images.map((imgUrl, index) => (
                   <motion.div
                     key={index}
-                    whileHover={{ scale: 1.05, rotate: 1 }}
-                    whileTap={{ scale: 0.95 }}
-                    className="overflow-hidden rounded-xl shadow-md hover:shadow-lg transition-all duration-300"
+                    whileHover={{ scale: 1.03 }}
+                    whileTap={{ scale: 0.97 }}
+                    className="overflow-hidden rounded-xl shadow-lg "
                   >
                     <Image
                       src={imgUrl}
                       alt={`${room.name} image ${index + 1}`}
-                      width={400}
-                      height={300}
-                      className="object-cover w-full h-64 transition-transform duration-500 hover:scale-110"
+                      width={500}
+                      height={400}
+                      className="object-cover w-full h-64"
                     />
                   </motion.div>
                 ))}
               </div>
             </motion.div>
           )}
+
+          {/* CTA Button */}
+          <div className="mt-12 text-center">
+            <Link
+              href="/contact"
+              className="inline-block px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-full shadow-md transition-all duration-300 text-lg"
+            >
+              Book This Room
+            </Link>
+          </div>
         </motion.div>
       </motion.div>
     </div>

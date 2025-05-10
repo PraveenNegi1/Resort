@@ -18,7 +18,7 @@ export default function About() {
         <h2 className="text-2xl font-semibold text-gray-700 mb-4">
           Our Hotels
         </h2>
-        <p className="text-gray-600 mb-6 text-[18px]">
+        <p className="text-gray-600 mb-6 md:text-[18px]">
           At StayEase Hotel, we believe in offering the finest quality
           accommodations to our guests. Our portfolio includes a wide variety of
           rooms.
@@ -27,8 +27,8 @@ export default function About() {
         <h2 className="text-2xl font-semibold text-gray-700 mb-4">
           Rooms & Suites
         </h2>
-        <p className="text-gray-600 mb-6 text-[18px]">
-          Whether you’re traveling for business, leisure, or a special occasion,
+        <p className="text-gray-600 mb-6  md:text-[18px]">
+          Whether you&apos;re traveling for business, leisure, or a special occasion,
           our rooms and suites are designed to cater to your needs. We offer a
           range of room types, from standard rooms to luxurious suites, each
           furnished with comfort and elegance in mind. All rooms come with
@@ -40,7 +40,7 @@ export default function About() {
         <h2 className="text-2xl font-semibold text-gray-700 mb-4">
           Facilities & Services
         </h2>
-        <ul className="list-disc pl-6 text-gray-600 space-y-2 mb-6 text-[18px]">
+        <ul className="list-disc pl-6 text-gray-600 space-y-2 mb-6  md:text-[18px]">
           <li>State-of-the-art fitness centers</li>
           <li>On-site restaurants offering local and international cuisine</li>
           <li>24/7 concierge service and room service</li>
@@ -53,7 +53,7 @@ export default function About() {
         <h2 className="text-2xl font-semibold text-gray-700 mb-4">
           Why Choose StayEase Hotels
         </h2>
-        <p className="text-gray-600 mb-6 text-[18px]">
+        <p className="text-gray-600 mb-6  md:text-[18px]">
           StayEase Hotel is dedicated to offering exceptional comfort, service,
           and value for money. Our properties are strategically located to
           ensure you have easy access to both popular attractions and tranquil
@@ -66,7 +66,7 @@ export default function About() {
           <h3 className="text-xl font-semibold text-blue-800 mb-2">
             Ready to Book Your Stay?
           </h3>
-          <p className="text-blue-700 mb-4 text-[18px]">
+          <p className="text-blue-700 mb-4  md:text-[18px]">
             Browse our selection rooms to find your perfect stay.
           </p>
           <a

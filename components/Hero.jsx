@@ -16,12 +16,12 @@ export default function Home() {
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-serif mb-4 drop-shadow-lg">
             Welcome to Tranquil Stay
           </h1>
-          <p className="text-lg sm:text-xl md:text-2xl mb-6 max-w-xl font-sans">
+          <p className="text-lg sm:text-xl md:text-2xl mb-6 max-w-xl font-serif">
             Experience luxury and comfort in the heart of nature
           </p>
           <Link
             href="/listings"
-            className="mt-4 inline-block px-6 py-3 bg-white text-blue-600 font-semibold rounded-full hover:bg-blue-600 hover:text-white transition duration-300"
+            className="mt-4 inline-block px-6 py-3 font-serif bg-white text-blue-600 font-semibold rounded-full hover:bg-blue-600 hover:text-white transition duration-300"
           >
             Explore Rooms
           </Link>
@@ -64,10 +64,10 @@ export default function Home() {
                 />
               </div>
               <div className="p-5">
-                <h3 className="text-xl font-semibold mb-2 text-gray-800 group-hover:text-blue-600 transition">
+                <h3 className="text-xl font-semibold font-serif mb-2 text-gray-800 group-hover:text-blue-600 transition">
                   {room.title}
                 </h3>
-                <p className="text-gray-600">{room.desc}</p>
+                <p className="text-gray-600 font-serif">{room.desc}</p>
               </div>
             </Link>
           ))}

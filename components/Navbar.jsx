@@ -12,7 +12,7 @@ export default function Navbar() {
 
   return (
     <nav className="bg-gray-800 text-white w-full">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 font-serif text-[18px]">
         <div className="flex justify-between h-16">
           <div className="flex-shrink-0 flex items-center">
             <Link href="/" className="text-2xl font-bold">

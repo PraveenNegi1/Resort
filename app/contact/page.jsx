@@ -23,10 +23,10 @@ const ContactPage = () => {
         transition={{ duration: 0.6 }}
         className="max-w-3xl mx-auto bg-white shadow-2xl rounded-2xl p-8"
       >
-        <h1 className="text-4xl font-bold text-center text-blue-700 mb-6">
+        <h1 className="text-4xl font-bold text-center font-serif text-blue-700 mb-6">
           Contact Us for Room Booking
         </h1>
-        <p className="text-center text-gray-600 mb-8">
+        <p className="text-center text-gray-600 mb-8 font-serif">
           We'd love to help you find the perfect stay. Reach out with any
           questions or requests.
         </p>
@@ -84,7 +84,7 @@ const ContactPage = () => {
           </motion.button>
         </form>
 
-        <div className="mt-10 text-center text-sm text-gray-500">
+        <div className="mt-10 text-center text-sm text-gray-500 font-serif">
           Or reach us on WhatsApp:{" "}
           <a
             href="https://wa.me/919876543210"

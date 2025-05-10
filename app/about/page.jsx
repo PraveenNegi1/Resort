@@ -2,12 +2,12 @@
 export default function About() {
   return (
     <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-4xl mx-auto">
+      <div className="max-w-4xl mx-auto font-serif">
         <h1 className="text-4xl font-bold font-serif text-gray-800 mb-6 text-center">
           About Our Hotel and Rooms
         </h1>
 
-        <p className="text-lg text-gray-600 mb-6 font-sans">
+        <p className="text-lg text-gray-600 mb-6 ">
           Welcome to{" "}
           <span className="text-blue-600 font-semibold">StayEase Hotels</span>,
           where luxury meets comfort in every corner. Our hotel offer a diverse
@@ -18,7 +18,7 @@ export default function About() {
         <h2 className="text-2xl font-semibold text-gray-700 mb-4">
           Our Hotels
         </h2>
-        <p className="text-gray-600 mb-6">
+        <p className="text-gray-600 mb-6 text-[18px]">
           At StayEase Hotel, we believe in offering the finest quality
           accommodations to our guests. Our portfolio includes a wide variety of
           rooms.
@@ -27,7 +27,7 @@ export default function About() {
         <h2 className="text-2xl font-semibold text-gray-700 mb-4">
           Rooms & Suites
         </h2>
-        <p className="text-gray-600 mb-6">
+        <p className="text-gray-600 mb-6 text-[18px]">
           Whether you’re traveling for business, leisure, or a special occasion,
           our rooms and suites are designed to cater to your needs. We offer a
           range of room types, from standard rooms to luxurious suites, each
@@ -40,7 +40,7 @@ export default function About() {
         <h2 className="text-2xl font-semibold text-gray-700 mb-4">
           Facilities & Services
         </h2>
-        <ul className="list-disc pl-6 text-gray-600 space-y-2 mb-6">
+        <ul className="list-disc pl-6 text-gray-600 space-y-2 mb-6 text-[18px]">
           <li>State-of-the-art fitness centers</li>
           <li>On-site restaurants offering local and international cuisine</li>
           <li>24/7 concierge service and room service</li>
@@ -53,7 +53,7 @@ export default function About() {
         <h2 className="text-2xl font-semibold text-gray-700 mb-4">
           Why Choose StayEase Hotels
         </h2>
-        <p className="text-gray-600 mb-6">
+        <p className="text-gray-600 mb-6 text-[18px]">
           StayEase Hotel is dedicated to offering exceptional comfort, service,
           and value for money. Our properties are strategically located to
           ensure you have easy access to both popular attractions and tranquil
@@ -66,7 +66,7 @@ export default function About() {
           <h3 className="text-xl font-semibold text-blue-800 mb-2">
             Ready to Book Your Stay?
           </h3>
-          <p className="text-blue-700 mb-4">
+          <p className="text-blue-700 mb-4 text-[18px]">
             Browse our selection rooms to find your perfect stay.
           </p>
           <a

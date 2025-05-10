@@ -11,7 +11,7 @@ import {
 export default function Services() {
   return (
     <div className="min-h-screen bg-white py-16 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto">
+      <div className="max-w-7xl mx-auto font-serif">
         <h1 className="text-4xl md:text-5xl font-serif text-center text-gray-800 mb-14">
           Our Services
         </h1>

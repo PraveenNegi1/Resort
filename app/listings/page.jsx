@@ -37,7 +37,7 @@ const Rooms = () => {
 
   return (
     <div className="min-h-screen">
-      <div className="relative w-full h-[400px] sm:h-[500px] overflow-hidden">
+      <div className="relative w-full h-[400px] sm:h-[500px] overflow-hidden font-serif">
         <div className="relative w-full h-full">
           <Image
             src="https://images.unsplash.com/photo-1641998148499-cb6b55a3c0d3?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -72,7 +72,7 @@ const Rooms = () => {
         </div>
 
         {/* Room Cards */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 font-serif">
           {currentRooms.length > 0 ? (
             currentRooms.map((room, index) => (
               <Link href={`/rooms/${room.id}`} key={index}>

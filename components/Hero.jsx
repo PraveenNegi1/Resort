@@ -37,17 +37,20 @@ export default function Home() {
           {[
             {
               title: "Deluxe Room",
-              image: "https://source.unsplash.com/400x300/?hotel-room",
+              image:
+                "https://images.unsplash.com/photo-1729605411476-defbdab14c54?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
               desc: "Modern room with king-size bed, balcony & great views.",
             },
             {
               title: "Suite",
-              image: "https://source.unsplash.com/400x300/?suite,luxury-room",
+              image:
+                "https://images.unsplash.com/photo-1590490359854-dfba19688d70?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
               desc: "Spacious suite with living area, luxury bath & amenities.",
             },
             {
               title: "Family Room",
-              image: "https://source.unsplash.com/400x300/?family-room",
+              image:
+                "https://images.unsplash.com/photo-1560448204-603b3fc33ddc?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
               desc: "Comfortable room perfect for families, with extra beds.",
             },
           ].map((room, index) => (

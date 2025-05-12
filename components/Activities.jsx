@@ -8,25 +8,23 @@ const activities = [
     title: "Mountain Trekking",
     description:
       "Explore scenic trails with guided trekking experiences in the Himalayas.",
-    image: "/images/trekking.jpg",
+    image:
+      "https://images.unsplash.com/photo-1635159804596-06b79defff8e?q=80&w=1931&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
-  {
-    title: "Ayurvedic Spa",
-    description:
-      "Relax and rejuvenate with authentic Ayurvedic treatments at our luxury spa.",
-    image: "/images/spa.jpg",
-  },
+
   {
     title: "Cultural Evenings",
     description:
       "Enjoy traditional dance performances and local cuisine under the stars.",
-    image: "/images/cultural.jpg",
+    image:
+      "https://images.unsplash.com/photo-1607962323824-e97780d3b9b6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
   {
     title: "River Rafting",
     description:
       "Experience the thrill of rafting in the Ganges or other thrilling rivers.",
-    image: "/images/rafting.jpg",
+    image:
+      "https://images.unsplash.com/photo-1503518406936-078df75d0c7c?q=80&w=1925&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
   },
 ];
 
@@ -53,7 +51,9 @@ export default function ActivitiesPage() {
               className="w-full h-56 object-cover"
             />
             <div className="p-6">
-              <h2 className="text-xl font-semibold mb-2 font-serif">{activity.title}</h2>
+              <h2 className="text-xl font-semibold mb-2 font-serif">
+                {activity.title}
+              </h2>
               <p className="text-gray-600 font-serif">{activity.description}</p>
             </div>
           </motion.div>

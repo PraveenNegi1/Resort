@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
+import Image from "next/image"; // Import Next.js Image component
 
 const ContactPage = () => {
   const router = useRouter();
@@ -21,78 +22,95 @@ const ContactPage = () => {
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="max-w-3xl mx-auto bg-white shadow-2xl rounded-2xl p-8"
+        className="max-w-5xl mx-auto bg-white shadow-2xl rounded-2xl p-8"
       >
-        <h1 className="text-4xl font-bold text-center font-serif text-blue-700 mb-6">
-          Contact Us for Room Booking
-        </h1>
-        <p className="text-center text-gray-600 mb-8 font-serif">
-          We'd love to help you find the perfect stay. Reach out with any
-          questions or requests.
-        </p>
-        <form className="space-y-6" onSubmit={handleSubmit}>
-          <div>
-            <label className="block mb-1 font-medium text-gray-700">
-              Full Name
-            </label>
-            <input
-              type="text"
-              placeholder="Your Name"
-              className="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-400"
-              required
+        <div className="flex flex-col lg:flex-row gap-8">
+          {/* Image Section */}
+          <div className="lg:w-1/2 relative h-[100vh] overflow-hidden rounded-xl">
+            <Image
+              src="https://images.unsplash.com/photo-1680770638423-6d4c1089bd7a?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" // Adjust the path to your image
+              alt="Room Booking Banner"
+              fill
+              style={{ objectFit: "cover" }} // Ensures image covers the container
+              priority // Optional: Prioritizes loading
+              className="rounded-xl"
             />
           </div>
-          <div>
-            <label className="block mb-1 font-medium text-gray-700">
-              Email
-            </label>
-            <input
-              type="email"
-              placeholder="your@email.com"
-              className="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-400"
-              required
-            />
-          </div>
-          <div>
-            <label className="block mb-1 font-medium text-gray-700">
-              Phone Number
-            </label>
-            <input
-              type="tel"
-              placeholder="+91 1234567890"
-              className="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-400"
-            />
-          </div>
-          <div>
-            <label className="block mb-1 font-medium text-gray-700">
-              Message
-            </label>
-            <textarea
-              rows={4}
-              placeholder="Tell us what you're looking for..."
-              className="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-400"
-              required
-            ></textarea>
-          </div>
-          <motion.button
-            whileTap={{ scale: 0.95 }}
-            whileHover={{ scale: 1.03 }}
-            className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-xl shadow-lg transition"
-            type="submit"
-          >
-            Send Inquiry
-          </motion.button>
-        </form>
 
-        <div className="mt-10 text-center text-sm text-gray-500 font-serif">
-          Or reach us on WhatsApp:{" "}
-          <a
-            href="https://wa.me/919876543210"
-            className="text-blue-600 underline"
-            target="_blank"
-          >
-            +91 98765 43210
-          </a>
+          {/* Form Section */}
+          <div className="lg:w-1/2">
+            <h1 className="text-4xl font-bold text-center font-serif text-blue-700 mb-6">
+              Contact Us for Room Booking
+            </h1>
+            <p className="text-center text-gray-600 mb-8 font-serif">
+              We'd love to help you find the perfect stay. Reach out with any
+              questions or requests.
+            </p>
+            <form className="space-y-6" onSubmit={handleSubmit}>
+              <div>
+                <label className="block mb-1 font-medium text-gray-700">
+                  Full Name
+                </label>
+                <input
+                  type="text"
+                  placeholder="Your Name"
+                  className="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                  required
+                />
+              </div>
+              <div>
+                <label className="block mb-1 font-medium text-gray-700">
+                  Email
+                </label>
+                <input
+                  type="email"
+                  placeholder="your@email.com"
+                  className="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                  required
+                />
+              </div>
+              <div>
+                <label className="block mb-1 font-medium text-gray-700">
+                  Phone Number
+                </label>
+                <input
+                  type="tel"
+                  placeholder="+91 1234567890"
+                  className="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                />
+              </div>
+              <div>
+                <label className="block mb-1 font-medium text-gray-700">
+                  Message
+                </label>
+                <textarea
+                  rows={4}
+                  placeholder="Tell us what you're looking for..."
+                  className="w-full border border-gray-300 rounded-xl px-4 py-3 focus:outline-none focus:ring-2 focus:ring-blue-400"
+                  required
+                ></textarea>
+              </div>
+              <motion.button
+                whileTap={{ scale: 0.95 }}
+                whileHover={{ scale: 1.03 }}
+                className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-xl shadow-lg transition"
+                type="submit"
+              >
+                Send Inquiry
+              </motion.button>
+            </form>
+
+            <div className="mt-10 text-center text-sm text-gray-500 font-serif">
+              Or reach us on WhatsApp:{" "}
+              <a
+                href="https://wa.me/919876543210"
+                className="text-blue-600 underline"
+                target="_blank"
+              >
+                +91 98765 43210
+              </a>
+            </div>
+          </div>
         </div>
       </motion.div>
     </div>

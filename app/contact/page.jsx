@@ -39,7 +39,7 @@ const ContactPage = () => {
 
           {/* Form Section */}
           <div className="lg:w-1/2">
-            <h1 className="text-4xl font-bold text-center font-serif text-blue-700 mb-6">
+            <h1 className="text-4xl font-bold text-center font-serif text-teal-700 mb-6">
               Contact Us for Room Booking
             </h1>
             <p className="text-center text-gray-600 mb-8 font-serif">

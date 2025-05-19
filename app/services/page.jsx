@@ -18,8 +18,8 @@ export default function Services() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
           <div className="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition text-center">
-            <FaPlusCircle className="text-blue-600 text-4xl mb-4 mx-auto" />
-            <h2 className="text-xl font-semibold text-blue-600 mb-3">
+            <FaPlusCircle className="text-teal-600 text-4xl mb-4 mx-auto" />
+            <h2 className="text-xl font-semibold text-teal-600 mb-3">
               Post Your Property
             </h2>
             <p className="text-gray-600">
@@ -29,8 +29,8 @@ export default function Services() {
           </div>
 
           <div className="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition text-center">
-            <FaUtensils className="text-blue-600 text-4xl mb-4 mx-auto" />
-            <h2 className="text-xl font-semibold text-blue-600 mb-3">
+            <FaUtensils className="text-teal-600 text-4xl mb-4 mx-auto" />
+            <h2 className="text-xl font-semibold text-teal-600 mb-3">
               Food Facility
             </h2>
             <p className="text-gray-600">
@@ -40,8 +40,8 @@ export default function Services() {
           </div>
 
           <div className="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition text-center">
-            <FaSearch className="text-blue-600 text-4xl mb-4 mx-auto" />
-            <h2 className="text-xl font-semibold text-blue-600 mb-3">
+            <FaSearch className="text-teal-600 text-4xl mb-4 mx-auto" />
+            <h2 className="text-xl font-semibold text-teal-600 mb-3">
               Smart Search Tools
             </h2>
             <p className="text-gray-600">
@@ -51,8 +51,8 @@ export default function Services() {
           </div>
 
           <div className="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition text-center">
-            <FaLock className="text-blue-600 text-4xl mb-4 mx-auto" />
-            <h2 className="text-xl font-semibold text-blue-600 mb-3">
+            <FaLock className="text-teal-600 text-4xl mb-4 mx-auto" />
+            <h2 className="text-xl font-semibold text-teal-600 mb-3">
               Secure Booking
             </h2>
             <p className="text-gray-600">
@@ -62,8 +62,8 @@ export default function Services() {
           </div>
 
           <div className="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition text-center">
-            <FaHeadset className="text-blue-600 text-4xl mb-4 mx-auto" />
-            <h2 className="text-xl font-semibold text-blue-600 mb-3">
+            <FaHeadset className="text-teal-600 text-4xl mb-4 mx-auto" />
+            <h2 className="text-xl font-semibold text-teal-600 mb-3">
               Customer Support
             </h2>
             <p className="text-gray-600">
@@ -73,8 +73,8 @@ export default function Services() {
           </div>
 
           <div className="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition text-center">
-            <FaMobileAlt className="text-blue-600 text-4xl mb-4 mx-auto" />
-            <h2 className="text-xl font-semibold text-blue-600 mb-3">
+            <FaMobileAlt className="text-teal-600 text-4xl mb-4 mx-auto" />
+            <h2 className="text-xl font-semibold text-teal-600 mb-3">
               Mobile-Friendly
             </h2>
             <p className="text-gray-600">
@@ -89,7 +89,7 @@ export default function Services() {
           </h3>
           <a
             href="/listings"
-            className="inline-block px-8 py-3 bg-blue-600 text-white font-medium rounded-full hover:bg-blue-700 transition"
+            className="inline-block px-8 py-3 bg-teal-600 text-white font-medium rounded-full hover:bg-teal-700 transition"
           >
             Explore Listings
           </a>

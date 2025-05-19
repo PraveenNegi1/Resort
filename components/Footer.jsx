@@ -106,8 +106,7 @@ export default function Footer() {
             </div>
           </div>
         </div>
-
-        <div className="mt-12 pt-8 border-t border-gray-700 text-center">
+        <div className="mt-12 pt-8 border-t border-white text-center">
           <p className="text-white text-sm">
             © {new Date().getFullYear()} Negi Hotels. All rights reserved.
           </p>

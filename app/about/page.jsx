@@ -9,7 +9,7 @@ export default function About() {
 
         <p className="text-lg text-gray-600 mb-6 ">
           Welcome to{" "}
-          <span className="text-blue-600 font-semibold">StayEase Hotels</span>,
+          <span className="text-teal-600 font-semibold">StayEase Hotels</span>,
           where luxury meets comfort in every corner. Our hotel offer a diverse
           range of stays, from cozy rooms to extravagant suites, all designed to
           provide you with a truly memorable experience.
@@ -63,15 +63,15 @@ export default function About() {
         </p>
 
         <div className="bg-blue-100 p-6 rounded-lg shadow mt-10 text-center">
-          <h3 className="text-xl font-semibold text-blue-800 mb-2">
+          <h3 className="text-xl font-semibold text-teal-800 mb-2">
             Ready to Book Your Stay?
           </h3>
-          <p className="text-blue-700 mb-4  md:text-[18px]">
+          <p className="text-teal-700 mb-4  md:text-[18px]">
             Browse our selection rooms to find your perfect stay.
           </p>
           <a
             href="/listings"
-            className="inline-block px-6 py-2 bg-blue-600 text-white font-medium rounded hover:bg-blue-700 transition"
+            className="inline-block px-6 py-2 bg-teal-600 text-white font-medium rounded hover:bg-teal-700 transition"
           >
             Explore Our Rooms
           </a>

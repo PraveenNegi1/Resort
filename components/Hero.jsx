@@ -1,4 +1,3 @@
-import Image from "next/image";
 import Link from "next/link";
 
 export default function Home() {
@@ -118,7 +117,7 @@ export default function Home() {
                 />
               </div>
               <div className="p-5">
-                <h3 className="text-xl font-semibold font-serif mb-2 text-gray-800 group-hover:text-blue-600 transition">
+                <h3 className="text-xl font-semibold font-serif mb-2 text-gray-800 group-hover:text-teal-600 transition">
                   {room.title}
                 </h3>
                 <p className="text-gray-600 font-serif text-[18px]">{room.desc}</p>
@@ -130,8 +129,6 @@ export default function Home() {
           ))}
         </div>
       </section>
-
-     
     </div>
   );
 }

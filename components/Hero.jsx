@@ -9,22 +9,67 @@ export default function Home() {
         className="relative h-screen bg-cover bg-center"
         style={{
           backgroundImage:
-            "url('https://images.unsplash.com/photo-1606402179428-a57976d71fa4?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')",
+            "url('https://images.unsplash.com/photo-1680503146476-abb8c752e1f4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')",
         }}
       >
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-black/30 flex flex-col justify-center items-center text-white px-4 text-center">
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-serif mb-4 drop-shadow-lg">
             Welcome to Tranquil Stay
           </h1>
-          <p className="text-lg sm:text-xl md:text-2xl mb-6 max-w-xl font-serif">
+          <p className="text-lg sm:text-xl md:text-2xl mb-4 max-w-xl font-serif">
             Experience luxury and comfort in the heart of nature
           </p>
           <Link
             href="/listings"
-            className="mt-4 inline-block px-6 py-3 font-serif bg-white text-blue-600 font-semibold rounded-full hover:bg-blue-600 hover:text-white transition duration-300"
+            className="mt-4 inline-block px-6 py-3 font-serif bg-white text-teal-700 font-semibold rounded-full hover:bg-teal-700 hover:text-white transition duration-300"
           >
             Explore Rooms
           </Link>
+        </div>
+      </section>
+
+       <section className="bg-white py-16 px-4 sm:px-8 md:px-20 text-center font-serif">
+        <h2 className="text-3xl md:text-4xl font-serif text-gray-800 mb-8">
+          Why Choose Tranquil Stay?
+        </h2>
+        <div className="max-w-4xl mx-auto text-gray-700 text-lg leading-relaxed">
+          <p className="mb-4">
+            At Tranquil Stay, we blend luxury with nature. Whether you're waking
+            up to birdsong, enjoying fresh organic meals, or soaking in the view
+            from your private balcony, every detail is curated for your comfort.
+          </p>
+          <p className="mb-4">
+            Explore nearby nature trails, indulge in spa therapies, or simply
+            relax in our serene ambiance. Our eco-conscious ethos ensures your
+            stay is both relaxing and sustainable.
+          </p>
+          <p className="mb-4">
+            Discover the beauty of the wild — without compromising on comfort.
+            Whether it's a romantic retreat, a solo escape, or a family
+            adventure, Tranquil Stay is your ideal getaway.
+          </p>
+          <p className="mb-4">
+            Each of our rooms is crafted with natural materials and modern
+            amenities, providing a harmonious balance of elegance and rustic
+            charm. Floor-to-ceiling windows invite the outdoors in, while plush
+            bedding ensures a restful night&apos;s sleep.
+          </p>
+          <p className="mb-4">
+            Our commitment to sustainability goes beyond aesthetics.
+            Solar-powered infrastructure, rainwater harvesting, and a zero-waste
+            kitchen reflect our dedication to the environment.
+          </p>
+          <p className="mb-4">
+            Unwind with yoga at sunrise, gather around bonfires under starlit
+            skies, or join our curated local excursions for an immersive
+            cultural experience. From adventure to serenity, there&apos;s something
+            for everyone.
+          </p>
+          <p className="mb-4">
+            Tranquil Stay isn't just a destination — it's a feeling. A place
+            where the noise of the world fades away and peace takes center
+            stage. Come for the view, stay for the experience.
+          </p>
         </div>
       </section>
 
@@ -38,20 +83,26 @@ export default function Home() {
             {
               title: "Deluxe Room",
               image:
-                "https://images.unsplash.com/photo-1729605411476-defbdab14c54?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                "https://images.unsplash.com/photo-1729605411476-defbdab14c54?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0",
               desc: "Modern room with king-size bed, balcony & great views.",
+              detail:
+                "Enjoy a peaceful retreat with plush bedding, private balcony, and panoramic views of lush surroundings — perfect for a romantic escape or solo reset.",
             },
             {
               title: "Suite",
               image:
-                "https://images.unsplash.com/photo-1590490359854-dfba19688d70?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                "https://images.unsplash.com/photo-1590490359854-dfba19688d70?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0",
               desc: "Spacious suite with living area, luxury bath & amenities.",
+              detail:
+                "Our suites offer indulgence and privacy. Unwind in a separate living space, soak in a lavish tub, and enjoy premium amenities for a luxurious stay.",
             },
             {
               title: "Family Room",
               image:
-                "https://images.unsplash.com/photo-1560448204-603b3fc33ddc?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                "https://images.unsplash.com/photo-1560448204-603b3fc33ddc?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0",
               desc: "Comfortable room perfect for families, with extra beds.",
+              detail:
+                "Designed for comfort and bonding, our family rooms feature extra sleeping space, cozy furnishings, and easy access to resort activities for all ages.",
             },
           ].map((room, index) => (
             <Link
@@ -70,12 +121,17 @@ export default function Home() {
                 <h3 className="text-xl font-semibold font-serif mb-2 text-gray-800 group-hover:text-blue-600 transition">
                   {room.title}
                 </h3>
-                <p className="text-gray-600 font-serif">{room.desc}</p>
+                <p className="text-gray-600 font-serif text-[18px]">{room.desc}</p>
+                <p className="text-[16px] text-gray-700 mt-2 ">
+                  {room.detail}
+                </p>
               </div>
             </Link>
           ))}
         </div>
       </section>
+
+     
     </div>
   );
 }

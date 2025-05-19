@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import Image from "next/image";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -12,9 +13,9 @@ export default function Navbar() {
 
   useEffect(() => {
     if (isOpen) {
-      document.body.style.overflow = "hidden"; // Disable scroll
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = ""; // Enable scroll
+      document.body.style.overflow = "";
     }
 
     return () => {
@@ -23,16 +24,21 @@ export default function Navbar() {
   }, [isOpen]);
 
   return (
-    <nav className="bg-gray-800 text-white w-full font-serif text-[18px]">
+    <nav className="bg-teal-800 text-white w-full font-serif text-[18px]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
           <div className="flex-shrink-0">
-            <Link href="/" className="text-2xl font-bold">
-              Logo
+            <Link href="/">
+              <Image
+                src="/hotelslogo.png"
+                alt="Hotel Serenity Logo"
+                width={120}
+                height={30}
+                className="object-contain pt-6"
+              />
             </Link>
           </div>
 
-          {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-4">
             <Link href="/" className="hover:bg-gray-700 px-3 py-2 rounded-md">
               Home
@@ -63,7 +69,6 @@ export default function Navbar() {
             </Link>
           </div>
 
-          {/* Mobile Menu Button */}
           <div className="md:hidden">
             <button
               onClick={toggleMenu}
@@ -109,18 +114,11 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Sidebar Menu */}
       {isOpen && (
         <>
-          {/* Backdrop */}
-          <div
-            className="fixed inset-0   z-40"
-            onClick={toggleMenu}
-          ></div>
+          <div className="fixed inset-0 z-40" onClick={toggleMenu}></div>
 
-          {/* Sidebar */}
           <div className="fixed inset-y-0 left-0 w-64 bg-gray-900 text-white p-5 z-50 shadow-lg transform transition-transform duration-300 ease-in-out">
-            
             <nav className="space-y-4">
               <Link
                 href="/"

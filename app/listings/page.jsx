@@ -12,7 +12,7 @@ const Rooms = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const roomsPerPage = 6;
 
-  // Filter rooms based on search query
+  
   const filteredRooms = rooms.filter((room) =>
     [room.name, room.description, ...room.amenities].some((field) =>
       field.toLowerCase().includes(searchQuery.toLowerCase())
@@ -29,7 +29,7 @@ const Rooms = () => {
   const handlePrev = () => {
     setCurrentPage((prev) => {
       const newPage = Math.max(prev - 1, 1);
-      console.log("Previous clicked, newPage:", newPage); // Debug log
+      console.log("Previous clicked, newPage:", newPage);
       return newPage;
     });
   };
@@ -37,20 +37,19 @@ const Rooms = () => {
   const handleNext = () => {
     setCurrentPage((prev) => {
       const newPage = Math.min(prev + 1, totalPages);
-      console.log("Next clicked, newPage:", newPage); // Debug log
+      console.log("Next clicked, newPage:", newPage); 
       return newPage;
     });
   };
 
   const handleSearchChange = (e) => {
     setSearchQuery(e.target.value);
-    setCurrentPage(1); // Reset to first page on search
+    setCurrentPage(1); 
   };
 
-  // Ensure currentPage is valid when filteredRooms changes
   useEffect(() => {
     if (currentPage > totalPages) {
-      console.log("Adjusting currentPage to", totalPages); // Debug log
+      console.log("Adjusting currentPage to", totalPages); 
       setCurrentPage(totalPages);
     }
   }, [filteredRooms, totalPages, currentPage]);
@@ -110,8 +109,8 @@ const Rooms = () => {
           animate="visible"
           className="mb-8"
         >
-          <div className="relative w-full max-w-md mx-auto border border-blue-500 rounded-lg shadow-sm overflow-hidden">
-            <FaSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-blue-400" />
+          <div className="relative w-full max-w-md mx-auto border border-teal-500 rounded-lg shadow-sm overflow-hidden">
+            <FaSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-teal-400" />
             <input
               type="text"
               value={searchQuery}
@@ -157,14 +156,14 @@ const Rooms = () => {
                         <p className="text-gray-600 mb-4 text-sm flex-grow line-clamp-3 overflow-hidden">
                           {room.description}
                         </p>
-                        <p className="text-lg font-bold text-blue-700 mb-4">
+                        <p className="text-lg font-bold text-teal-700 mb-4">
                           ₹{room.price} / night
                         </p>
                         <ul className="flex flex-wrap gap-2 overflow-hidden max-h-16">
                           {room.amenities.map((item, i) => (
                             <li
                               key={i}
-                              className="bg-blue-100 text-blue-700 px-2 py-1 rounded-md text-xs sm:text-sm transition-colors duration-300 hover:bg-blue-200 truncate"
+                              className="bg-blue-100 text-teal-700 px-2 py-1 rounded-md text-xs sm:text-sm transition-colors duration-300 hover:bg-blue-200 truncate"
                             >
                               {item}
                             </li>
@@ -200,7 +199,7 @@ const Rooms = () => {
               disabled={currentPage === 1}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-3 py-2 sm:px-4 sm:py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:opacity-50 disabled:hover:bg-blue-600 transition-colors text-sm sm:text-base"
+              className="px-3 py-2 sm:px-4 sm:py-2 bg-teal-600 text-white rounded-lg hover:bg-teal-700 disabled:opacity-50 disabled:hover:bg-teal-600 transition-colors text-sm sm:text-base"
             >
               Previous
             </motion.button>
@@ -213,7 +212,7 @@ const Rooms = () => {
                   whileTap={{ scale: 0.9 }}
                   className={`px-3 py-1 sm:px-4 sm:py-2 rounded-lg text-sm sm:text-base ${
                     currentPage === page
-                      ? "bg-blue-600 text-white"
+                      ? "bg-teal-600 text-white"
                       : "bg-gray-200 text-gray-800 hover:bg-gray-300"
                   } transition-colors`}
                 >
@@ -226,7 +225,7 @@ const Rooms = () => {
               disabled={currentPage === totalPages}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-3 py-2 sm:px-4 sm:py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:opacity-50 disabled:hover:bg-blue-600 transition-colors text-sm sm:text-base"
+              className="px-3 py-2 sm:px-4 sm:py-2 bg-teal-600 text-white rounded-lg hover:bg-teal-700 disabled:opacity-50 disabled:hover:bg-blue-600 transition-colors text-sm sm:text-base"
             >
               Next
             </motion.button>

@@ -4,7 +4,7 @@ import {
   FaMobileAlt,
   FaLock,
   FaHeadset,
-  FaWifi ,
+  FaWifi,
   FaUtensils,
 } from "react-icons/fa";
 
@@ -38,8 +38,6 @@ export default function Services() {
               options.
             </p>
           </div>
-
-         
 
           <div className="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition text-center">
             <FaLock className="text-teal-600 text-4xl mb-4 mx-auto" />

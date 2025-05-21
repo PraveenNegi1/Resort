@@ -89,7 +89,7 @@ export default function LaptopVideo() {
 
   return (
     <div
-      className="min-h-screen bg-gray-100 flex items-center justify-center py-20"
+      className="min-h-screen bg-white flex items-center justify-center py-20 mt-80"
       ref={containerRef}
     >
       <div className="perspective-1000 w-full max-w-3xl px-4">
@@ -108,7 +108,6 @@ export default function LaptopVideo() {
           >
             <div className="" style={{ width: "90%" }}>
               <div className="absolute bottom-0 left-0 right-0 h-5 bg-gray-900 rounded-b-xl"></div>
-              <div className="absolute bottom-1 left-1/2 transform -translate-x-1/2 w-10 h-5 bg-gray-700 rounded-full"></div>
             </div>
 
             <div className="laptop-shadow absolute -bottom-6 left-1/2 transform -translate-x-1/2 w-4/5 h-4 bg-black opacity-30 rounded-full blur-md"></div>

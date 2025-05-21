@@ -16,10 +16,10 @@ export default function Footer() {
           <div className="flex flex-col items-center md:items-start">
             <div className="mb-4">
               <Image
-                src="/hotelslogo.png"
+                src="/logo2.png"
                 alt="Hotels Logo"
-                width={150}
-                height={150}
+                width={180}
+                height={180}
                 className="object-contain"
               />
             </div>
@@ -50,14 +50,7 @@ export default function Footer() {
                   About
                 </Link>
               </li>
-              <li>
-                <Link
-                  href="/services"
-                  className="hover:text-white transition-colors duration-300"
-                >
-                  Services
-                </Link>
-              </li>
+
               <li>
                 <Link
                   href="/listings"
@@ -108,7 +101,7 @@ export default function Footer() {
         </div>
         <div className="mt-12 pt-8 border-t border-white text-center">
           <p className="text-white text-sm">
-            © {new Date().getFullYear()} Negi Hotels. All rights reserved.
+            © {new Date().getFullYear()} HillNest Stays. All rights reserved.
           </p>
         </div>
       </div>

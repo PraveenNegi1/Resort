@@ -4,13 +4,13 @@ import {
   FaMobileAlt,
   FaLock,
   FaHeadset,
-  FaPlusCircle,
+  FaWifi ,
   FaUtensils,
 } from "react-icons/fa";
 
 export default function Services() {
   return (
-    <div className="min-h-screen bg-white py-16 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-gray-100 py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto font-serif">
         <h1 className="text-4xl md:text-5xl font-serif text-center text-gray-800 mb-14">
           Our Services
@@ -18,13 +18,13 @@ export default function Services() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
           <div className="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition text-center">
-            <FaPlusCircle className="text-teal-600 text-4xl mb-4 mx-auto" />
+            <FaWifi className="text-teal-600 text-4xl mb-4 mx-auto" />
             <h2 className="text-xl font-semibold text-teal-600 mb-3">
-              Post Your Property
+              Free WiFi
             </h2>
             <p className="text-gray-600">
-              List your available spaces easily and reach thousands of renters
-              quickly.
+              Enjoy high-speed internet access throughout the property for work
+              and entertainment.
             </p>
           </div>
 
@@ -39,16 +39,7 @@ export default function Services() {
             </p>
           </div>
 
-          <div className="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition text-center">
-            <FaSearch className="text-teal-600 text-4xl mb-4 mx-auto" />
-            <h2 className="text-xl font-semibold text-teal-600 mb-3">
-              Smart Search Tools
-            </h2>
-            <p className="text-gray-600">
-              Use filters and map views to discover rentals tailored to your
-              needs.
-            </p>
-          </div>
+         
 
           <div className="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition text-center">
             <FaLock className="text-teal-600 text-4xl mb-4 mx-auto" />
@@ -91,7 +82,7 @@ export default function Services() {
             href="/listings"
             className="inline-block px-8 py-3 bg-teal-600 text-white font-medium rounded-full hover:bg-teal-700 transition"
           >
-            Explore Listings
+            Explore Rooms
           </a>
         </div>
       </div>

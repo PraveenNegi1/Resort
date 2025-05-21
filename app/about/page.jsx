@@ -9,7 +9,7 @@ export default function About() {
 
         <p className="text-lg text-gray-600 mb-6 ">
           Welcome to{" "}
-          <span className="text-teal-600 font-semibold">StayEase Hotels</span>,
+          <span className="text-teal-600 font-semibold">HillNest Stays</span>,
           where luxury meets comfort in every corner. Our hotel offer a diverse
           range of stays, from cozy rooms to extravagant suites, all designed to
           provide you with a truly memorable experience.
@@ -19,7 +19,7 @@ export default function About() {
           Our Hotels
         </h2>
         <p className="text-gray-600 mb-6 md:text-[18px]">
-          At StayEase Hotel, we believe in offering the finest quality
+          At HillNest Stays, we believe in offering the finest quality
           accommodations to our guests. Our portfolio includes a wide variety of
           rooms.
         </p>
@@ -28,10 +28,10 @@ export default function About() {
           Rooms & Suites
         </h2>
         <p className="text-gray-600 mb-6  md:text-[18px]">
-          Whether you&apos;re traveling for business, leisure, or a special occasion,
-          our rooms and suites are designed to cater to your needs. We offer a
-          range of room types, from standard rooms to luxurious suites, each
-          furnished with comfort and elegance in mind. All rooms come with
+          Whether you&apos;re traveling for business, leisure, or a special
+          occasion, our rooms and suites are designed to cater to your needs. We
+          offer a range of room types, from standard rooms to luxurious suites,
+          each furnished with comfort and elegance in mind. All rooms come with
           modern amenities including high-speed internet, flat-screen TVs, cozy
           bedding, and stunning views, so you can unwind and relax during your
           stay.
@@ -51,10 +51,10 @@ export default function About() {
         </ul>
 
         <h2 className="text-2xl font-semibold text-gray-700 mb-4">
-          Why Choose StayEase Hotels
+          Why Choose HillNest Stays
         </h2>
         <p className="text-gray-600 mb-6  md:text-[18px]">
-          StayEase Hotel is dedicated to offering exceptional comfort, service,
+          HillNest Stays is dedicated to offering exceptional comfort, service,
           and value for money. Our properties are strategically located to
           ensure you have easy access to both popular attractions and tranquil
           retreats. With personalized services, a wide range of room options,

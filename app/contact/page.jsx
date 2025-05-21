@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { useRouter } from "next/navigation";
 import toast from "react-hot-toast";
-import Image from "next/image"; // Import Next.js Image component
+import Image from "next/image";
 
 const ContactPage = () => {
   const router = useRouter();
@@ -46,7 +46,7 @@ const ContactPage = () => {
               We'd love to help you find the perfect stay. Reach out with any
               questions or requests.
             </p>
-            <form className="space-y-6" onSubmit={handleSubmit}>
+            <form className="space-y-6 font-sans" onSubmit={handleSubmit}>
               <div>
                 <label className="block mb-1 font-medium text-gray-700">
                   Full Name
@@ -93,7 +93,7 @@ const ContactPage = () => {
               <motion.button
                 whileTap={{ scale: 0.95 }}
                 whileHover={{ scale: 1.03 }}
-                className="w-full bg-teal-700 hover:bg-teal-800 text-white font-semibold py-3 rounded-xl shadow-lg transition"
+                className="w-full bg-teal-700 hover:bg-teal-800 font-serif text-white font-semibold py-3 rounded-xl shadow-lg transition"
                 type="submit"
               >
                 Send Inquiry

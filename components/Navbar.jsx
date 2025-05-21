@@ -30,10 +30,10 @@ export default function Navbar() {
           <div className="flex-shrink-0">
             <Link href="/">
               <Image
-                src="/hotelslogo.png"
+                src="/logo2.png"
                 alt="Hotel Serenity Logo"
-                width={100}
-                height={25}
+                width={150}
+                height={55}
                 className="object-contain p-2 pt-2"
               />
             </Link>
@@ -58,12 +58,7 @@ export default function Navbar() {
             >
               Gallery
             </Link>
-            <Link
-              href="/services"
-              className="hover:bg-white hover:text-teal-600  px-3 py-2 rounded-md"
-            >
-              Services
-            </Link>
+           
             <Link
               href="/contact"
               className="hover:bg-white hover:text-teal-600  px-3 py-2 rounded-md"
@@ -144,13 +139,7 @@ export default function Navbar() {
               >
                 Gallery
               </Link>
-              <Link
-                href="/services"
-                className="block hover:bg-white hover:text-teal-600  px-3 py-2 rounded-md"
-                onClick={toggleMenu}
-              >
-                Services
-              </Link>
+             
               <Link
                 href="/contact"
                 className="block hover:bg-white hover:text-teal-600  px-3 py-2 rounded-md"

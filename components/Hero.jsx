@@ -13,7 +13,7 @@ export default function Home() {
       >
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-black/30 flex flex-col justify-center items-center text-white px-4 text-center">
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-serif mb-4 drop-shadow-lg">
-            Welcome to Tranquil Stay
+            Welcome to HillNest Stays
           </h1>
           <p className="text-lg sm:text-xl md:text-2xl mb-4 max-w-xl font-serif">
             Experience luxury and comfort in the heart of nature
@@ -29,11 +29,11 @@ export default function Home() {
 
        <section className="bg-white py-16 px-4 sm:px-8 md:px-20 text-center font-serif">
         <h2 className="text-3xl md:text-4xl font-serif text-gray-800 mb-8">
-          Why Choose Tranquil Stay?
+          Why Choose HillNest Stays?
         </h2>
         <div className="max-w-4xl mx-auto text-gray-700 text-lg leading-relaxed">
           <p className="mb-4">
-            At Tranquil Stay, we blend luxury with nature. Whether you're waking
+            At HillNest Stays, we blend luxury with nature. Whether you're waking
             up to birdsong, enjoying fresh organic meals, or soaking in the view
             from your private balcony, every detail is curated for your comfort.
           </p>
@@ -65,7 +65,7 @@ export default function Home() {
             for everyone.
           </p>
           <p className="mb-4">
-            Tranquil Stay isn't just a destination — it's a feeling. A place
+            HillNest Stays isn't just a destination — it's a feeling. A place
             where the noise of the world fades away and peace takes center
             stage. Come for the view, stay for the experience.
           </p>

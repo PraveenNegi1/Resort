@@ -1,6 +1,7 @@
 import ActivitiesPage from "@/components/Activities";
 import LocalAttraction from "@/components/Attraction";
 import Hero from "@/components/Hero";
+import LaptopVideo from "@/components/Laptop";
 import Services from "@/components/Services";
 
 export default function Home() {
@@ -10,6 +11,7 @@ export default function Home() {
     <ActivitiesPage />
     <LocalAttraction />
     <Services />
+    <LaptopVideo  />
     </>
   );
 }

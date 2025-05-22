@@ -213,7 +213,7 @@ const Rooms = () => {
                   className={`px-3 py-1 sm:px-4 sm:py-2 rounded-lg text-sm sm:text-base ${
                     currentPage === page
                       ? "bg-teal-600 text-white"
-                      : "bg-gray-200 text-gray-800 hover:bg-gray-300"
+                      : "bg-white text-teal-800 hover:bg-gray-300"
                   } transition-colors`}
                 >
                   {page}

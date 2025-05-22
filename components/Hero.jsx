@@ -27,15 +27,16 @@ export default function Home() {
         </div>
       </section>
 
-       <section className="bg-white py-16 px-4 sm:px-8 md:px-20 text-center font-serif">
+      <section className="bg-white py-16 px-4 sm:px-8 md:px-20 text-center font-serif">
         <h2 className="text-3xl md:text-4xl font-serif text-gray-800 mb-8">
           Why Choose HillNest Stays?
         </h2>
         <div className="max-w-4xl mx-auto text-gray-700 text-lg leading-relaxed">
           <p className="mb-4">
-            At HillNest Stays, we blend luxury with nature. Whether you're waking
-            up to birdsong, enjoying fresh organic meals, or soaking in the view
-            from your private balcony, every detail is curated for your comfort.
+            At HillNest Stays, we blend luxury with nature. Whether you're
+            waking up to birdsong, enjoying fresh organic meals, or soaking in
+            the view from your private balcony, every detail is curated for your
+            comfort.
           </p>
           <p className="mb-4">
             Explore nearby nature trails, indulge in spa therapies, or simply
@@ -61,8 +62,8 @@ export default function Home() {
           <p className="mb-4">
             Unwind with yoga at sunrise, gather around bonfires under starlit
             skies, or join our curated local excursions for an immersive
-            cultural experience. From adventure to serenity, there&apos;s something
-            for everyone.
+            cultural experience. From adventure to serenity, there&apos;s
+            something for everyone.
           </p>
           <p className="mb-4">
             HillNest Stays isn't just a destination — it's a feeling. A place
@@ -77,7 +78,7 @@ export default function Home() {
         <h2 className="text-3xl md:text-4xl font-serif text-center mb-12 text-gray-800">
           Our Rooms
         </h2>
-        <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-3">
+        <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-3 font-serif">
           {[
             {
               title: "Deluxe Room",
@@ -120,10 +121,10 @@ export default function Home() {
                 <h3 className="text-xl font-semibold font-serif mb-2 text-gray-800 group-hover:text-teal-600 transition">
                   {room.title}
                 </h3>
-                <p className="text-gray-600 font-serif text-[18px]">{room.desc}</p>
-                <p className="text-[16px] text-gray-700 mt-2 ">
-                  {room.detail}
+                <p className="text-gray-600 font-serif text-[18px]">
+                  {room.desc}
                 </p>
+                <p className="text-[16px] text-gray-700 mt-2 ">{room.detail}</p>
               </div>
             </Link>
           ))}

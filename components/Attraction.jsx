@@ -84,16 +84,15 @@ export default function LocalAttraction() {
   const [isVisible, setIsVisible] = useState(false);
   const componentRef = useRef(null);
 
-  // IntersectionObserver to trigger animation on viewport entry
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         if (entries[0].isIntersecting) {
           setIsVisible(true);
-          observer.disconnect(); // Trigger only once
+          observer.disconnect();
         }
       },
-      { threshold: 0.1 } // Trigger when 10% of component is visible
+      { threshold: 0.1 }
     );
 
     if (componentRef.current) {
@@ -107,10 +106,9 @@ export default function LocalAttraction() {
     };
   }, []);
 
-  // Trigger slide animation on slide change
   useEffect(() => {
     setAnimateSlide(true);
-    const timer = setTimeout(() => setAnimateSlide(false), 700); // Match animation duration
+    const timer = setTimeout(() => setAnimateSlide(false), 1000);
     return () => clearTimeout(timer);
   }, [currentSlide]);
 
@@ -124,119 +122,200 @@ export default function LocalAttraction() {
     );
   };
 
+  const goToSlide = (index) => {
+    setCurrentSlide(index);
+  };
+
   return (
-    <div
-      ref={componentRef}
-      className="min-h-screen bg-white flex flex-col items-center justify-center p-4 font-serif"
-    >
-      <h1 className="text-4xl font-semibold text-gray-800 mb-8 text-center">
-        Local Attractions
+    <div className="min-h-screen bg-gray-50">
+      <h1 className="text-4xl md:text-5xl font-serif text-center mb-12 pt-12 text-gray-900">
+        Top Local Attractions
+        <span className="text-teal-500"> to Explore</span>
       </h1>
-      <div className="max-w-7xl w-full bg-white shadow-lg rounded-lg overflow-hidden flex flex-col md:flex-row">
-        <div
-          className={`md:w-1/2 p-8 transition-transform duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] ${
-            isVisible
-              ? animateSlide
-                ? "animate-slide-in-left"
-                : "translate-x-0"
-              : "translate-x-[-100%] opacity-0"
-          }`}
+      <div
+        ref={componentRef}
+        className="h-[100vh] flex items-center justify-center p-4 font-sans relative overflow-hidden"
+        style={{
+          backgroundImage: `url(${attractions[currentSlide].image})`,
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
+          backgroundAttachment: "fixed",
+        }}
+      >
+        <div className="absolute inset-0 bg-gradient-to-br from-teal-900/50 to-purple-900/30 transition-opacity duration-1000 ease-[cubic-bezier(0.4,0,0.2,1)]"></div>
+
+        <button
+          onClick={prevSlide}
+          className="absolute left-8 md:left-28 top-1/2 transform -translate-y-1/2 bg-white/90 text-teal-600 p-4 rounded-full hover:bg-teal-500 hover:text-white transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] hover:scale-110 active:scale-95 focus:outline-none focus:ring-2 focus:ring-teal-400 z-20 shadow-lg"
         >
-          <h2 className="text-2xl font-semibold text-teal-700 mb-2">
-            {attractions[currentSlide].title}
-          </h2>
-          <p className="text-gray-700 mb-4 md:text-[18px]">
-            {attractions[currentSlide].description}
-          </p>
-          <p className="text-gray-700 mb-4 md:text-[18px]">
-            Discover the best spots in our city! From serene parks to historical
-            landmarks, there's something for everyone. Visit these attractions
-            to experience the vibrant culture, stunning landscapes, and unique
-            history of our local area. Whether you're a local or a visitor,
-            these destinations offer unforgettable experiences for all ages.
-          </p>
-          <h3 className="text-xl font-semibold text-teal-700 mb-2">
-            Highlights
-          </h3>
-          <ul className="list-disc list-inside text-gray-600 mb-4 text-[16px]">
-            {attractions[currentSlide].features.map((feature, index) => (
-              <li key={index}>{feature}</li>
-            ))}
-          </ul>
-          <p className="text-gray-700 mb-4 md:text-[18px]">
-            Plan your visit today and immerse yourself in the charm of our city.
-            Check out seasonal events or guided tours for an enhanced
-            experience!
-          </p>
-          <a
-            href="/contact"
-            className="inline-block bg-teal-600 text-white py-2 px-4 rounded hover:bg-teal-700 transition"
+          ←
+        </button>
+
+        <div className="relative max-w-6xl w-full bg-white/95 backdrop-blur-sm shadow-xl rounded-xl overflow-hidden flex flex-col md:flex-row transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+          <div
+            className={`md:w-1/2 relative h-96 transition-all duration-1000 ease-[cubic-bezier(0.4,0,0.2,1)] ${
+              isVisible
+                ? animateSlide
+                  ? "animate-slide-in-left"
+                  : "translate-x-0 opacity-100"
+                : "translate-x-[-100%] opacity-0"
+            }`}
           >
-            Plan Your Visit
-          </a>
-        </div>
-        <div
-          className={`md:w-1/2 relative transition-transform duration-700 ease-[cubic-bezier(0.4,0,0.2,1)] ${
-            isVisible
-              ? animateSlide
-                ? "animate-slide-in-right"
-                : "translate-x-0"
-              : "translate-x-[100%] opacity-0"
-          }`}
-        >
-          <div className="relative h-80 md:h-full">
             <Image
               src={attractions[currentSlide].image}
               alt={attractions[currentSlide].title}
               layout="fill"
               objectFit="cover"
-              className="rounded-r-lg"
+              className="rounded-l-xl transition-transform duration-1000 ease-[cubic-bezier(0.4,0,0.2,1)] hover:scale-105"
             />
           </div>
-          <div className="absolute bottom-4 left-0 right-0 flex justify-center space-x-4">
-            <button
-              onClick={prevSlide}
-              className="bg-teal-500 text-white p-2 rounded-full hover:bg-teal-700 transition"
-            >
-              ←
-            </button>
-            <button
-              onClick={nextSlide}
-              className="bg-teal-500 text-white p-2 rounded-full hover:bg-teal-700 transition"
-            >
-              →
-            </button>
+          <div
+            className={`md:w-1/2 p-10 flex flex-col justify-between transition-all duration-1000 ease-[cubic-bezier(0.4,0,0.2,1)] ${
+              isVisible
+                ? animateSlide
+                  ? "animate-slide-in-right"
+                  : "translate-x-0 opacity-100"
+                : "translate-x-[100%] opacity-0"
+            }`}
+          >
+            <div>
+              <h2
+                className={`text-4xl font-bold font-playfair text-gray-900 mb-4 tracking-tight ${
+                  animateSlide ? "animate-text-in" : ""
+                }`}
+              >
+                {attractions[currentSlide].title}
+              </h2>
+              <p
+                className={`text-gray-700 mb-6 text-lg font-inter leading-relaxed ${
+                  animateSlide ? "animate-text-in delay-100" : ""
+                }`}
+              >
+                {attractions[currentSlide].description}
+              </p>
+              <h3
+                className={`text-xl font-semibold font-playfair text-gray-900 mb-3 ${
+                  animateSlide ? "animate-text-in delay-200" : ""
+                }`}
+              >
+                Highlights
+              </h3>
+              <ul
+                className={`list-disc list-inside text-gray-600 text-base font-inter ${
+                  animateSlide ? "animate-text-in delay-300" : ""
+                }`}
+              >
+                {attractions[currentSlide].features.map((feature, index) => (
+                  <li key={index} className="mb-2">
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
+
+        <button
+          onClick={nextSlide}
+          className="absolute right-8 md:right-28 top-1/2 transform -translate-y-1/2 bg-white/90 text-teal-600 p-4 rounded-full hover:bg-teal-500 hover:text-white transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] hover:scale-110 active:scale-95 focus:outline-none focus:ring-2 focus:ring-teal-400 z-20 shadow-lg"
+        >
+          →
+        </button>
+
+        <div className="absolute bottom-8 flex space-x-2 z-20">
+          {attractions.map((_, index) => (
+            <button
+              key={index}
+              onClick={() => goToSlide(index)}
+              className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                currentSlide === index
+                  ? "bg-teal-500 scale-125"
+                  : "bg-white/50 hover:bg-white/80"
+              }`}
+            ></button>
+          ))}
+        </div>
+
+        <style jsx>{`
+          @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500&display=swap");
+
+          .font-playfair {
+            font-family: "Playfair Display", serif;
+          }
+          .font-inter {
+            font-family: "Inter", sans-serif;
+          }
+          @keyframes slide-in-left {
+            from {
+              transform: translateX(-100%);
+              opacity: 0;
+            }
+            to {
+              transform: translateX(0);
+              opacity: 1;
+            }
+          }
+          @keyframes slide-in-right {
+            from {
+              transform: translateX(100%);
+              opacity: 0;
+            }
+            to {
+              transform: translateX(0);
+              opacity: 1;
+            }
+          }
+          @keyframes text-in {
+            from {
+              transform: translateY(20px);
+              opacity: 0;
+            }
+            to {
+              transform: translateY(0);
+              opacity: 1;
+            }
+          }
+          @keyframes dot-pulse {
+            0% {
+              transform: scale(1);
+            }
+            50% {
+              transform: scale(1.25);
+            }
+            100% {
+              transform: scale(1);
+            }
+          }
+          .animate-slide-in-left {
+            animation: slide-in-left 1s cubic-bezier(0.4, 0, 0.2, 1);
+          }
+          .animate-slide-in-right {
+            animation: slide-in-right 1s cubic-bezier(0.4, 0, 0.2, 1);
+          }
+          .animate-text-in {
+            animation: text-in 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+          }
+          .delay-100 {
+            animation-delay: 0.1s;
+          }
+          .delay-200 {
+            animation-delay: 0.2s;
+          }
+          .delay-300 {
+            animation-delay: 0.3s;
+          }
+          @media (prefers-reduced-motion: reduce) {
+            .animate-slide-in-left,
+            .animate-slide-in-right,
+            .animate-text-in {
+              animation: none;
+              transform: translateX(0) translateY(0);
+              opacity: 1;
+            }
+          }
+        `}</style>
       </div>
-      <style jsx>{`
-        @keyframes slide-in-left {
-          from {
-            transform: translateX(-100%);
-            opacity: 0;
-          }
-          to {
-            transform: translateX(0);
-            opacity: 1;
-          }
-        }
-        @keyframes slide-in-right {
-          from {
-            transform: translateX(100%);
-            opacity: 0;
-          }
-          to {
-            transform: translateX(0);
-            opacity: 1;
-          }
-        }
-        .animate-slide-in-left {
-          animation: slide-in-left 0.7s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-        .animate-slide-in-right {
-          animation: slide-in-right 0.7s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-      `}</style>
     </div>
   );
 }

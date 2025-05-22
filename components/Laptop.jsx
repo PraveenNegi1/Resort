@@ -92,21 +92,22 @@ export default function LaptopVideo() {
   };
 
   return (
-    <div className="font-serif">
-      <div className="text-center mb-12 mt-20">
+    <div className="font-serif bg-gradient-to-br from-teal-900/50 to-purple-900/80 ">
+      
+      <div className="text-center md:mb-12 pt-12">
         <h2 className="text-4xl font-bold text-gray-800 mb-4">
           HillNest Stays Hotels
         </h2>
-        <p className="text-lg text-gray-500 max-w-2xl mx-auto">
+        <p className="text-lg text-white max-w-2xl mx-auto">
           Experience luxury at its finest with stunning ocean views, world-class
           amenities, and unparalleled comfort at HillNest Stays Hotels.
         </p>
       </div>
       <div
-        className="min-h-screen bg-white flex items-center justify-center py-20 md:mt-60"
+        className="min-h-screen bg-white flex items-center justify-center md:py-20 md:mt-60 "
         ref={containerRef}
       >
-        <div className="perspective-1440 w-full max-w-5xl px-4">
+        <div className="perspective-1440 w-full max-w-5xl px-4 ">
           <div className="text-center mb-8 text-gray-500">
             {scrollDirection === "down"
               ? "Scroll down to open laptop"
@@ -153,7 +154,7 @@ export default function LaptopVideo() {
             </div>
           </div>
 
-          <div className="text-center mt-20">
+          <div className="text-center mt-20 ">
             <a
               href="contact"
               className="inline-block bg-teal-600 text-white font-semibold py-3 px-6 rounded-lg hover:bg-teal-700 transition-colors"

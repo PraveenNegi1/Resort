@@ -1,15 +1,48 @@
+"use client";
+
 import Link from "next/link";
+import { useState, useEffect } from "react";
 
 export default function Home() {
+  const backgroundImages = [
+    "https://images.unsplash.com/photo-1680503146476-abb8c752e1f4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0",
+    "https://images.unsplash.com/photo-1729605411476-defbdab14c54?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "https://images.unsplash.com/photo-1687180497323-0750d6fe0124?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "https://images.unsplash.com/photo-1741506131058-533fcf894483?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "https://images.unsplash.com/photo-1583845112203-29329902332e?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  ];
+
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [nextImageIndex, setNextImageIndex] = useState(1);
+  const [isFading, setIsFading] = useState(false);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIsFading(true);
+      setTimeout(() => {
+        setCurrentImageIndex((prevIndex) =>
+          prevIndex === backgroundImages.length - 1 ? 0 : prevIndex + 1
+        );
+        setNextImageIndex((prevIndex) =>
+          prevIndex === backgroundImages.length - 1 ? 0 : prevIndex + 1
+        );
+        setIsFading(false);
+      }, 900); 
+    }, 4000); 
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <div className="font-sans text-gray-800">
-      <section
-        className="relative h-screen bg-cover bg-center"
-        style={{
-          backgroundImage:
-            "url('https://images.unsplash.com/photo-1680503146476-abb8c752e1f4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D')",
-        }}
-      >
+      <section className="relative h-screen bg-cover bg-center">
+        <div
+          className="absolute inset-0 bg-cover bg-center transition-opacity duration-1200"
+          style={{
+            backgroundImage: `url('${backgroundImages[currentImageIndex]}')`,
+            opacity: isFading ? 0 : 1,
+          }}
+        />
+
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-black/30 flex flex-col justify-center items-center text-white px-4 text-center">
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-serif mb-4 drop-shadow-lg">
             Welcome to HillNest Stays
@@ -51,7 +84,7 @@ export default function Home() {
             Each of our rooms is crafted with natural materials and modern
             amenities, providing a harmonious balance of elegance and rustic
             charm. Floor-to-ceiling windows invite the outdoors in, while plush
-            bedding ensures a restful night&apos;s sleep.
+            bedding ensures a restful night's sleep.
           </p>
           <p className="mb-4">
             Our commitment to sustainability goes beyond aesthetics.
@@ -61,8 +94,8 @@ export default function Home() {
           <p className="mb-4">
             Unwind with yoga at sunrise, gather around bonfires under starlit
             skies, or join our curated local excursions for an immersive
-            cultural experience. From adventure to serenity, there&apos;s
-            something for everyone.
+            cultural experience. From adventure to serenity, there's something
+            for everyone.
           </p>
           <p className="mb-4">
             HillNest Stays isn't just a destination — it's a feeling. A place
@@ -72,7 +105,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Rooms Preview Section */}
       <section className="py-16 px-4 sm:px-8 md:px-16 bg-gray-50">
         <h2 className="text-3xl md:text-4xl font-serif text-center mb-12 text-gray-800">
           Our Rooms

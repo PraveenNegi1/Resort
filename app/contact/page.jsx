@@ -60,7 +60,7 @@ const ContactPage = () => {
       >
         <div className="flex flex-col lg:flex-row gap-8">
           {/* Image Section */}
-          <div className="lg:w-1/2 relative h-[100vh] overflow-hidden rounded-xl">
+          <div className="lg:w-1/2 relative h-[100vh] overflow-hidden hidden md:block rounded-xl">
             <Image
               src="https://images.unsplash.com/photo-1680770638423-6d4c1089bd7a?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
               alt="Room Booking Banner"
@@ -73,7 +73,7 @@ const ContactPage = () => {
 
           {/* Form Section */}
           <div className="lg:w-1/2">
-            <h1 className="text-4xl font-bold text-center font-serif text-teal-700 mb-6">
+            <h1 className="md:text-4xl text-2xl font-bold text-center font-serif text-teal-700 mb-6">
               Contact Us for Room Booking
             </h1>
             <p className="text-center text-gray-600 mb-8 font-serif">

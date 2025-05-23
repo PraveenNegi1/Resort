@@ -2,6 +2,7 @@
 import { useEffect, useRef, useState } from "react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import Ok from "./Dishes";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -92,13 +93,12 @@ export default function LaptopVideo() {
   };
 
   return (
-    <div className="font-serif bg-gradient-to-br from-teal-900/50 to-purple-900/80 ">
-      
+    <div className="font-serif bg-gradient-to-br">
       <div className="text-center md:mb-12 pt-12">
         <h2 className="text-4xl font-bold text-gray-800 mb-4">
           HillNest Stays Hotels
         </h2>
-        <p className="text-lg text-white max-w-2xl mx-auto">
+        <p className="text-lg text-black max-w-2xl mx-auto">
           Experience luxury at its finest with stunning ocean views, world-class
           amenities, and unparalleled comfort at HillNest Stays Hotels.
         </p>
@@ -164,6 +164,7 @@ export default function LaptopVideo() {
           </div>
         </div>
       </div>
+      
     </div>
   );
 }

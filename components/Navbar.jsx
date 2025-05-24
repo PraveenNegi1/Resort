@@ -58,7 +58,7 @@ export default function Navbar() {
             >
               Gallery
             </Link>
-           
+
             <Link
               href="/contact"
               className="hover:bg-white hover:text-teal-600  px-3 py-2 rounded-md"
@@ -139,7 +139,7 @@ export default function Navbar() {
               >
                 Gallery
               </Link>
-             
+
               <Link
                 href="/contact"
                 className="block hover:bg-white hover:text-teal-600  px-3 py-2 rounded-md"

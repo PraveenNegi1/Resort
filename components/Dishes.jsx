@@ -40,7 +40,7 @@ export default function DiningSection() {
 
             <Link
               href="/diningArea"
-              className="bg-gray-100 text-gray-800 px-4 py-2 mb-4 rounded-md hover:bg-gray-200 transition "
+              className="bg-teal-300 text-gray-800 px-4 py-2 mb-4 rounded-md hover:bg-gray-200 transition "
             >
               Explore More
             </Link>

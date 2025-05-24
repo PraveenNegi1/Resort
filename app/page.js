@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <>
       <Hero />
-      <ActivitiesPage />
+      {/* <ActivitiesPage /> */}
       <LocalAttraction />
       <Services />
       <LaptopVideo />

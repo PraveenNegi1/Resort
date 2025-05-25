@@ -46,7 +46,7 @@ const page = () => {
             Welcome to HillNest Stays
           </h1>
           <p className="text-lg sm:text-xl md:text-2xl mb-4 max-w-xl font-serif">
-            Experience luxury fodd and comfort in the sitting area
+          Indulge in luxury, gourmet delights, and ultimate comfort in our elegant sitting area.
           </p>
         </div>
       </section>

@@ -4,8 +4,8 @@ import Hero from "@/components/Hero";
 import LaptopVideo from "@/components/Laptop";
 import Services from "@/components/Services";
 import DiningSection from "@/components/Dishes";
-import Heropage from "@/components/Brands";
-import QuoteCard from "@/components/QuoteCard";
+
+
 
 export default function Home() {
   return (
@@ -16,8 +16,8 @@ export default function Home() {
       <Services />
       <LaptopVideo />
       <DiningSection />
-      <Heropage />
-      <QuoteCard />
+
+
     </>
   );
 }

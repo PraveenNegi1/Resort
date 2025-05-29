@@ -10,7 +10,7 @@ import Image from "next/image";
 
 export default function Footer() {
   return (
-    <footer className=" bg-[#97301c] text-white py-12">
+    <footer className=" bg-teal-600 text-white py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 font-serif">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           <div className="flex flex-col items-center md:items-start">
@@ -71,7 +71,7 @@ export default function Footer() {
               </p>
               <p className="flex items-center gap-3">
                 <FaEnvelope className="text-white" />
-                <span>contact@roomrental.com</span>
+                <span>contact@hillneststays.com</span>
               </p>
             </div>
             <div className="flex space-x-6 mt-6 text-2xl text-gray-300">

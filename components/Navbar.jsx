@@ -24,7 +24,7 @@ export default function Navbar() {
   }, [isOpen]);
 
   return (
-    <nav className="bg-[#97301c] text-white w-full font-serif text-[18px]">
+    <nav className="bg-teal-600 text-white w-full font-serif text-[18px]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between h-16 items-center">
           <div className="flex-shrink-0">

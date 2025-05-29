@@ -5,6 +5,8 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import toast from "react-hot-toast";
 import Image from "next/image";
+import { db } from "../../lib/firebase"; // Adjust path if needed
+import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 
 const ContactPage = () => {
   const router = useRouter();
@@ -25,6 +27,14 @@ const ContactPage = () => {
     setIsSubmitting(true);
 
     try {
+      // Save to Firestore
+      const docRef = await addDoc(collection(db, "contacts"), {
+        ...formData,
+        createdAt: serverTimestamp(),
+      });
+      // console.log("Document written with ID: ", docRef.id);
+
+      // Existing email logic
       const response = await fetch("/api/send-email", {
         method: "POST",
         headers: {
@@ -44,7 +54,7 @@ const ContactPage = () => {
         toast.error(`Error: ${result.message}`);
       }
     } catch (error) {
-      toast.error("Error: Failed to send email.");
+      toast.error("Error: Failed to send data.");
     } finally {
       setIsSubmitting(false);
     }
@@ -154,7 +164,7 @@ const ContactPage = () => {
                 className="text-blue-600 underline"
                 target="_blank"
               >
-                +91 98765 43210
+                +91 98765 4320
               </a>
             </div>
           </div>

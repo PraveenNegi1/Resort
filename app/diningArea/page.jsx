@@ -161,7 +161,7 @@ const page = () => {
             </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="bg-gray-50 p-6 rounded-lg">
+              <div className="bg-teal-50 p-6 rounded-lg">
                 <h3 className="text-xl font-medium text-gray-800 mb-2">
                   Butter Chicken
                 </h3>
@@ -171,7 +171,7 @@ const page = () => {
                 </p>
               </div>
 
-              <div className="bg-gray-50 p-6 rounded-lg">
+              <div className="bg-teal-50 p-6 rounded-lg">
                 <h3 className="text-xl font-medium text-gray-800 mb-2">
                   Rogan Josh
                 </h3>
@@ -181,7 +181,7 @@ const page = () => {
                 </p>
               </div>
 
-              <div className="bg-gray-50 p-6 rounded-lg">
+              <div className="bg-teal-50 p-6 rounded-lg">
                 <h3 className="text-xl font-medium text-gray-800 mb-2">
                   Momos
                 </h3>
@@ -191,7 +191,7 @@ const page = () => {
                 </p>
               </div>
 
-              <div className="bg-gray-50 p-6 rounded-lg">
+              <div className="bg-teal-50 p-6 rounded-lg">
                 <h3 className="text-xl font-medium text-gray-800 mb-2">
                   Spring Rolls
                 </h3>
@@ -201,7 +201,7 @@ const page = () => {
                 </p>
               </div>
 
-              <div className="bg-gray-50 p-6 rounded-lg">
+              <div className="bg-teal-50 p-6 rounded-lg">
                 <h3 className="text-xl font-medium text-gray-800 mb-2">
                   Noodles
                 </h3>
@@ -211,7 +211,7 @@ const page = () => {
                 </p>
               </div>
 
-              <div className="bg-gray-50 p-6 rounded-lg">
+              <div className="bg-teal-50 p-6 rounded-lg">
                 <h3 className="text-xl font-medium text-gray-800 mb-2">
                   Indian-style Burger
                 </h3>

@@ -147,7 +147,7 @@ export default function LaptopVideo() {
 
             <div
               ref={screenRef}
-              className="absolute bottom-0 left-0 right-0 mx-auto w-full max-w-5xl h-[85vh] bg-gray-900 rounded-t-2xl transition-all duration-75 ease-out shadow-2xl"
+              className="absolute bottom-0 left-0 right-0 mx-auto w-full max-w-5xl h-[82vh] bg-gray-900 rounded-t-2xl transition-all duration-75 ease-out shadow-2xl"
               style={{
                 transformOrigin: "bottom center",
                 transform: "rotateX(-95deg)",

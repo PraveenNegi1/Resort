@@ -46,7 +46,8 @@ const page = () => {
             Welcome to HillNest Stays
           </h1>
           <p className="text-lg sm:text-xl md:text-2xl mb-4 max-w-xl font-serif">
-          Indulge in luxury, gourmet delights, and ultimate comfort in our elegant sitting area.
+            Indulge in luxury, gourmet delights, and ultimate comfort in our
+            elegant sitting area.
           </p>
         </div>
       </section>
@@ -117,7 +118,31 @@ const page = () => {
             {/* Third Image - Terrace Dining */}
             <div className="relative h-64 md:h-80 rounded-lg overflow-hidden shadow-lg">
               <Image
-                src="https://images.unsplash.com/photo-1669908978664-485e69bc26cd?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                src="https://images.unsplash.com/photo-1664138218128-2dcf791a9d27?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Terrace dining with mountain views"
+                fill
+                className="object-cover"
+              />
+            </div>
+            <div className="relative h-64 md:h-80 rounded-lg overflow-hidden shadow-lg">
+              <Image
+                src="https://images.unsplash.com/photo-1550367363-ea12860cc124?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Terrace dining with mountain views"
+                fill
+                className="object-cover"
+              />
+            </div>
+            <div className="relative h-64 md:h-80 rounded-lg overflow-hidden shadow-lg">
+              <Image
+                src="https://images.unsplash.com/photo-1502998070258-dc1338445ac2?q=80&w=1958&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Terrace dining with mountain views"
+                fill
+                className="object-cover"
+              />
+            </div>
+            <div className="relative h-64 md:h-80 rounded-lg overflow-hidden shadow-lg">
+              <Image
+                src="https://images.unsplash.com/photo-1651981075280-9a9e01acbff0?q=80&w=2026&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
                 alt="Terrace dining with mountain views"
                 fill
                 className="object-cover"
@@ -130,38 +155,69 @@ const page = () => {
       {/* Signature Dishes Section */}
       <div className="bg-white py-16">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
+          <div className="max-w-6xl mx-auto text-center">
             <h2 className="text-3xl md:text-4xl font-light text-gray-800 mb-8">
-              Signature Dishes
+              Signature Indian Dishes
             </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               <div className="bg-gray-50 p-6 rounded-lg">
                 <h3 className="text-xl font-medium text-gray-800 mb-2">
-                  Mountain Trout
+                  Butter Chicken
                 </h3>
                 <p className="text-gray-600 text-sm">
-                  Fresh local trout grilled with mountain herbs and lemon butter
+                  Creamy tomato-based curry with tender marinated chicken, a
+                  North Indian classic.
                 </p>
               </div>
 
               <div className="bg-gray-50 p-6 rounded-lg">
                 <h3 className="text-xl font-medium text-gray-800 mb-2">
-                  Himalayan Herb Chicken
+                  Rogan Josh
                 </h3>
                 <p className="text-gray-600 text-sm">
-                  Tender chicken marinated with aromatic Himalayan herbs and
-                  spices
+                  A rich and aromatic lamb curry from Kashmir, cooked with
+                  yogurt and traditional spices.
                 </p>
               </div>
 
               <div className="bg-gray-50 p-6 rounded-lg">
                 <h3 className="text-xl font-medium text-gray-800 mb-2">
-                  Cottage Cheese Steaks
+                  Momos
                 </h3>
                 <p className="text-gray-600 text-sm">
-                  Grilled cottage cheese steaks with seasonal vegetables and
-                  herbs
+                  Steamed dumplings filled with spiced vegetables or meat,
+                  served with spicy chutney.
+                </p>
+              </div>
+
+              <div className="bg-gray-50 p-6 rounded-lg">
+                <h3 className="text-xl font-medium text-gray-800 mb-2">
+                  Spring Rolls
+                </h3>
+                <p className="text-gray-600 text-sm">
+                  Crispy fried rolls stuffed with mixed vegetables and noodles,
+                  served with tangy dip.
+                </p>
+              </div>
+
+              <div className="bg-gray-50 p-6 rounded-lg">
+                <h3 className="text-xl font-medium text-gray-800 mb-2">
+                  Noodles
+                </h3>
+                <p className="text-gray-600 text-sm">
+                  Stir-fried noodles tossed with vegetables and Indo-Chinese
+                  sauces — a street food favorite.
+                </p>
+              </div>
+
+              <div className="bg-gray-50 p-6 rounded-lg">
+                <h3 className="text-xl font-medium text-gray-800 mb-2">
+                  Indian-style Burger
+                </h3>
+                <p className="text-gray-600 text-sm">
+                  Crispy spiced potato patty burger with chutney, onions, and
+                  fresh veggies in a soft bun.
                 </p>
               </div>
             </div>

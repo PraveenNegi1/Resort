@@ -19,10 +19,10 @@ export async function POST(request) {
       text: `Name: ${fullName}\nEmail: ${email}\nPhone: ${
         phone || "Not provided"
       }\nMessage: ${message}`,
-      html: `<p><strong>Name:</strong> ${fullName}</p>
-             <p><strong>Email:</strong> ${email}</p>
-             <p><strong>Phone:</strong> ${phone || "Not provided"}</p>
-             <p><strong>Message:</strong> ${message}</p>`,
+      // html: `<p><strong>Name:</strong> ${fullName}</p>
+      //        <p><strong>Email:</strong> ${email}</p>
+      //        <p><strong>Phone:</strong> ${phone || "Not provided"}</p>
+      //        <p><strong>Message:</strong> ${message}</p>`,
     };
 
     await transporter.sendMail(mailOptions);

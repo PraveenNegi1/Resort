@@ -84,7 +84,7 @@ const ContactPage = () => {
           {/* Form Section */}
           <div className="lg:w-1/2">
             <h1 className="md:text-4xl text-2xl font-bold text-center font-serif text-teal-700 mb-6">
-              Contact Us for Room Booking
+              Contact Us for Your Dream Room Booking
             </h1>
             <p className="text-center text-gray-600 mb-8 font-serif">
               We'd love to help you find the perfect stay. Reach out with any

@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import toast from "react-hot-toast";
 import Image from "next/image";
-import { db } from "../../lib/firebase"; // Adjust path if needed
+import { db } from "../../lib/firebase"; 
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 
 const ContactPage = () => {
@@ -32,9 +32,8 @@ const ContactPage = () => {
         ...formData,
         createdAt: serverTimestamp(),
       });
-      // console.log("Document written with ID: ", docRef.id);
+      
 
-      // Existing email logic
       const response = await fetch("/api/send-email", {
         method: "POST",
         headers: {
@@ -69,7 +68,6 @@ const ContactPage = () => {
         className="max-w-5xl mx-auto bg-white shadow-2xl rounded-2xl p-8"
       >
         <div className="flex flex-col lg:flex-row gap-8">
-          {/* Image Section */}
           <div className="lg:w-1/2 relative h-[100vh] overflow-hidden hidden md:block rounded-xl">
             <Image
               src="https://images.unsplash.com/photo-1680770638423-6d4c1089bd7a?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -164,7 +162,7 @@ const ContactPage = () => {
                 className="text-blue-600 underline"
                 target="_blank"
               >
-                +91 98765 4320
+                +91 9758354290
               </a>
             </div>
           </div>

@@ -27,7 +27,6 @@ const ContactPage = () => {
     setIsSubmitting(true);
 
     try {
-      // Save to Firestore
       const docRef = await addDoc(collection(db, "contacts"), {
         ...formData,
         createdAt: serverTimestamp(),

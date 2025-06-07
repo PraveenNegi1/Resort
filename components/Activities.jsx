@@ -31,7 +31,7 @@ const activities = [
 export default function ActivitiesPage() {
   return (
     <main className="px-6 py-12 bg-gray-100 min-h-screen">
-      <h1 className="text-4xl md:text-5xl  font-serif text-center mb-12 text-gray-800">
+      <h1 className="text-4xl md:text-5xl  font-serif text-center mb-12 text-[#72383D]">
         Activities
       </h1>
 

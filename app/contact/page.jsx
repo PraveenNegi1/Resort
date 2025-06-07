@@ -80,7 +80,7 @@ const ContactPage = () => {
 
           {/* Form Section */}
           <div className="lg:w-1/2">
-            <h1 className="md:text-4xl text-2xl font-bold text-center font-serif text-teal-700 mb-6">
+            <h1 className="md:text-4xl text-2xl font-bold text-center font-serif text-teal-800 mb-6">
               Contact Us for Your Dream Room Booking
             </h1>
             <p className="text-center text-gray-600 mb-8 font-serif">
@@ -146,7 +146,7 @@ const ContactPage = () => {
               <motion.button
                 whileTap={{ scale: 0.95 }}
                 whileHover={{ scale: 1.03 }}
-                className="w-full bg-teal-700 hover:bg-teal-800 font-serif text-white font-semibold py-3 rounded-xl shadow-lg transition"
+                className="w-full bg-[#72383D] hover:bg-teal-800 font-serif text-white font-semibold py-3 rounded-xl shadow-lg transition"
                 type="submit"
                 disabled={isSubmitting}
               >

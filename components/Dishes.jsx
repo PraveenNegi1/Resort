@@ -3,9 +3,9 @@ import Link from "next/link";
 
 export default function DiningSection() {
   return (
-    <div className="bg-gray-100">
+    <div className="bg-[#F1EDE6]">
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 font-serif">
-        <h1 className="text-5xl font-semibold  text-gray-800 font-serif text-center mb-8">
+        <h1 className="text-5xl font-semibold  text-[#72383D] font-serif text-center mb-8">
           Dining Area
         </h1>
         <div className="bg-white  rounded-lg border border-gray-200 shadow-lg p-6 flex flex-col md:flex-row items-center">
@@ -40,7 +40,7 @@ export default function DiningSection() {
 
             <Link
               href="/diningArea"
-              className="bg-teal-300 text-gray-800 px-4 py-2 mb-4 rounded-md hover:bg-gray-200 transition "
+              className="bg-[#72383D] text-white px-4 py-2 mb-4 rounded-md hover:bg-[#7e4e52] transition "
             >
               Explore More
             </Link>

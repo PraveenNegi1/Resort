@@ -128,9 +128,9 @@ export default function LocalAttraction() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <h1 className="text-4xl md:text-5xl font-serif text-center mb-12 pt-12 text-gray-900">
+      <h1 className="text-4xl md:text-5xl font-serif text-center mb-12 pt-12 text-[#72383D]">
         Top Local Attractions
-        <span className="text-teal-500"> to Explore</span>
+        <span className="text-black"> to Explore</span>
       </h1>
       <div
         ref={componentRef}
@@ -147,7 +147,7 @@ export default function LocalAttraction() {
 
         <button
           onClick={prevSlide}
-          className="absolute left-8 md:left-28 top-1/2 transform -translate-y-1/2 bg-white/90 text-teal-600 p-4 rounded-full hover:bg-teal-500 hover:text-white transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] hover:scale-110 active:scale-95 focus:outline-none focus:ring-2 focus:ring-teal-400 z-20 shadow-lg"
+          className="absolute left-8 md:left-28 top-1/2 transform -translate-y-1/2 bg-white/90 text-[#72383D] p-4 rounded-full hover:bg-[#72383D] hover:text-white transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] hover:scale-110 active:scale-95 focus:outline-none focus:ring-2 focus:ring-teal-400 z-20 shadow-lg"
         >
           ←
         </button>
@@ -181,7 +181,7 @@ export default function LocalAttraction() {
           >
             <div>
               <h2
-                className={`text-4xl font-bold font-playfair text-gray-900 mb-4 tracking-tight ${
+                className={`text-4xl font-bold font-playfair text-[#72383D] mb-4 tracking-tight ${
                   animateSlide ? "animate-text-in" : ""
                 }`}
               >
@@ -218,7 +218,7 @@ export default function LocalAttraction() {
 
         <button
           onClick={nextSlide}
-          className="absolute right-8 md:right-28 top-1/2 transform -translate-y-1/2 bg-white/90 text-teal-600 p-4 rounded-full hover:bg-teal-500 hover:text-white transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] hover:scale-110 active:scale-95 focus:outline-none focus:ring-2 focus:ring-teal-400 z-20 shadow-lg"
+          className="absolute right-8 md:right-28 top-1/2 transform -translate-y-1/2 bg-white/90 text-[#72383D] p-4 rounded-full hover:bg-[#72383D] hover:text-white transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] hover:scale-110 active:scale-95 focus:outline-none focus:ring-2 focus:ring-teal-400 z-20 shadow-lg"
         >
           →
         </button>
@@ -230,8 +230,8 @@ export default function LocalAttraction() {
               onClick={() => goToSlide(index)}
               className={`w-3 h-3 rounded-full transition-all duration-300 ${
                 currentSlide === index
-                  ? "bg-teal-500 scale-125"
-                  : "bg-white/50 hover:bg-white/80"
+                  ? "bg-[#72383D] scale-125"
+                  : "bg-white hover:bg-white/80"
               }`}
             ></button>
           ))}

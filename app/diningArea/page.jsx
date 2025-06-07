@@ -55,7 +55,7 @@ const page = () => {
       {/* Header Section */}
       <div className="bg-white py-16 px-4">
         <div className="container mx-auto max-w-6xl">
-          <h1 className="text-3xl md:text-4xl  font-light text-gray-800 text-center mb-12 leading-tight">
+          <h1 className="text-3xl md:text-4xl  font-light text-[#72383D] text-center mb-12 leading-tight">
             Dining at HillNest Stays
           </h1>
 
@@ -82,7 +82,7 @@ const page = () => {
             <div className="text-center ">
               <Link
                 href="/contact"
-                className="mt-4 inline-block px-6 py-3 border border-teal-600 font-serif bg-white text-teal-700 font-semibold rounded-full hover:bg-teal-700 hover:text-white transition duration-300"
+                className="mt-4 inline-block px-6 py-3 border border-[#72383D] font-serif bg-white text-[#72383D] font-semibold rounded-full hover:bg-[#72383D] hover:text-white transition duration-300"
               >
                 Contact Us for Reservations
               </Link>
@@ -156,12 +156,12 @@ const page = () => {
       <div className="bg-white py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-light text-gray-800 mb-8">
+            <h2 className="text-3xl md:text-4xl font-light text-[#72383D] mb-8">
               Signature Indian Dishes
             </h2>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              <div className="bg-teal-50 p-6 rounded-lg">
+              <div className="bg-[#F1EDE6] p-6 rounded-lg">
                 <h3 className="text-xl font-medium text-gray-800 mb-2">
                   Butter Chicken
                 </h3>
@@ -171,7 +171,7 @@ const page = () => {
                 </p>
               </div>
 
-              <div className="bg-teal-50 p-6 rounded-lg">
+              <div className="bg-[#F1EDE6] p-6 rounded-lg">
                 <h3 className="text-xl font-medium text-gray-800 mb-2">
                   Rogan Josh
                 </h3>
@@ -181,7 +181,7 @@ const page = () => {
                 </p>
               </div>
 
-              <div className="bg-teal-50 p-6 rounded-lg">
+              <div className="bg-[#F1EDE6] p-6 rounded-lg">
                 <h3 className="text-xl font-medium text-gray-800 mb-2">
                   Momos
                 </h3>
@@ -191,7 +191,7 @@ const page = () => {
                 </p>
               </div>
 
-              <div className="bg-teal-50 p-6 rounded-lg">
+              <div className="bg-[#F1EDE6] p-6 rounded-lg">
                 <h3 className="text-xl font-medium text-gray-800 mb-2">
                   Spring Rolls
                 </h3>
@@ -201,7 +201,7 @@ const page = () => {
                 </p>
               </div>
 
-              <div className="bg-teal-50 p-6 rounded-lg">
+              <div className="bg-[#F1EDE6] p-6 rounded-lg">
                 <h3 className="text-xl font-medium text-gray-800 mb-2">
                   Noodles
                 </h3>
@@ -211,7 +211,7 @@ const page = () => {
                 </p>
               </div>
 
-              <div className="bg-teal-50 p-6 rounded-lg">
+              <div className="bg-[#F1EDE6] p-6 rounded-lg">
                 <h3 className="text-xl font-medium text-gray-800 mb-2">
                   Indian-style Burger
                 </h3>

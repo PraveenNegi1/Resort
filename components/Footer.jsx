@@ -10,7 +10,7 @@ import Image from "next/image";
 
 export default function Footer() {
   return (
-    <footer className=" bg-[#72383D] text-white py-12">
+    <footer className=" bg-[#0e1732] text-[#957C3D] py-12">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 font-serif">
         <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
           <div className="flex flex-col items-center md:items-start">

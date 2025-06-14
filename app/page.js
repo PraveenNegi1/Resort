@@ -4,6 +4,8 @@ import Hero from "@/components/Hero";
 import LaptopVideo from "@/components/Laptop";
 import Services from "@/components/Services";
 import DiningSection from "@/components/Dishes";
+import ComfortSection from "@/components/Rooms";
+import RoomShowcase from "@/components/Ourrooms";
 
 
 
@@ -12,6 +14,8 @@ export default function Home() {
     <>
       <Hero />
       {/* <ActivitiesPage /> */}
+      <RoomShowcase />
+      <ComfortSection />
       <LocalAttraction />
       <Services />
       <LaptopVideo />

@@ -12,14 +12,14 @@ export default function Services() {
   return (
     <div className="min-h-screen bg-[#F1EDE6] py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto font-serif">
-        <h1 className="text-4xl md:text-5xl font-serif text-center text-[#72383D] mb-14">
+        <h1 className="text-4xl md:text-5xl font-serif text-center text-[#0e1732] mb-14">
           Our Services
         </h1>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
           <div className="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition text-center">
-            <FaWifi className="text-[#72383D] text-4xl mb-4 mx-auto" />
-            <h2 className="text-xl font-semibold text-[#72383D] mb-3">
+            <FaWifi className="text-[#0e1732] text-4xl mb-4 mx-auto" />
+            <h2 className="text-xl font-semibold text-[#0e1732] mb-3">
               Free WiFi
             </h2>
             <p className="text-gray-600">
@@ -29,8 +29,8 @@ export default function Services() {
           </div>
 
           <div className="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition text-center">
-            <FaUtensils className="text-[#72383D] text-4xl mb-4 mx-auto" />
-            <h2 className="text-xl font-semibold text-[#72383D] mb-3">
+            <FaUtensils className="text-[#0e1732] text-4xl mb-4 mx-auto" />
+            <h2 className="text-xl font-semibold text-[#0e1732] mb-3">
               Food Facility
             </h2>
             <p className="text-gray-600">
@@ -40,8 +40,8 @@ export default function Services() {
           </div>
 
           <div className="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition text-center">
-            <FaLock className="text-[#72383D]text-4xl mb-4 mx-auto" />
-            <h2 className="text-xl font-semibold text-[#72383D] mb-3">
+            <FaLock className="text-[#0e1732]text-4xl mb-4 mx-auto" />
+            <h2 className="text-xl font-semibold text-[#0e1732] mb-3">
               Secure Booking
             </h2>
             <p className="text-gray-600">
@@ -51,8 +51,8 @@ export default function Services() {
           </div>
 
           <div className="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition text-center">
-            <FaHeadset className="text-[#72383D] text-4xl mb-4 mx-auto" />
-            <h2 className="text-xl font-semibold text-[#72383D] mb-3">
+            <FaHeadset className="text-[#0e1732] text-4xl mb-4 mx-auto" />
+            <h2 className="text-xl font-semibold text-[#0e1732] mb-3">
               Customer Support
             </h2>
             <p className="text-gray-600">
@@ -62,8 +62,8 @@ export default function Services() {
           </div>
 
           <div className="bg-white p-8 rounded-2xl shadow-md hover:shadow-xl transition text-center">
-            <FaMobileAlt className="text-[#72383D] text-4xl mb-4 mx-auto" />
-            <h2 className="text-xl font-semibold text-[#72383D] mb-3">
+            <FaMobileAlt className="text-[#0e1732] text-4xl mb-4 mx-auto" />
+            <h2 className="text-xl font-semibold text-[#0e1732] mb-3">
               Mobile-Friendly
             </h2>
             <p className="text-gray-600">
@@ -78,7 +78,7 @@ export default function Services() {
           </h3>
           <a
             href="/listings"
-            className="inline-block px-8 py-3 bg-[#72383D] text-white font-medium rounded-full hover:bg-[#3b2626] transition"
+            className="inline-block px-8 py-3 bg-[#0e1732] text-white font-medium rounded-full hover:bg-[#3b2626] transition"
           >
             Explore Rooms
           </a>

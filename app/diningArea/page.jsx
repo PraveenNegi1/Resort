@@ -53,14 +53,14 @@ const page = () => {
       </section>
 
       {/* Header Section */}
-      <div className="bg-white py-16 px-4">
+      <div className="bg-[#0e1732] py-16 px-4">
         <div className="container mx-auto max-w-6xl">
-          <h1 className="text-3xl md:text-4xl  font-light text-[#72383D] text-center mb-12 leading-tight">
+          <h1 className="text-3xl md:text-4xl  font-light text-white text-center mb-12 leading-tight">
             Dining at HillNest Stays
           </h1>
 
           <div className="max-w-5xl mx-auto">
-            <p className="text-base md:text-lg text-gray-700 leading-relaxed text-center mb-8">
+            <p className="text-base md:text-lg text-white leading-relaxed text-center mb-8">
               HillNest Stays offers an exceptional dining experience nestled in
               the heart of pristine hills, where culinary excellence meets
               breathtaking natural beauty. Our multi-cuisine restaurant and cozy
@@ -82,7 +82,7 @@ const page = () => {
             <div className="text-center ">
               <Link
                 href="/contact"
-                className="mt-4 inline-block px-6 py-3 border border-[#72383D] font-serif bg-white text-[#72383D] font-semibold rounded-full hover:bg-[#72383D] hover:text-white transition duration-300"
+                className="mt-4 inline-block px-6 py-3 border border-white font-serif bg-white text-[#0e1732] font-semibold rounded-full hover:bg-[#0e1732] hover:text-white transition duration-300"
               >
                 Contact Us for Reservations
               </Link>
@@ -156,7 +156,7 @@ const page = () => {
       <div className="bg-white py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-light text-[#72383D] mb-8">
+            <h2 className="text-3xl md:text-4xl font-light text-[#0e1732] mb-8">
               Signature Indian Dishes
             </h2>
 

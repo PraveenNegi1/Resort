@@ -94,10 +94,10 @@ const RoomDetails = () => {
           {/* Price */}
           <motion.p
             variants={itemVariants}
-            className="text-3xl sm:text-4xl font-bold text-[#72383D] mb-10 bg-[#F1EDE6] px-6 py-3 rounded-xl inline-block shadow-md"
+            className="text-3xl sm:text-4xl font-bold text-[#0e1732] mb-10 bg-[#F1EDE6] px-6 py-3 rounded-xl inline-block shadow-md"
           >
             ₹{room.price}{" "}
-            <span className="text-lg font-medium text-[#72383D]">/ night</span>
+            <span className="text-lg font-medium text-[#0e1732]">/ night</span>
           </motion.p>
 
           {/* Amenities */}
@@ -111,7 +111,7 @@ const RoomDetails = () => {
                   key={index}
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.95 }}
-                  className="bg-[#F1EDE6] text-[#72383D] px-4 py-2 rounded-full text-sm font-medium shadow-sm transition-all duration-300"
+                  className="bg-[#F1EDE6] text-[#0e1732] px-4 py-2 rounded-full text-sm font-medium shadow-sm transition-all duration-300"
                 >
                   {item}
                 </motion.li>
@@ -134,7 +134,7 @@ const RoomDetails = () => {
                     initial={{ opacity: 0, x: -20 }}
                     transition={{ delay: index * 0.1 }}
                   >
-                    <span className="w-2 h-2 mt-2 bg-[#72383D] rounded-full" />
+                    <span className="w-2 h-2 mt-2 bg-[#0e1732] rounded-full" />
                     <span>{feature}</span>
                   </motion.li>
                 ))}
@@ -172,7 +172,7 @@ const RoomDetails = () => {
           <motion.div variants={itemVariants} className="mt-16 text-center">
             <Link
               href="/contact"
-              className="inline-block px-8 py-4 bg-[#72383D] hover:bg-[#72383dc1] text-white text-lg rounded-full shadow-lg transition-all duration-300 font-serif tracking-wide"
+              className="inline-block px-8 py-4 bg-[#0e1732] text-white hover:bg-white hover:text-[#0e1732] border-[#0e1732] border text-lg rounded-full shadow-lg transition-all duration-300 font-serif tracking-wide"
             >
               Book This Room
             </Link>

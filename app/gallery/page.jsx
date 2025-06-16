@@ -14,9 +14,9 @@ const images = [
 
 const GalleryPage = () => {
   return (
-    <div className="min-h-screen bg-gray-50 px-4 py-10 sm:px-6 lg:px-12">
-      <div className="">
-        <h1 className="text-4xl md:text-5xl font-serif text-center text-[#72383D] mb-12">
+    <div className="min-h-screen bg-gray-50 px-4 py-10 sm:px-6 lg:px-12 ">
+      <div className="pt-24">
+        <h1 className="text-4xl md:text-5xl font-serif text-center text-[#0e1732] mb-12">
           Explore Our Photo Gallery
         </h1>
 

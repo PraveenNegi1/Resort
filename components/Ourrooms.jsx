@@ -3,12 +3,13 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
 
 const data = [
   {
     imageLarge: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c",
     imageMobile: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c",
-    price: "$840",
+    price: "₹8840",
     rooms: 5,
     size: "120m2",
     bed: "King bed, 3 single beds",
@@ -20,8 +21,8 @@ const data = [
   {
     imageLarge: "https://images.unsplash.com/photo-1612965607446-25e1332775ae?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     imageMobile: "https://images.unsplash.com/photo-1612965607446-25e1332775ae?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    price: "$640",
-    rooms: 3,
+    price: "₹3640",
+    rooms: 2,
     size: "90m2",
     bed: "2 Queen beds",
     capacity: "1-4 Persons",
@@ -44,9 +45,10 @@ export default function RoomShowcase() {
   const current = data[index];
 
   return (
-    <div className="bg-[#0e1732] text-white h-[100vh] flex flex-col md:flex-row items-center px-40 gap-36 py-12 relative overflow-hidden mb-28">
-      {/* Mobile frame */}
-      <div className="absolute bottom-20 left-4 md:left-10 w-[200px] h-[250px] bg-white rounded-lg shadow-xl z-10 overflow-hidden border border-gray-300">
+    <div className="bg-[#0e1732] text-white min-h-screen flex flex-col md:flex-row items-center md:px-40 px-4 gap-10 md:gap-36 py-12 relative overflow-hidden ">
+      
+      {/* Mobile frame - hidden on small screens */}
+      <div className="absolute bottom-20 left-4 md:left-10 w-[200px] h-[250px] bg-white rounded-lg shadow-xl z-10 overflow-hidden border border-gray-300 hidden md:block">
         <AnimatePresence mode="wait">
           <motion.div
             key={index}
@@ -56,7 +58,7 @@ export default function RoomShowcase() {
             transition={{ duration: 0.8 }}
             className="h-full overflow-y-auto p-3 space-y-3"
           >
-            <div className="">
+            <div>
               <div className="relative w-full h-[120px] rounded-t-lg overflow-hidden">
                 <Image
                   src={current.imageMobile}
@@ -71,9 +73,11 @@ export default function RoomShowcase() {
                 <p className="text-[11px] text-gray-500 mb-1">
                   View: {current.view}
                 </p>
-                <button className="bg-[#0e1732] text-white text-[10px] px-3 py-1 mt-1 rounded">
+                <Link
+                 href="/contact" 
+                className="bg-[#0e1732] text-white text-[10px] px-3 py-1 mt-1 rounded">
                   VIEW DETAILS
-                </button>
+                </Link>
               </div>
             </div>
           </motion.div>
@@ -81,7 +85,7 @@ export default function RoomShowcase() {
       </div>
 
       {/* Main frame */}
-      <div className="relative w-[50%] border-[3px] border-white p-1 rounded-xl overflow-hidden z-0">
+      <div className="relative w-full md:w-[50%] border-[3px] border-white p-1 rounded-xl overflow-hidden z-0">
         <AnimatePresence mode="wait">
           <motion.div
             key={index}
@@ -112,9 +116,11 @@ export default function RoomShowcase() {
               <p className="mb-1">Capacity: {current.capacity}</p>
               <p className="mb-1">View: {current.view}</p>
               <p className="mb-3">Recommended: {current.recommend}</p>
-              <button className="border border-white px-4 py-2 hover:bg-white hover:text-[#0e1732] transition-all">
+              <Link
+                href="/contact" 
+               className="border border-white px-4 py-2 hover:bg-white hover:text-[#0e1732] transition-all">
                 BOOK NOW
-              </button>
+              </Link>
             </div>
           </motion.div>
         </AnimatePresence>

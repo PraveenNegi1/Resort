@@ -52,18 +52,18 @@ export default function Home() {
           </p>
           <Link
             href="/listings"
-            className="mt-4 inline-block px-6 py-3 font-serif bg-white text-[#72383D] font-semibold rounded-full hover:bg-teal-700 hover:text-white transition duration-300"
+            className="mt-4 inline-block px-6 py-3 font-serif bg-white text-[#0e1732] font-semibold rounded-full hover:bg-[#0e1732] hover:text-white transition duration-300"
           >
             Explore Rooms
           </Link>
         </div>
       </section>
 
-      <section className="bg-white py-16 px-4 sm:px-8 md:px-20 text-center font-serif">
-        <h2 className="text-3xl md:text-4xl font-serif text-[#72383D] mb-8">
+      <section className="bg-[#0e1732] py-16 px-4 sm:px-8 md:px-20 text-center font-serif">
+        <h2 className="text-3xl md:text-4xl font-serif text-white mb-8">
           Why Choose HillNest Stays?
         </h2>
-        <div className="max-w-4xl mx-auto text-gray-700 text-lg leading-relaxed">
+        <div className="max-w-4xl mx-auto text-white text-lg leading-relaxed">
           <p className="mb-4">
             At HillNest Stays, we blend luxury with nature. Whether you're
             waking up to birdsong, enjoying fresh organic meals, or soaking in
@@ -106,7 +106,7 @@ export default function Home() {
       </section>
 
       <section className="py-16 px-4 sm:px-8 md:px-16 bg-[#F1EDE6]">
-        <h2 className="text-3xl md:text-4xl font-serif text-center mb-12 text-[#72383D]">
+        <h2 className="text-3xl md:text-4xl font-serif text-center mb-12 text-[#0e1732]">
           Our Rooms
         </h2>
         <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-3 font-serif">

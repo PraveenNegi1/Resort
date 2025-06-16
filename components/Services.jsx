@@ -10,9 +10,9 @@ import {
 
 export default function Services() {
   return (
-    <div className="min-h-screen bg-[#F1EDE6] py-16 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-[#0e1732] py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto font-serif">
-        <h1 className="text-4xl md:text-5xl font-serif text-center text-[#0e1732] mb-14">
+        <h1 className="text-4xl md:text-5xl font-serif text-center text-white mb-14">
           Our Services
         </h1>
 
@@ -73,12 +73,12 @@ export default function Services() {
         </div>
 
         <div className="text-center mt-20">
-          <h3 className="text-2xl sm:text-3xl font-semibold text-gray-800 mb-4">
+          <h3 className="text-2xl sm:text-3xl font-semibold text-white mb-4">
             Ready to find your next room?
           </h3>
           <a
             href="/listings"
-            className="inline-block px-8 py-3 bg-[#0e1732] text-white font-medium rounded-full hover:bg-[#3b2626] transition"
+            className="inline-block px-8 py-3 bg-white text-[#0e1732] font-medium rounded-full hover:bg-[#0e1732] hover:text-white border border-white transition"
           >
             Explore Rooms
           </a>

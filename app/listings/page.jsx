@@ -109,8 +109,8 @@ const Rooms = () => {
           animate="visible"
           className="mb-8"
         >
-          <div className="relative w-full max-w-md mx-auto border border-teal-500 rounded-lg shadow-sm overflow-hidden">
-            <FaSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-teal-400" />
+          <div className="relative w-full max-w-md mx-auto border border-[#0e1732] rounded-lg shadow-sm overflow-hidden">
+            <FaSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-[#0e1732]" />
             <input
               type="text"
               value={searchQuery}
@@ -156,14 +156,14 @@ const Rooms = () => {
                         <p className="text-gray-600 mb-4 text-sm flex-grow line-clamp-3 overflow-hidden">
                           {room.description}
                         </p>
-                        <p className="text-lg font-bold text-[#72383D] mb-4">
+                        <p className="text-lg font-bold text-[#0e1732] mb-4">
                           ₹{room.price} / night
                         </p>
                         <ul className="flex flex-wrap gap-2 overflow-hidden max-h-16">
                           {room.amenities.map((item, i) => (
                             <li
                               key={i}
-                              className="bg-blue-100 text-[#72383D] px-2 py-1 rounded-md text-xs sm:text-sm transition-colors duration-300 hover:bg-blue-200 truncate"
+                              className="bg-blue-100 text-[#0e1732] px-2 py-1 rounded-md text-xs sm:text-sm transition-colors duration-300 hover:bg-blue-200 truncate"
                             >
                               {item}
                             </li>
@@ -199,7 +199,7 @@ const Rooms = () => {
               disabled={currentPage === 1}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-3 py-2 sm:px-4 sm:py-2 bg-[#72383D] text-white rounded-lg hover:bg-[#F1EDE6] disabled:opacity-50  hover:text-[#72383D] transition-colors text-sm sm:text-base"
+              className="px-3 py-2 sm:px-4 sm:py-2 bg-[#0e1732] text-white rounded-lg hover:bg-[#F1EDE6] disabled:opacity-50  hover:text-[#0e1732] transition-colors text-sm sm:text-base"
             >
               Previous
             </motion.button>
@@ -212,8 +212,8 @@ const Rooms = () => {
                   whileTap={{ scale: 0.9 }}
                   className={`px-3 py-1 sm:px-4 sm:py-2 rounded-lg text-sm sm:text-base ${
                     currentPage === page
-                      ? "bg-[#72383D] text-white"
-                      : "bg-white text-[#72383D] hover:bg-gray-300"
+                      ? "bg-[#0e1732] text-white"
+                      : "bg-white text-[#0e1732] hover:bg-gray-300"
                   } transition-colors`}
                 >
                   {page}
@@ -225,7 +225,7 @@ const Rooms = () => {
               disabled={currentPage === totalPages}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              className="px-3 py-2 sm:px-4 sm:py-2 bg-[#72383D] text-white rounded-lg hover:bg-[#F1EDE6] hover:text-[#72383D] disabled:opacity-50 disabled:hover:bg-blue-600 transition-colors text-sm sm:text-base"
+              className="px-3 py-2 sm:px-4 sm:py-2 bg-[#0e1732] text-white rounded-lg hover:bg-[#F1EDE6] hover:text-[#0e1732] disabled:opacity-50 disabled:hover:bg-blue-600 transition-colors text-sm sm:text-base"
             >
               Next
             </motion.button>

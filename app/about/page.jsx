@@ -1,15 +1,15 @@
 // pages/about.js
 export default function About() {
   return (
-    <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+    <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8 ">
       <div className="max-w-4xl mx-auto font-serif">
-        <h1 className="text-4xl font-bold font-serif text-gray-800 mb-6 text-center">
+        <h1 className="text-4xl font-bold font-serif text-gray-800 mb-6 text-center pt-20">
           About Our Hotel and Rooms
         </h1>
 
         <p className="text-lg text-gray-600 mb-6 ">
           Welcome to{" "}
-          <span className="text-teal-600 font-semibold">HillNest Stays</span>,
+          <span className="text-[#0e1732] font-semibold">HillNest Stays</span>,
           where luxury meets comfort in every corner. Our hotel offer a diverse
           range of stays, from cozy rooms to extravagant suites, all designed to
           provide you with a truly memorable experience.
@@ -62,16 +62,16 @@ export default function About() {
           convenient, and memorable.
         </p>
 
-        <div className="bg-blue-100 p-6 rounded-lg shadow mt-10 text-center">
-          <h3 className="text-xl font-semibold text-teal-800 mb-2">
+        <div className="bg-[#0e1732] p-6 rounded-lg shadow mt-10 text-center">
+          <h3 className="text-xl font-semibold text-[#0e1732] mb-2">
             Ready to Book Your Stay?
           </h3>
-          <p className="text-teal-700 mb-4  md:text-[18px]">
+          <p className="text-white mb-4  md:text-[18px]">
             Browse our selection rooms to find your perfect stay.
           </p>
           <a
             href="/listings"
-            className="inline-block px-6 py-2 bg-teal-600 text-white font-medium rounded hover:bg-teal-700 transition"
+            className="inline-block px-6 py-2 bg-white text-[#0e1732] font-medium rounded  transition"
           >
             Explore Our Rooms
           </a>

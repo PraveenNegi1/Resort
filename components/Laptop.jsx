@@ -113,9 +113,9 @@ export default function LaptopVideo() {
   };
 
   return (
-    <div className="font-serif bg-white pb-20">
+    <div className=" hidden md:block font-serif bg-white pb-20">
       <div className="text-center pt-20 pb-14">
-        <h2 className="text-4xl md:text-5xl font-bold text-[#72383D] mb-6">
+        <h2 className="text-4xl md:text-5xl font-bold text-[#0e1732] mb-6">
           HillNest Stays Hotels
         </h2>
         <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto px-4 leading-relaxed">

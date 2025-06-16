@@ -47,9 +47,9 @@ export default function DiningSection() {
 
             <div className="flex flex-wrap gap-4 mt-4">
               <div className="flex items-center space-x-2">
-                <div className="bg-yellow-100 p-3 rounded-full">
+                <div className="bg-[#0e1732] p-3 rounded-full">
                   <svg
-                    className="w-6 h-6 text-yellow-600"
+                    className="w-6 h-6 text-white"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -66,9 +66,9 @@ export default function DiningSection() {
                 <span className="text-gray-600">Open from 7 AM</span>
               </div>
               <div className="flex items-center space-x-2">
-                <div className="bg-yellow-100 p-3 rounded-full">
+                <div className="bg-[#0e1732] p-3 rounded-full">
                   <svg
-                    className="w-6 h-6 text-yellow-600"
+                    className="w-6 h-6 text-white"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -85,9 +85,9 @@ export default function DiningSection() {
                 <span className="text-gray-600">Capacity: 60</span>
               </div>
               <div className="flex items-center space-x-2">
-                <div className="bg-yellow-100 p-3 rounded-full">
+                <div className="bg-[#0e1732] p-3 rounded-full">
                   <svg
-                    className="w-6 h-6 text-yellow-600"
+                    className="w-6 h-6 text-white"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"
@@ -104,9 +104,9 @@ export default function DiningSection() {
                 <span className="text-gray-600">Authentic Flavors</span>
               </div>
               <div className="flex items-center space-x-2">
-                <div className="bg-yellow-100 p-3 rounded-full">
+                <div className="bg-[#0e1732] p-3 rounded-full">
                   <svg
-                    className="w-6 h-6 text-yellow-600"
+                    className="w-6 h-6 text-white"
                     fill="none"
                     stroke="currentColor"
                     viewBox="0 0 24 24"

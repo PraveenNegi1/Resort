@@ -59,7 +59,7 @@ const ContactPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-100 via-white to-blue-50 py-12 px-6">
+    <div className="min-h-screen bg-gradient-to-b from-blue-100 via-white to-blue-50 py-12 px-6 pt-40">
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
@@ -80,7 +80,7 @@ const ContactPage = () => {
 
           {/* Form Section */}
           <div className="lg:w-1/2">
-            <h1 className="md:text-4xl text-2xl font-bold text-center font-serif text-teal-800 mb-6">
+            <h1 className="md:text-4xl text-2xl font-bold text-center font-serif text-[#0e1732] mb-6">
               Contact Us for Your Dream Room Booking
             </h1>
             <p className="text-center text-gray-600 mb-8 font-serif">
@@ -146,7 +146,7 @@ const ContactPage = () => {
               <motion.button
                 whileTap={{ scale: 0.95 }}
                 whileHover={{ scale: 1.03 }}
-                className="w-full bg-[#72383D] hover:bg-teal-800 font-serif text-white font-semibold py-3 rounded-xl shadow-lg transition"
+                className="w-full bg-[#0e1732] hover:bg-white font-serif text-white hover:text-[#0e1732] border border-[#0e1732] font-semibold py-3 rounded-xl shadow-lg transition"
                 type="submit"
                 disabled={isSubmitting}
               >

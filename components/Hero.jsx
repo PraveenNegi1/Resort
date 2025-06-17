@@ -149,7 +149,7 @@ export default function Home() {
                 />
               </div>
               <div className="p-5">
-                <h3 className="text-xl font-semibold font-serif mb-2 text-gray-800 group-hover:text-teal-600 transition">
+                <h3 className="text-xl font-semibold font-serif mb-2 text-gray-500 group-hover:text-[#0e1732] transition">
                   {room.title}
                 </h3>
                 <p className="text-gray-600 font-serif text-[18px]">

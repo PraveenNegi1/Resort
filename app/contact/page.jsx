@@ -158,7 +158,7 @@ const ContactPage = () => {
               Or reach us on WhatsApp:{" "}
               <a
                 href="https://wa.me/919876543210"
-                className="text-blue-600 underline"
+                className="text-[#0e1732] underline"
                 target="_blank"
               >
                 +91 9758354290

@@ -6,6 +6,7 @@ import Services from "@/components/Services";
 import DiningSection from "@/components/Dishes";
 import ComfortSection from "@/components/Rooms";
 import RoomShowcase from "@/components/Ourrooms";
+import Testimonials from "@/components/Testimonials";
 
 
 
@@ -20,6 +21,7 @@ export default function Home() {
       <Services />
       <LaptopVideo />
       <DiningSection />
+      <Testimonials/>
 
 
     </>

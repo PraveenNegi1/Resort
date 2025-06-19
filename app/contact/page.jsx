@@ -59,12 +59,12 @@ const ContactPage = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-100 via-white to-blue-50 py-12 px-6 pt-40">
+    <div className="min-h-screen bg-white py-12 px-6 pt-40">
       <motion.div
         initial={{ opacity: 0, y: 40 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6 }}
-        className="max-w-5xl mx-auto bg-white shadow-2xl rounded-2xl p-8"
+        className="max-w-5xl mx-auto bg-[#F1EDE6] shadow-2xl rounded-2xl p-8"
       >
         <div className="flex flex-col lg:flex-row gap-8">
           <div className="lg:w-1/2 relative h-[100vh] overflow-hidden hidden md:block rounded-xl">

@@ -1,5 +1,5 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import { FaStar, FaArrowLeft, FaArrowRight } from "react-icons/fa";
 
@@ -64,6 +64,14 @@ const Testimonials = () => {
   const handlePrev = () => {
     setCurrentPage((prev) => (prev - 1 + totalPages) % totalPages);
   };
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      handleNext();
+    }, 3000); // Auto-advance every 3 seconds
+
+    return () => clearInterval(interval); // Cleanup on unmount
+  }, []);
 
   const startIndex = currentPage * itemsPerPage;
   const currentTestimonials = testimonials.slice(

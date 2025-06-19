@@ -14,34 +14,38 @@ const page = () => {
   ];
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [isFading, setIsFading] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setIsFading(true);
-      setTimeout(() => {
-        setCurrentImageIndex((prevIndex) =>
-          prevIndex === backgroundImages.length - 1 ? 0 : prevIndex + 1
-        );
-        setIsFading(false);
-      }, 600);
+      setCurrentImageIndex((prevIndex) =>
+        prevIndex === backgroundImages.length - 1 ? 0 : prevIndex + 1
+      );
     }, 4000);
-
     return () => clearInterval(interval);
-  }, [backgroundImages.length]);
+  }, []);
 
   return (
     <div className="min-h-screen bg-gray-50 font-serif">
-      <section className="relative h-screen bg-cover bg-center">
-        <div
-          className="absolute inset-0 bg-cover bg-center transition-opacity duration-1200"
-          style={{
-            backgroundImage: `url('${backgroundImages[currentImageIndex]}')`,
-            opacity: isFading ? 0 : 1,
-          }}
-        />
+      <section className="relative h-screen overflow-hidden">
+        {backgroundImages.map((img, index) => (
+          <div
+            key={index}
+            className={`absolute inset-0 bg-cover bg-center transition-all duration-1000 ease-in-out ${
+              index === currentImageIndex
+                ? "opacity-100 z-10 scale-110"
+                : "opacity-0 z-0 scale-100"
+            }`}
+            style={{
+              backgroundImage: `url('${img}')`,
+              animation:
+                index === currentImageIndex
+                  ? "zoomIn 4000ms ease-out backword"
+                  : "none",
+            }}
+          />
+        ))}
 
-        <div className="absolute inset-0  flex flex-col justify-center items-center text-white px-4 text-center">
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-black/30 flex flex-col justify-center items-center text-white px-4 text-center z-20">
           <h1 className="text-3xl md:text-4xl  font-serif mb-4 drop-shadow-lg">
             Welcome to HillNest Stays
           </h1>
@@ -50,6 +54,16 @@ const page = () => {
             elegant sitting area.
           </p>
         </div>
+        <style jsx>{`
+          @keyframes zoomIn {
+            0% {
+              transform: scale(3);
+            }
+            100% {
+              transform: scale(1.1);
+            }
+          }
+        `}</style>
       </section>
 
       {/* Header Section */}

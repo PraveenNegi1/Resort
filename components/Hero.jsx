@@ -6,44 +6,46 @@ import { useState, useEffect } from "react";
 export default function Home() {
   const backgroundImages = [
     "https://images.unsplash.com/photo-1680503146476-abb8c752e1f4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0",
-    "https://images.unsplash.com/photo-1729605411476-defbdab14c54?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "https://images.unsplash.com/photo-1687180497323-0750d6fe0124?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "https://images.unsplash.com/photo-1741506131058-533fcf894483?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    "https://images.unsplash.com/photo-1583845112203-29329902332e?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    "https://images.unsplash.com/photo-1729605411476-defbdab14c54?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0",
+    "https://images.unsplash.com/photo-1687180497323-0750d6fe0124?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0",
+    "https://images.unsplash.com/photo-1741506131058-533fcf894483?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0",
+    "https://images.unsplash.com/photo-1583845112203-29329902332e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0",
   ];
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
-  const [nextImageIndex, setNextImageIndex] = useState(1);
-  const [isFading, setIsFading] = useState(false);
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setIsFading(true);
-      setTimeout(() => {
-        setCurrentImageIndex((prevIndex) =>
-          prevIndex === backgroundImages.length - 1 ? 0 : prevIndex + 1
-        );
-        setNextImageIndex((prevIndex) =>
-          prevIndex === backgroundImages.length - 1 ? 0 : prevIndex + 1
-        );
-        setIsFading(false);
-      }, 900); 
-    }, 4000); 
+      setCurrentImageIndex((prevIndex) =>
+        prevIndex === backgroundImages.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 4000);
     return () => clearInterval(interval);
   }, []);
 
   return (
     <div className="font-sans text-gray-800">
-      <section className="relative h-screen bg-cover bg-center">
-        <div
-          className="absolute inset-0 bg-cover bg-center transition-opacity duration-1200"
-          style={{
-            backgroundImage: `url('${backgroundImages[currentImageIndex]}')`,
-            opacity: isFading ? 0 : 1,
-          }}
-        />
+      {/* Hero Section */}
+      <section className="relative h-screen overflow-hidden">
+        {backgroundImages.map((img, index) => (
+          <div
+            key={index}
+            className={`absolute inset-0 bg-cover bg-center transition-all duration-1000 ease-in-out ${
+              index === currentImageIndex
+                ? "opacity-100 z-10 scale-110"
+                : "opacity-0 z-0 scale-100"
+            }`}
+            style={{
+              backgroundImage: `url('${img}')`,
+              animation:
+                index === currentImageIndex
+                  ? "zoomIn 4000ms ease-out backword"
+                  : "none",
+            }}
+          />
+        ))}
 
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-black/30 flex flex-col justify-center items-center text-white px-4 text-center">
+        <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-black/30 flex flex-col justify-center items-center text-white px-4 text-center z-20">
           <h1 className="text-4xl sm:text-5xl md:text-6xl font-serif mb-4 drop-shadow-lg">
             Welcome to HillNest Stays
           </h1>
@@ -57,10 +59,23 @@ export default function Home() {
             Explore Rooms
           </Link>
         </div>
+
+        {/* Custom CSS for zoom animation */}
+        <style jsx>{`
+          @keyframes zoomIn {
+            0% {
+              transform: scale(3);
+            }
+            100% {
+              transform: scale(1.1);
+            }
+          }
+        `}</style>
       </section>
 
+      {/* Why Choose Section */}
       <section className="bg-[#0e1732] py-16 px-4 sm:px-8 md:px-20 text-center font-serif">
-        <h2 className="text-3xl md:text-4xl font-serif text-white mb-8">
+        <h2 className="text-3xl md:text-4xl text-white mb-8">
           Why Choose HillNest Stays?
         </h2>
         <div className="max-w-4xl mx-auto text-white text-lg leading-relaxed">
@@ -78,7 +93,7 @@ export default function Home() {
           <p className="mb-4">
             Discover the beauty of the wild — without compromising on comfort.
             Whether it's a romantic retreat, a solo escape, or a family
-            adventure, Tranquil Stay is your ideal getaway.
+            adventure, HillNest Stay is your ideal getaway.
           </p>
           <p className="mb-4">
             Each of our rooms is crafted with natural materials and modern
@@ -105,6 +120,7 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Our Rooms Section */}
       <section className="py-16 px-4 sm:px-8 md:px-16 bg-[#F1EDE6]">
         <h2 className="text-3xl md:text-4xl font-serif text-center mb-12 text-[#0e1732]">
           Our Rooms
@@ -149,13 +165,11 @@ export default function Home() {
                 />
               </div>
               <div className="p-5">
-                <h3 className="text-xl font-semibold font-serif mb-2 text-gray-500 group-hover:text-[#0e1732] transition">
+                <h3 className="text-xl font-semibold mb-2 text-gray-500 group-hover:text-[#0e1732] transition">
                   {room.title}
                 </h3>
-                <p className="text-gray-600 font-serif text-[18px]">
-                  {room.desc}
-                </p>
-                <p className="text-[16px] text-gray-700 mt-2 ">{room.detail}</p>
+                <p className="text-gray-600 text-[18px]">{room.desc}</p>
+                <p className="text-[16px] text-gray-700 mt-2">{room.detail}</p>
               </div>
             </Link>
           ))}
@@ -164,4 +178,3 @@ export default function Home() {
     </div>
   );
 }
-

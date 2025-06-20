@@ -9,7 +9,6 @@ import {
   FaArrowRight,
 } from "react-icons/fa";
 
-// ⭐ StarRating Component
 const StarRating = ({ rating }) => {
   const fullStars = Math.floor(rating);
   const hasHalfStar = rating - fullStars >= 0.25 && rating - fullStars < 0.75;
@@ -28,7 +27,6 @@ const StarRating = ({ rating }) => {
   );
 };
 
-// 📋 Testimonials Data
 const testimonials = [
   {
     name: "Gopal Suhas",
@@ -96,7 +94,7 @@ const Testimonials = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       handleNext();
-    }, 3000); // Auto-advance every 3 seconds
+    }, 3000); 
 
     return () => clearInterval(interval); // Cleanup on unmount
   }, []);

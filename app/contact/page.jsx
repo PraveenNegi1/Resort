@@ -5,7 +5,7 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import toast from "react-hot-toast";
 import Image from "next/image";
-import { db } from "../../lib/firebase"; 
+import { db } from "../../lib/firebase";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
 
 const ContactPage = () => {
@@ -31,9 +31,16 @@ const ContactPage = () => {
         ...formData,
         createdAt: serverTimestamp(),
       });
-      
 
       const response = await fetch("/api/send-email", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const res = await fetch("/api/send-to-airtable", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -48,6 +48,15 @@ const ContactPage = () => {
         body: JSON.stringify(formData),
       });
 
+      const data = await res.json();
+      console.log("Response from Airtable API route:", data);
+
+      if (!res.ok) {
+        toast.error("Failed: " + data.message);
+      } else {
+        toast.success("Saved in Airtable!");
+      }
+
       const result = await response.json();
       if (response.ok) {
         toast.success("Query sent successfully!");

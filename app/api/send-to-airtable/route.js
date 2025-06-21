@@ -1,29 +1,37 @@
-import { NextResponse } from "next/server";
-import { base } from "@/lib/airtable";
+import base from "@/lib/airtable";
 
-export async function POST(req) {
+export async function POST(request) {
   try {
-    const body = await req.json();
+    const body = await request.json();
     const { fullName, email, phone, message } = body;
 
     if (!fullName || !email || !message) {
-      return NextResponse.json({ success: false, message: "Missing required fields" }, { status: 400 });
+      return Response.json(
+        { message: "Missing required fields" },
+        { status: 400 }
+      );
     }
+    console.log("Sending to Airtable:", { fullName, email, phone, message });
 
-    const record = await base(process.env.AIRTABLE_TABLE_NAME).create([
+    const data = await base("Contacts").create([
       {
         fields: {
           Name: fullName,
           Email: email,
-          Phone: phone,
+          PhoneNumber: Number(phone),
           Message: message,
         },
       },
     ]);
 
-    return NextResponse.json({ success: true, record });
+    console.log(data);
+
+    return Response.json({ message: "Data sent to Airtable" }, { status: 200 });
   } catch (error) {
-    console.error("Airtable Error:", error);
-    return NextResponse.json({ success: false, message: error.message || "Unknown error" }, { status: 500 });
+    console.error("Airtable error:", error);
+    return Response.json(
+      { message: "Failed to send to Airtable", error: error.message },
+      { status: 500 }
+    );
   }
 }

@@ -5,75 +5,70 @@ import Image from "next/image";
 
 const attractions = [
   {
-    title: "City Park",
+    title: "Tehri Lake and Dam",
     description:
-      "A beautiful urban park with lush greenery, walking trails, and a serene lake perfect for relaxation.",
-    image:
-      "https://images.unsplash.com/photo-1692829564432-19418ab44d1e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "A popular destination for water sports, boating, and enjoying scenic views.",
+    image: "/tehri-dam.webp",
     features: [
-      "Scenic walking and biking trails",
-      "Picnic areas with BBQ facilities",
-      "Boating and fishing on the lake",
+      "Jet skiing, kayaking, and banana boat rides",
+      "Floating huts and houseboats for stay",
+      "Panoramic views of the dam and mountains",
     ],
   },
   {
-    title: "Historic Museum",
+    title: "Devprayag",
     description:
-      "Explore the rich history of our city with artifacts and exhibits dating back centuries.",
-    image:
-      "https://images.unsplash.com/photo-1541264161754-445bbdd7de52?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "The confluence of the Alaknanda and Bhagirathi rivers, a sacred site for Hindus.",
+    image: "/devprayag.jpeg",
     features: [
-      "Interactive historical exhibits",
-      "Guided tours available daily",
-      "Special events and workshops",
+      "Sacred sangam (confluence) of rivers",
+      "Raghunathji Temple visit",
+      "Spiritual bath and rituals at river banks",
     ],
   },
   {
-    title: "Skyline Viewpoint",
+    title: "Dhanaulti",
     description:
-      "Enjoy breathtaking panoramic views of the city skyline, especially stunning at sunset.",
-    image:
-      "https://images.unsplash.com/photo-1663436294249-7ad04dbc18d6?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "A hill station known for its peaceful atmosphere and scenic beauty.",
+    image: "/Dhanaulti.jpg",
     features: [
-      "Observation deck with telescopes",
-      "Evening light shows",
-      "Nearby cafes and restaurants",
+      "Eco Park with pine and deodar trees",
+      "Camping and adventure sports",
+      "Views of snow-capped Himalayan peaks",
     ],
   },
   {
-    title: "Botanical Gardens",
+    title: "Ghansali Town",
     description:
-      "A vibrant garden showcasing diverse plant species, colorful flower displays, and peaceful walking paths.",
-    image:
-      "https://images.unsplash.com/photo-1624523994701-83798154f78a?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "Explore the local culture and way of life in this Tehri Garhwal town.",
+    image: "/Ghansali.webp",
     features: [
-      "Rare and exotic plant collections",
-      "Seasonal flower festivals",
-      "Guided botanical tours",
+      "Local Garhwali markets and food stalls",
+      "Cultural festivals and folk music",
+      "Base point for nearby villages and temples",
     ],
   },
   {
-    title: "Riverfront Walkway",
+    title: "Budha Kedar",
     description:
-      "A scenic promenade along the river, perfect for evening strolls, dining, and local events.",
-    image:
-      "https://images.unsplash.com/photo-1690082791947-b5e881fb0e18?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      "Situated within reachable 27 km distance from Ghansali, Buda Kedar is a sacred pilgrimage site known for its ancient temple dedicated to Lord Shiva.",
+    image: "/budha-kedar-gangi.jpg",
     features: [
-      "Riverside dining and cafes",
-      "Weekly farmer's market",
-      "Live music and street performances",
+      "Ancient Shiva temple with historical significance",
+      "Peaceful riverbank setting",
+      "Spiritual treks and pilgrimage routes",
     ],
   },
   {
-    title: "Art Gallery District",
+    title: "Gangi",
     description:
-      "A cultural hub featuring contemporary and classic art from local and international artists.",
+      "Explore the quaint village of Gangi, located at a distance of 27 km in the vicinity of Ghansali. Known for its serene surroundings, lush greenery, and traditional Garhwali culture.",
     image:
       "https://images.unsplash.com/photo-1616113780522-e26b6b37cc3a?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     features: [
-      "Rotating art exhibitions",
-      "Artist meet-and-greet events",
-      "Art workshops for all ages",
+      "Traditional wooden Garhwali homes",
+      "Terraced farming and village walks",
+      "Gateway to Khatling Glacier treks",
     ],
   },
 ];

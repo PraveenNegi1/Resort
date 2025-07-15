@@ -7,22 +7,24 @@ export async function POST(request) {
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
+        user: process.env.EMAIL_USER, // your Gmail address
+        pass: process.env.EMAIL_PASS, // app password
       },
     });
 
     const mailOptions = {
-      from: email,
-      to: "your-email@example.com",
+      from: process.env.EMAIL_USER,
+      to: process.env.EMAIL_USER, // where you want to receive the mail
       subject: `New Room Booking Inquiry from ${fullName}`,
       text: `Name: ${fullName}\nEmail: ${email}\nPhone: ${
         phone || "Not provided"
       }\nMessage: ${message}`,
-      // html: `<p><strong>Name:</strong> ${fullName}</p>
-      //        <p><strong>Email:</strong> ${email}</p>
-      //        <p><strong>Phone:</strong> ${phone || "Not provided"}</p>
-      //        <p><strong>Message:</strong> ${message}</p>`,
+      html: `
+        <p><strong>Name:</strong> ${fullName}</p>
+        <p><strong>Email:</strong> ${email}</p>
+        <p><strong>Phone:</strong> ${phone || "Not provided"}</p>
+        <p><strong>Message:</strong> ${message}</p>
+      `,
     };
 
     await transporter.sendMail(mailOptions);

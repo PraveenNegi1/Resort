@@ -73,9 +73,9 @@ export default function Services() {
         </div>
 
         <div className="text-center mt-20">
-          <h3 className="text-2xl sm:text-3xl font-semibold text-white mb-4">
+          <h2 className="text-2xl sm:text-3xl font-semibold text-white mb-4">
             Ready to find your next room?
-          </h3>
+          </h2>
           <a
             href="/listings"
             className="inline-block px-8 py-3 bg-white text-[#0e1732] font-medium rounded-full hover:bg-[#0e1732] hover:text-white border border-white transition"

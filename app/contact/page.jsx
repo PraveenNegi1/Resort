@@ -27,12 +27,14 @@ const ContactPage = () => {
     setIsSubmitting(true);
 
     try {
-      const docRef = await addDoc(collection(db, "contacts"), {
+      // Save to Firebase
+      await addDoc(collection(db, "contacts"), {
         ...formData,
         createdAt: serverTimestamp(),
       });
 
-      const response = await fetch("/api/send-email", {
+      // Send Email
+      const emailRes = await fetch("/api/send-email", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -40,7 +42,13 @@ const ContactPage = () => {
         body: JSON.stringify(formData),
       });
 
-      const res = await fetch("/api/send-to-airtable", {
+      const emailData = await emailRes.json();
+      if (!emailRes.ok) {
+        throw new Error(emailData.message || "Email send failed");
+      }
+
+      // Send to Airtable (optional)
+      const airtableRes = await fetch("/api/send-to-airtable", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -48,27 +56,22 @@ const ContactPage = () => {
         body: JSON.stringify(formData),
       });
 
-      const data = await res.json();
-      console.log("Response from Airtable API route:", data);
-
-      if (!res.ok) {
-        toast.error("Failed: " + data.message);
+      const airtableData = await airtableRes.json();
+      if (!airtableRes.ok) {
+        toast.error("Airtable failed: " + airtableData.message);
       } else {
         toast.success("Saved in Airtable!");
       }
 
-      const result = await response.json();
-      if (response.ok) {
-        toast.success("Query sent successfully!");
-        setFormData({ fullName: "", email: "", phone: "", message: "" });
-        setTimeout(() => {
-          router.push("/");
-        }, 1500);
-      } else {
-        toast.error(`Error: ${result.message}`);
-      }
+      toast.success("Query sent successfully!");
+      setFormData({ fullName: "", email: "", phone: "", message: "" });
+
+      setTimeout(() => {
+        router.push("/");
+      }, 1500);
     } catch (error) {
-      toast.error("Error: Failed to send data.");
+      console.error(error);
+      toast.error("Error: " + error.message);
     } finally {
       setIsSubmitting(false);
     }
@@ -186,8 +189,4 @@ const ContactPage = () => {
     </div>
   );
 };
-
 export default ContactPage;
-
-
-

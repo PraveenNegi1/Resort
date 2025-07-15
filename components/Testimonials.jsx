@@ -107,10 +107,10 @@ const Testimonials = () => {
 
   return (
     <section className="bg-white py-20 relative overflow-hidden">
-      <h2 className="text-5xl text-[#0e1732] font-semibold text-center mb-32 font-serif tracking-wide">
+      <h1 className="text-5xl text-[#0e1732] font-semibold text-center mb-32 font-serif tracking-wide">
         Testimonials
         <p className="w-20 h-1 mx-auto mt-2 bg-[#0e1732]" />
-      </h2>
+      </h1>
 
       <div className="flex flex-wrap justify-center gap-8 px-4 max-w-7xl mx-auto transition-all duration-500">
         {currentTestimonials.map((t, idx) => (
@@ -127,7 +127,7 @@ const Testimonials = () => {
                 className="object-cover w-full h-full"
               />
             </div>
-            <h3 className="text-xl font-medium mt-4 font-serif">{t.name}</h3>
+            <h2 className="text-xl font-medium mt-4 font-serif">{t.name}</h2>
             <StarRating rating={t.rating} />
             <p className="text-sm text-gray-600">{t.review}</p>
           </div>

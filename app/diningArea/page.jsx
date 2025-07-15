@@ -69,9 +69,9 @@ const page = () => {
       {/* Header Section */}
       <div className="bg-[#0e1732] py-16 px-4">
         <div className="container mx-auto max-w-6xl">
-          <h1 className="text-3xl md:text-4xl  font-light text-white text-center mb-12 leading-tight">
+          <h2 className="text-3xl md:text-4xl  font-light text-white text-center mb-12 leading-tight">
             Dining at HillNest Stays
-          </h1>
+          </h2>
 
           <div className="max-w-5xl mx-auto">
             <p className="text-base md:text-lg text-white leading-relaxed text-center mb-8">
@@ -186,9 +186,9 @@ const page = () => {
               </div>
 
               <div className="bg-[#F1EDE6] p-6 rounded-lg">
-                <h3 className="text-xl font-medium text-gray-800 mb-2">
+                <h2 className="text-xl font-medium text-gray-800 mb-2">
                   Rogan Josh
-                </h3>
+                </h2>
                 <p className="text-gray-600 text-sm">
                   A rich and aromatic lamb curry from Kashmir, cooked with
                   yogurt and traditional spices.
@@ -196,9 +196,9 @@ const page = () => {
               </div>
 
               <div className="bg-[#F1EDE6] p-6 rounded-lg">
-                <h3 className="text-xl font-medium text-gray-800 mb-2">
+                <h2 className="text-xl font-medium text-gray-800 mb-2">
                   Momos
-                </h3>
+                </h2>
                 <p className="text-gray-600 text-sm">
                   Steamed dumplings filled with spiced vegetables or meat,
                   served with spicy chutney.
@@ -206,9 +206,9 @@ const page = () => {
               </div>
 
               <div className="bg-[#F1EDE6] p-6 rounded-lg">
-                <h3 className="text-xl font-medium text-gray-800 mb-2">
+                <h2 className="text-xl font-medium text-gray-800 mb-2">
                   Spring Rolls
-                </h3>
+                </h2>
                 <p className="text-gray-600 text-sm">
                   Crispy fried rolls stuffed with mixed vegetables and noodles,
                   served with tangy dip.
@@ -216,9 +216,9 @@ const page = () => {
               </div>
 
               <div className="bg-[#F1EDE6] p-6 rounded-lg">
-                <h3 className="text-xl font-medium text-gray-800 mb-2">
+                <h2 className="text-xl font-medium text-gray-800 mb-2">
                   Noodles
-                </h3>
+                </h2>
                 <p className="text-gray-600 text-sm">
                   Stir-fried noodles tossed with vegetables and Indo-Chinese
                   sauces — a street food favorite.
@@ -226,9 +226,9 @@ const page = () => {
               </div>
 
               <div className="bg-[#F1EDE6] p-6 rounded-lg">
-                <h3 className="text-xl font-medium text-gray-800 mb-2">
+                <h2 className="text-xl font-medium text-gray-800 mb-2">
                   Indian-style Burger
-                </h3>
+                </h2>
                 <p className="text-gray-600 text-sm">
                   Crispy spiced potato patty burger with chutney, onions, and
                   fresh veggies in a soft bun.

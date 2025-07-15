@@ -157,7 +157,7 @@ const Rooms = () => {
                           {room.description}
                         </p>
                         <p className="text-lg font-bold text-[#0e1732] mb-4">
-                          ₹{room.price} / night
+                          ₹{room.price} / day
                         </p>
                         <ul className="flex flex-wrap gap-2 overflow-hidden max-h-16">
                           {room.amenities.map((item, i) => (

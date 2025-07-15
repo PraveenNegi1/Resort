@@ -54,8 +54,7 @@ export default function Footer() {
                   Rooms & Suites
                 </Link>
               </li>
-              <li>
-              </li>
+              <li></li>
               <li>
                 <Link
                   href="/gallery"
@@ -82,7 +81,7 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/faq" className="hover:text-[#957C3D] transition">
+                <Link href="/faqs" className="hover:text-[#957C3D] transition">
                   FAQs
                 </Link>
               </li>
@@ -94,14 +93,6 @@ export default function Footer() {
                   Policies
                 </Link>
               </li>
-              <li>
-                <Link
-                  href="/support"
-                  className="hover:text-[#957C3D] transition"
-                >
-                  Help Center
-                </Link>
-              </li>
             </ul>
           </div>
 
@@ -110,14 +101,16 @@ export default function Footer() {
             <h3 className="text-xl font-semibold mb-6">Stay Connected</h3>
             <div className="space-y-4">
               <p className="flex items-center gap-3">
-                <FaPhoneAlt /> <span>+91 98765 43210</span>
+                <FaPhoneAlt /> <span>+91 9758354290</span>
               </p>
               <p className="flex items-center gap-3">
                 <FaEnvelope /> <span>contact@hillneststays.com</span>
               </p>
               <p className="flex items-center gap-3">
                 <FaMapMarkerAlt />{" "}
-                <span>HillNest Stays, Ghansali, Uttarakhand</span>
+                <span>
+                  HillNest Stays, Ghansali, Tehri Garhwal, Uttarakhand
+                </span>
               </p>
             </div>
 

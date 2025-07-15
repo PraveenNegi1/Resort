@@ -11,7 +11,7 @@ const data = [
     imageMobile: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c",
     price: "₹8840",
     rooms: 5,
-    size: "120m2",
+
     bed: "King bed, 3 single beds",
     capacity: "1-5 Persons",
     view: "City view",
@@ -19,11 +19,27 @@ const data = [
     roomType: "PRIME SUITE",
   },
   {
-    imageLarge: "https://images.unsplash.com/photo-1612965607446-25e1332775ae?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    imageMobile: "https://images.unsplash.com/photo-1612965607446-25e1332775ae?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    imageLarge:
+      "https://images.unsplash.com/photo-1740446568845-eb3258a78734?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    imageMobile:
+      "https://images.unsplash.com/photo-1740446568845-eb3258a78734?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    price: "₹2640",
+    rooms: 2,
+
+    bed: "2 Queen beds",
+    capacity: "1-4 Persons",
+    view: "Garden view",
+    recommend: "Ideal for couples or small families",
+    roomType: "STANDERD ROOMS",
+  },
+  {
+    imageLarge:
+      "https://images.unsplash.com/photo-1612965607446-25e1332775ae?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    imageMobile:
+      "https://images.unsplash.com/photo-1612965607446-25e1332775ae?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     price: "₹3640",
     rooms: 2,
-    size: "90m2",
+
     bed: "2 Queen beds",
     capacity: "1-4 Persons",
     view: "Garden view",
@@ -46,7 +62,6 @@ export default function RoomShowcase() {
 
   return (
     <div className="bg-[#0e1732] text-white min-h-screen flex flex-col md:flex-row items-center md:px-40 px-4 gap-10 md:gap-36 py-12 relative overflow-hidden ">
-      
       {/* Mobile frame - hidden on small screens */}
       <div className="absolute bottom-20 left-4 md:left-10 w-[200px] h-[250px] bg-white rounded-lg shadow-xl z-10 overflow-hidden border border-gray-300 hidden md:block">
         <AnimatePresence mode="wait">
@@ -74,8 +89,9 @@ export default function RoomShowcase() {
                   View: {current.view}
                 </p>
                 <Link
-                 href="/contact" 
-                className="bg-[#0e1732] text-white text-[10px] px-3 py-1 mt-1 rounded">
+                  href="/contact"
+                  className="bg-[#0e1732] text-white text-[10px] px-3 py-1 mt-1 rounded"
+                >
                   VIEW DETAILS
                 </Link>
               </div>
@@ -117,8 +133,9 @@ export default function RoomShowcase() {
               <p className="mb-1">View: {current.view}</p>
               <p className="mb-3">Recommended: {current.recommend}</p>
               <Link
-                href="/contact" 
-               className="border border-white px-4 py-2 hover:bg-white hover:text-[#0e1732] transition-all">
+                href="/contact"
+                className="border border-white px-4 py-2 hover:bg-white hover:text-[#0e1732] transition-all"
+              >
                 BOOK NOW
               </Link>
             </div>
@@ -128,9 +145,9 @@ export default function RoomShowcase() {
 
       {/* Text content */}
       <div className="mt-12 md:mt-0 md:ml-10 w-full md:w-[30%] z-0">
-        <h2 className="text-white text-2xl md:text-4xl font-light mb-4">
+        <h1 className="text-white text-2xl md:text-4xl font-light mb-4">
           VERSATILE ROOM LISTS
-        </h2>
+        </h1>
         <p className="text-white text-sm md:text-base mb-6">
           Carsten equips your new website with a wide assortment of carefully
           designed, practical & captivating list templates for showcasing all

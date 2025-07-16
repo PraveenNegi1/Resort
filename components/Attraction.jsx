@@ -63,8 +63,7 @@ const attractions = [
     title: "Gangi",
     description:
       "Explore the quaint village of Gangi, located at a distance of 27 km in the vicinity of Ghansali. Known for its serene surroundings, lush greenery, and traditional Garhwali culture.",
-    image:
-      "https://images.unsplash.com/photo-1616113780522-e26b6b37cc3a?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    image: "/Gangi-2.png",
     features: [
       "Traditional wooden Garhwali homes",
       "Terraced farming and village walks",
@@ -142,7 +141,7 @@ export default function LocalAttraction() {
 
         <button
           onClick={prevSlide}
-          className="absolute left-8 md:left-28 top-1/2 transform -translate-y-1/2 bg-white/90 text-[#72383D] p-4 rounded-full hover:bg-[#72383D] hover:text-white transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] hover:scale-110 active:scale-95 focus:outline-none focus:ring-2 focus:ring-teal-400 z-20 shadow-lg"
+          className="absolute left-8 md:left-28 top-1/2 transform -translate-y-1/2 bg-white/90 text-[#0e1732] p-4 rounded-full hover:bg-[#0e1732] hover:text-white transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] hover:scale-110 active:scale-95 focus:outline-none focus:ring-2 focus:ring-teal-400 z-20 shadow-lg"
         >
           ←
         </button>

@@ -94,7 +94,7 @@ const Testimonials = () => {
   useEffect(() => {
     const interval = setInterval(() => {
       handleNext();
-    }, 3000); 
+    }, 3000);
 
     return () => clearInterval(interval); // Cleanup on unmount
   }, []);
@@ -137,12 +137,14 @@ const Testimonials = () => {
       <div className="flex justify-center mt-12 gap-4">
         <button
           onClick={handlePrev}
+          type="button"
           className="w-10 h-10 rounded-full border border-[#e3c79d] flex items-center justify-center hover:bg-[#e3c79d]/20 transition"
         >
           <FaArrowLeft />
         </button>
         <button
           onClick={handleNext}
+          type="button"
           className="w-10 h-10 rounded-full border border-[#e3c79d] flex items-center justify-center hover:bg-[#e3c79d]/20 transition"
         >
           <FaArrowRight />

@@ -170,6 +170,7 @@ const RoomDetails = () => {
             <motion.button
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
+              type="button"
               className="w-full bg-[#0e1732] text-white py-4 rounded-2xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
             >
               <Link href="/contact" className="hover:text-[#957C3D] transition">

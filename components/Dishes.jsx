@@ -40,6 +40,7 @@ export default function DiningSection() {
 
             <Link
               href="/diningArea"
+              type="button"
               className="bg-[#0e1732] text-white px-4 py-2 mb-4 rounded-md hover:bg-white hover:text-[#0e1732] transition border border-[#0e1732] "
             >
               Explore More

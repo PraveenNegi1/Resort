@@ -58,7 +58,7 @@ export default function Navbar() {
             className="h-10 w-auto"
           />
         </Link>
-        <button onClick={toggleMenu} aria-label="Toggle menu">
+        <button onClick={toggleMenu} type="button" aria-label="Toggle menu">
           {isOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
       </div>

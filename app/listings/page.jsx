@@ -210,6 +210,7 @@ const Rooms = () => {
                   onClick={() => setCurrentPage(page)}
                   whileHover={{ scale: 1.1 }}
                   whileTap={{ scale: 0.9 }}
+                  type="button"
                   className={`px-3 py-1 sm:px-4 sm:py-2 rounded-lg text-sm sm:text-base ${
                     currentPage === page
                       ? "bg-[#0e1732] text-white"
@@ -225,6 +226,7 @@ const Rooms = () => {
               disabled={currentPage === totalPages}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
+              type="button"
               className="px-3 py-2 sm:px-4 sm:py-2 bg-[#0e1732] text-white rounded-lg hover:bg-[#F1EDE6] hover:text-[#0e1732] disabled:opacity-50 disabled:hover:bg-blue-600 transition-colors text-sm sm:text-base"
             >
               Next

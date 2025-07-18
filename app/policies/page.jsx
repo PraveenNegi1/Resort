@@ -25,9 +25,7 @@ export default function PolicyPage() {
           <section className="group bg-white/80 backdrop-blur-sm border border-slate-200/60 rounded-2xl sm:rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 p-6 sm:p-8 lg:p-10 transform hover:-translate-y-2 hover:scale-[1.02]">
             <div className="flex items-start gap-4 sm:gap-6 mb-4 sm:mb-6">
               <div className="flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-gradient-to-br from-red-500 to-red-600 rounded-xl sm:rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-110">
-                <span className="text-xl sm:text-2xl lg:text-3xl text-white">
-                  ⚠️
-                </span>
+                
               </div>
               <div className="flex-1">
                 <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#0e1732] group-hover:text-[#957C3D] transition-colors duration-300 leading-tight">
@@ -53,9 +51,7 @@ export default function PolicyPage() {
           <section className="group bg-white/80 backdrop-blur-sm border border-slate-200/60 rounded-2xl sm:rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 p-6 sm:p-8 lg:p-10 transform hover:-translate-y-2 hover:scale-[1.02]">
             <div className="flex items-start gap-4 sm:gap-6 mb-4 sm:mb-6">
               <div className="flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl sm:rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-110">
-                <span className="text-xl sm:text-2xl lg:text-3xl text-white">
-                  🏠
-                </span>
+                
               </div>
               <div className="flex-1">
                 <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#0e1732] group-hover:text-[#957C3D] transition-colors duration-300 leading-tight">
@@ -107,9 +103,7 @@ export default function PolicyPage() {
           <section className="group bg-white/80 backdrop-blur-sm border border-slate-200/60 rounded-2xl sm:rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 p-6 sm:p-8 lg:p-10 transform hover:-translate-y-2 hover:scale-[1.02]">
             <div className="flex items-start gap-4 sm:gap-6 mb-4 sm:mb-6">
               <div className="flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-xl sm:rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-110">
-                <span className="text-xl sm:text-2xl lg:text-3xl text-white">
-                  🔒
-                </span>
+                
               </div>
               <div className="flex-1">
                 <h2 className="text-xl sm:text-2xl lg:text-3xl font-bold text-[#0e1732] group-hover:text-[#957C3D] transition-colors duration-300 leading-tight">

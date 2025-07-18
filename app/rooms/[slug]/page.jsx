@@ -99,7 +99,7 @@ const RoomDetails = () => {
             </motion.div>
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mt-6">
-              {room.images?.slice(0, 3).map((imgUrl, index) => (
+              {room.images?.slice(0, 4).map((imgUrl, index) => (
                 <motion.div
                   key={index}
                   whileHover={{ scale: 1.05 }}
@@ -126,13 +126,13 @@ const RoomDetails = () => {
 
           <motion.div
             variants={itemVariants}
-            className="bg-white rounded-3xl shadow-xl p-8 border border-slate-200/50 backdrop-blur-sm"
+            className="bg-[#0e1732] rounded-3xl shadow-xl p-8 border border-white backdrop-blur-sm"
           >
             <div className="mb-6">
-              <h1 className="text-3xl font-bold text-slate-900 mb-2">
+              <h1 className="text-3xl font-bold text-white mb-2">
                 {room.name}
               </h1>
-              <div className="flex items-center text-slate-600">
+              <div className="flex items-center text-white">
                 <span className="text-yellow-500">⭐</span>
                 <span className="ml-1 font-medium">4.8 (24 reviews)</span>
               </div>
@@ -151,10 +151,10 @@ const RoomDetails = () => {
                   className="bg-gradient-to-br from-slate-50 to-slate-100 p-4 rounded-2xl border border-slate-200/50 text-center hover:shadow-md transition-all duration-300"
                 >
                   <div className="text-2xl mb-2">{item.icon}</div>
-                  <div className="text-xs text-slate-600 uppercase tracking-wide">
+                  <div className="text-xs text-[#0e1732] uppercase tracking-wide">
                     {item.label}
                   </div>
-                  <div className="font-semibold text-slate-900">
+                  <div className="font-semibold text-[#0e1732]">
                     {item.value}
                   </div>
                 </motion.div>
@@ -162,7 +162,7 @@ const RoomDetails = () => {
             </div>
 
             <div className="text-center mb-6">
-              <div className="text-4xl font-bold bg-[#0e1732] bg-clip-text text-transparent mb-2">
+              <div className="text-4xl font-bold bg-white bg-clip-text text-transparent mb-2">
                 ₹{room.price} /day
               </div>
             </div>
@@ -171,7 +171,7 @@ const RoomDetails = () => {
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               type="button"
-              className="w-full bg-[#0e1732] text-white py-4 rounded-2xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
+              className="w-full bg-white py-4 rounded-2xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
             >
               <Link href="/contact" className="hover:text-[#957C3D] transition">
                 Contact Us
@@ -187,13 +187,13 @@ const RoomDetails = () => {
           <div className="lg:col-span-2 space-y-8">
             <motion.div
               variants={itemVariants}
-              className="bg-white p-8 rounded-3xl shadow-xl border border-slate-200/50"
+              className="bg-[#0e1732] p-8 rounded-3xl shadow-xl border border-slate-200/50"
             >
-              <h2 className="text-2xl font-bold text-slate-900 mb-6 flex items-center">
-                <span className="text-3xl mr-3">📝</span>
+              <h2 className="text-2xl font-bold text-white mb-6 flex items-center">
+                <span className="text-3xl mr-3"></span>
                 Description
               </h2>
-              <p className="text-slate-700 text-lg leading-relaxed">
+              <p className="text-white text-lg leading-relaxed">
                 {room.detailedDescription || room.description}
               </p>
             </motion.div>

@@ -12,10 +12,10 @@ import Image from "next/image";
 export default function Footer() {
   return (
     <footer className="bg-[#0e1732] text-[#957C3D] pt-16 pb-8">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 font-serif">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 Merriweather">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           {/* Logo and Description */}
-          <div className="flex flex-col items-center md:items-start">
+          <div className="flex flex-col items-center md:items-start font-extralight">
             <div className="mb-4">
               <Image
                 src="/logo2.png"
@@ -35,7 +35,7 @@ export default function Footer() {
           {/* Explore Links */}
           <div>
             <h3 className="text-xl font-semibold mb-6 text-white">Explore</h3>
-            <ul className="space-y-3 text-white">
+            <ul className="space-y-3 text-white font-extralight">
               <li>
                 <Link href="/" className="hover:text-[#957C3D] transition">
                   Home
@@ -71,7 +71,7 @@ export default function Footer() {
             <h3 className="text-xl font-semibold mb-6 text-white">
               Customer Support
             </h3>
-            <ul className="space-y-3 text-white">
+            <ul className="space-y-3 text-white font-extralight">
               <li>
                 <Link
                   href="/contact"
@@ -99,7 +99,7 @@ export default function Footer() {
           {/* Contact Info and Socials */}
           <div className="text-white">
             <h3 className="text-xl font-semibold mb-6">Stay Connected</h3>
-            <div className="space-y-4">
+            <div className="space-y-4 font-extralight">
               <p className="flex items-center gap-3">
                 <FaPhoneAlt /> <span>+91 9758354290</span>
               </p>

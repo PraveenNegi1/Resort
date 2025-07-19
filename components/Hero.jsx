@@ -74,7 +74,7 @@ export default function Home() {
       </section>
 
       
-      <section className="bg-[#0e1732] py-16 px-4 sm:px-8 md:px-20 text-center font-serif">
+      <section className="bg-[#0e1732] py-16 px-4 sm:px-8 md:px-20 text-center Merriweather ">
         <h2 className="text-3xl md:text-4xl text-white mb-8">
           Why Choose HillNest Stays?
         </h2>

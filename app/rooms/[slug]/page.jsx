@@ -4,8 +4,8 @@ import Image from "next/image";
 import { rooms } from "@/lib/roomData";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
-import Link from "next/link";
 import { useState, useEffect, useRef } from "react";
+import Popup from "@/components/PopUp";
 
 const RoomDetails = () => {
   const slug = usePathname().split("/").pop();
@@ -65,14 +65,16 @@ const RoomDetails = () => {
       transition: { duration: 0.5 },
     },
   };
+  
+  const [isPopupOpen, setIsPopupOpen] = useState(false);
 
   return (
-    <div className="min-h-screen font-serif bg-gradient-to-br from-slate-50 via-white to-slate-100 flex justify-between md:pl-36 ">
+    <div className="min-h-screen font-serif bg-gradient-to-br from-slate-50 via-white to-slate-100 flex justify-between md:px-36 ">
       <motion.div
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="max-w-7xl py-8 mt-28 "
+        className=" py-8 mt-28 "
       >
         <motion.section
           variants={itemVariants}
@@ -168,17 +170,17 @@ const RoomDetails = () => {
             </div>
 
             <motion.button
+              onClick={() => setIsPopupOpen(true)}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               type="button"
               className="w-full bg-white py-4 rounded-2xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300"
             >
-              <Link href="/contact" className="hover:text-[#957C3D] transition">
-                Contact Us
-              </Link>
+              Contact Us
             </motion.button>
           </motion.div>
         </motion.section>
+        <Popup isOpen={isPopupOpen} onClose={() => setIsPopupOpen(false)} />
 
         <motion.section
           variants={itemVariants}

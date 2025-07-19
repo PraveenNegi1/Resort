@@ -61,7 +61,7 @@ export default function RoomShowcase() {
   const current = data[index];
 
   return (
-    <div className="bg-[#0e1732] text-white min-h-screen flex flex-col md:flex-row items-center md:px-40 px-4 gap-10 md:gap-36 py-12 relative overflow-hidden ">
+    <div className="bg-[#0e1732] text-white min-h-screen flex flex-col md:flex-row items-center md:px-40 px-4 gap-10 md:gap-36 py-12 relative overflow-hidden Merriweather ">
       {/* Mobile frame - hidden on small screens */}
       <div className="absolute bottom-20 left-4 md:left-10 w-[200px] h-[250px] bg-white rounded-lg shadow-xl z-10 overflow-hidden border border-gray-300 hidden md:block">
         <AnimatePresence mode="wait">
@@ -145,15 +145,15 @@ export default function RoomShowcase() {
 
       {/* Text content */}
       <div className="mt-12 md:mt-0 md:ml-10 w-full md:w-[30%] z-0">
-        <h1 className="text-white text-2xl md:text-4xl font-light mb-4">
+        <h1 className="text-white text-2xl md:text-4xl font-normal mb-4">
           VERSATILE ROOM LISTS
         </h1>
-        <p className="text-white text-sm md:text-base mb-6">
+        <p className="text-white text-sm md:text-base mb-6 font-light">
           Carsten equips your new website with a wide assortment of carefully
           designed, practical & captivating list templates for showcasing all
           the rooms your business offers.
         </p>
-        <div className="text-white text-xs md:text-sm grid grid-cols-2 gap-3">
+        <div className="text-white text-xs md:text-sm grid grid-cols-2 gap-3 font-light">
           <span>STANDARD ROOM LIST</span>
           <span>ROOM SLIDER</span>
           <span>CENTERED ROOM LIST</span>

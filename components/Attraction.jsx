@@ -128,7 +128,7 @@ export default function LocalAttraction() {
       </h1>
       <div
         ref={componentRef}
-        className="h-[100vh] flex items-center justify-center p-4 font-sans relative overflow-hidden"
+        className="h-[100vh] flex items-center justify-center p-4 Merriweather  relative overflow-hidden"
         style={{
           backgroundImage: `url(${attractions[currentSlide].image})`,
           backgroundSize: "cover",
@@ -175,28 +175,28 @@ export default function LocalAttraction() {
           >
             <div>
               <h2
-                className={`text-4xl font-bold font-playfair text-[#0e1732] mb-4 tracking-tight ${
+                className={`text-4xl font-bold Merriweather text-[#0e1732] mb-4 tracking-tight ${
                   animateSlide ? "animate-text-in" : ""
                 }`}
               >
                 {attractions[currentSlide].title}
               </h2>
               <p
-                className={`text-gray-700 mb-6 text-lg font-inter leading-relaxed ${
+                className={`text-gray-700 mb-6 text-lg  leading-relaxed ${
                   animateSlide ? "animate-text-in delay-100" : ""
                 }`}
               >
                 {attractions[currentSlide].description}
               </p>
               <h3
-                className={`text-xl font-semibold font-playfair text-gray-900 mb-3 ${
+                className={`text-xl font-semibold  text-gray-900 mb-3 ${
                   animateSlide ? "animate-text-in delay-200" : ""
                 }`}
               >
                 Highlights
               </h3>
               <ul
-                className={`list-disc list-inside text-gray-600 text-base font-inter ${
+                className={`list-disc list-inside text-gray-600 text-base  ${
                   animateSlide ? "animate-text-in delay-300" : ""
                 }`}
               >

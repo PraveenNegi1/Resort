@@ -89,7 +89,6 @@ const Popup = ({
         onClick={(e) => e.stopPropagation()}
         className="bg-white/80 dark:bg-[#0f172a]/90 backdrop-blur-lg p-5 sm:p-8 rounded-2xl w-full max-w-lg shadow-2xl border border-white/20 relative overflow-y-auto max-h-[90vh]"
       >
-        {/* Close Button */}
         <motion.button
           onClick={onClose}
           whileHover={{ scale: 1.1, rotate: 90 }}
@@ -99,7 +98,6 @@ const Popup = ({
           ✕
         </motion.button>
 
-        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -121,14 +119,12 @@ const Popup = ({
           </p>
         </motion.div>
 
-        {/* Form */}
         <motion.form
           onSubmit={handleSubmit}
           initial="hidden"
           animate="visible"
           className="space-y-4"
         >
-          {/* Name */}
           <motion.div variants={inputVariants} className="group relative">
             <input
               type="text"
@@ -139,7 +135,6 @@ const Popup = ({
             />
           </motion.div>
 
-          {/* Email */}
           <motion.div variants={inputVariants} className="group relative">
             <input
               type="email"
@@ -150,7 +145,6 @@ const Popup = ({
             />
           </motion.div>
 
-          {/* Phone */}
           <motion.div variants={inputVariants} className="group relative">
             <input
               type="tel"
@@ -161,7 +155,6 @@ const Popup = ({
             />
           </motion.div>
 
-          {/* Message */}
           <motion.div variants={inputVariants} className="group relative">
             <textarea
               name="message"
@@ -172,7 +165,6 @@ const Popup = ({
             ></textarea>
           </motion.div>
 
-          {/* Submit Button */}
           <motion.button
             variants={inputVariants}
             type="submit"

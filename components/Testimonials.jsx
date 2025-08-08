@@ -105,11 +105,9 @@ const TestimonialsCarousel = () => {
       (prev) => (prev - 1 + testimonials.length) % testimonials.length
     );
   };
-
   const goToSlide = (index) => {
     setCurrentIndex(index);
   };
-
   useEffect(() => {
     if (!isAutoPlaying) return;
 
@@ -147,7 +145,6 @@ const TestimonialsCarousel = () => {
           onMouseEnter={handleMouseEnter}
           onMouseLeave={handleMouseLeave}
         >
-          {/* Main Carousel */}
           <div className="relative h-96 mb-8 overflow-hidden rounded-3xl">
             {testimonials.map((testimonial, index) => (
               <div

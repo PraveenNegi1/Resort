@@ -1,7 +1,8 @@
 "use client";
 import Image from "next/image";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { X, ChevronLeft, ChevronRight, ZoomIn } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const images = [
   "/room-galery/room1.jpg",
@@ -9,148 +10,121 @@ const images = [
   "/room-galery/room3.jpg",
   "/room-galery/room4.jpg",
   "/room-galery/room5.jpg",
-  "https://images.unsplash.com/photo-1653069045463-8cb48f193c8a?q=80&w=1932&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  "https://images.unsplash.com/photo-1706811043117-ee9997840ac0?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  "https://images.unsplash.com/photo-1611905964800-bb1cefa5a11a?q=80&w=1935&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+  "https://images.unsplash.com/photo-1653069045463-8cb48f193c8a?q=80&w=1932&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1706811043117-ee9997840ac0?q=80&w=2070&auto=format&fit=crop",
+  "https://images.unsplash.com/photo-1611905964800-bb1cefa5a11a?q=80&w=1935&auto=format&fit=crop",
 ];
 
-const GalleryPage = () => {
+export default function GalleryPage() {
   const [selectedImage, setSelectedImage] = useState(null);
-  const [isLightboxOpen, setIsLightboxOpen] = useState(false);
 
-  const openLightbox = (index) => {
-    setSelectedImage(index);
-    setIsLightboxOpen(true);
-  };
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (!selectedImage && selectedImage !== 0) return;
+      if (e.key === "ArrowRight") nextImage();
+      if (e.key === "ArrowLeft") prevImage();
+      if (e.key === "Escape") setSelectedImage(null);
+    };
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [selectedImage]);
 
-  const closeLightbox = () => {
-    setIsLightboxOpen(false);
-    setSelectedImage(null);
-  };
+  const openLightbox = (index) => setSelectedImage(index);
+  const closeLightbox = () => setSelectedImage(null);
 
-  const nextImage = () => {
+  const nextImage = () =>
     setSelectedImage((prev) => (prev + 1) % images.length);
-  };
-
-  const prevImage = () => {
+  const prevImage = () =>
     setSelectedImage((prev) => (prev - 1 + images.length) % images.length);
-  };
-
-  const getGridClasses = (index) => {
-    const patterns = [
-      "md:col-span-2 md:row-span-2",
-      "md:col-span-1 md:row-span-1", 
-      "md:col-span-1 md:row-span-2", 
-      "md:col-span-2 md:row-span-1", 
-      "md:col-span-1 md:row-span-1",
-      "md:col-span-1 md:row-span-1", 
-      "md:col-span-3 md:row-span-1", 
-      "md:col-span-1 md:row-span-1", 
-    ];
-    return patterns[index % patterns.length];
-  };
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50 font-serif">
-      <div className="fixed inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute -top-40 -right-40 w-80 h-80 bg-blue-100 rounded-full mix-blend-multiply filter blur-xl opacity-70 animate-pulse"></div>
-      </div>
-
       <div className="relative z-10 px-4 py-16 sm:px-6 lg:px-12">
-        <div className="pt-16">
-          <div className="text-center mb-20">
-            <div className="inline-block">
-              <h1 className="text-5xl md:text-5xl font-bold bg-[#0e1732] bg-clip-text text-transparent mb-6 leading-tight">
-                Visual Stories
-              </h1>
-              <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mb-6 rounded-full"></div>
-            </div>
-            <p className="text-xl text-slate-800 max-w-2xl mx-auto leading-relaxed">
-              Discover breathtaking moments captured through our lens. Each
-              image tells a unique story waiting to be explored.
-            </p>
-          </div>
+        <div className="text-center mb-20">
+          <h1 className="text-5xl font-bold bg-gradient-to-r from-blue-700 to-purple-600 bg-clip-text text-transparent mb-6">
+            Visual Stories
+          </h1>
+          <p className="text-lg text-slate-700 max-w-2xl mx-auto leading-relaxed">
+            A visual journey through our finest rooms—designed for your ultimate
+            comfort and luxury.
+          </p>
+        </div>
 
-          <div className="max-w-7xl mx-auto">
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-4 md:gap-6 auto-rows-fr">
-              {images.map((src, index) => (
-                <div
-                  key={index}
-                  className={`group relative overflow-hidden rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-500 cursor-pointer transform hover:scale-105 ${getGridClasses(
-                    index
-                  )}`}
-                  onClick={() => openLightbox(index)}
-                  style={{
-                    backgroundImage: `url(${src})`,
-                    backgroundSize: "cover",
-                    backgroundPosition: "center",
-                    minHeight: "250px",
-                  }}
-                >
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-
-                  <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-4 group-hover:translate-y-0">
-                    <div className="text-center text-white">
-                      <ZoomIn className="w-8 h-8 mx-auto mb-2 drop-shadow-lg" />
-                      <p className="text-sm font-medium drop-shadow-lg">
-                        View Full Size
-                      </p>
-                    </div>
-                  </div>
-
-                  <div className="absolute top-4 left-4 bg-white/20 backdrop-blur-sm text-white px-3 py-1 rounded-full text-sm font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                    {index + 1}
-                  </div>
-
-                  <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-out"></div>
-                </div>
-              ))}
-            </div>
-          </div>
+        <div className="columns-1 sm:columns-2 lg:columns-3 gap-4 [column-fill:_balance]">
+          {images.map((src, index) => (
+            <motion.div
+              key={index}
+              className="mb-4 break-inside-avoid cursor-pointer overflow-hidden rounded-2xl shadow-md hover:shadow-xl transition"
+              whileHover={{ scale: 1.02 }}
+              onClick={() => openLightbox(index)}
+            >
+              <Image
+                src={src}
+                alt={`Gallery image ${index + 1}`}
+                width={800}
+                height={600}
+                className="w-full h-auto object-cover"
+              />
+              <div className="p-3 bg-white">
+                <p className="text-sm font-medium text-slate-700">
+                  Image {index + 1}
+                </p>
+              </div>
+            </motion.div>
+          ))}
         </div>
       </div>
 
-      {isLightboxOpen && (
-        <div className="fixed inset-0 bg-black/95 backdrop-blur-sm z-50 flex items-center justify-center p-4">
-          <div className="relative max-w-5xl max-h-full">
+      <AnimatePresence>
+        {selectedImage !== null && (
+          <motion.div
+            className="fixed inset-0 bg-black/90 backdrop-blur-sm z-50 flex items-center justify-center p-4"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+          >
             <button
               onClick={closeLightbox}
-              className="absolute -top-12 right-0 text-white/80 hover:text-white transition-colors z-10"
+              className="absolute top-4 right-4 text-white hover:text-red-400"
             >
               <X className="w-8 h-8" />
             </button>
 
             <button
               onClick={prevImage}
-              className="absolute left-4 top-1/2 transform -translate-y-1/2 text-white/80 hover:text-white transition-colors z-10 bg-black/20 backdrop-blur-sm rounded-full p-2"
+              className="absolute left-4 top-1/2 -translate-y-1/2 text-white/80 hover:text-white bg-black/30 p-2 rounded-full"
             >
               <ChevronLeft className="w-6 h-6" />
             </button>
             <button
               onClick={nextImage}
-              className="absolute right-4 top-1/2 transform -translate-y-1/2 text-white/80 hover:text-white transition-colors z-10 bg-black/20 backdrop-blur-sm rounded-full p-2"
+              className="absolute right-4 top-1/2 -translate-y-1/2 text-white/80 hover:text-white bg-black/30 p-2 rounded-full"
             >
               <ChevronRight className="w-6 h-6" />
             </button>
 
-            <div className="relative">
+            <motion.div
+              key={selectedImage}
+              initial={{ scale: 0.9, opacity: 0 }}
+              animate={{ scale: 1, opacity: 1 }}
+              exit={{ scale: 0.9, opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              className="max-w-5xl max-h-[80vh]"
+            >
               <Image
                 src={images[selectedImage]}
                 alt={`Gallery image ${selectedImage + 1}`}
                 width={1200}
                 height={800}
-                className="max-w-full max-h-[80vh] object-contain rounded-lg shadow-2xl"
+                className="max-w-full max-h-[80vh] object-contain rounded-lg"
               />
-
-              <div className="absolute -bottom-12 left-1/2 transform -translate-x-1/2 text-white/80 text-sm">
+              <p className="text-center mt-4 text-white/80 text-sm">
                 {selectedImage + 1} / {images.length}
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
+              </p>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </div>
   );
-};
-
-export default GalleryPage;
+}

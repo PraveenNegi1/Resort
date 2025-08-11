@@ -9,6 +9,8 @@ const Popup = ({
   title = "Contact Us",
   subtitle = "Let's discuss your perfect stay",
   apiEndpoint = "/api/send-email",
+  roomName,
+  roomPrice,
 }) => {
   const [isLoading, setIsLoading] = useState(false);
 
@@ -22,6 +24,8 @@ const Popup = ({
       email: form.email.value,
       phone: form.phone.value,
       message: form.message.value,
+      roomName, // ✅ added
+      roomPrice, // ✅ added
     };
 
     try {
@@ -104,19 +108,17 @@ const Popup = ({
           transition={{ delay: 0.2 }}
           className="text-center mb-6 sm:mb-8"
         >
-          <motion.div
-            animate={{ rotate: [0, 10, -10, 0] }}
-            transition={{ duration: 2, repeat: Infinity }}
-            className="text-3xl mb-1"
-          >
-            📞
-          </motion.div>
           <h2 className="text-2xl sm:text-3xl font-bold bg-gradient-to-r from-indigo-700 to-purple-600 bg-clip-text text-transparent">
             {title}
           </h2>
-          <p className="text-slate-700 dark:text-slate-300 text-sm sm:text-base mt-1">
+          <p className="text-white dark:text-slate-300 text-sm sm:text-base mt-1">
             {subtitle}
           </p>
+          <div className="mb-4 text-center text-[16px] text-white">
+            Booking enquiry for: <strong>{roomName}</strong>
+            <br />
+            Price: ₹{roomPrice} / day
+          </div>
         </motion.div>
 
         <motion.form

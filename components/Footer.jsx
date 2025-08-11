@@ -11,141 +11,110 @@ import Image from "next/image";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#0e1732] text-[#957C3D] pt-16 pb-8">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 Merriweather">
+    <footer className="bg-[#0e1732] text-[#d4af37] relative overflow-hidden font-serif">
+      <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-8">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
-          {/* Logo and Description */}
-          <div className="flex flex-col items-center md:items-start font-extralight">
-            <div className="mb-4">
-              <Image
-                src="/logo2.png"
-                alt="HillNest Logo"
-                width={180}
-                height={180}
-                className="object-contain"
-              />
-            </div>
-            <p className="text-white text-center md:text-left max-w-xs leading-relaxed">
+          <div className="flex flex-col items-center md:items-start text-center md:text-left">
+            <Image
+              src="/logo2.png"
+              alt="HillNest Logo"
+              width={140}
+              height={140}
+              className="object-contain mb-4"
+            />
+            <p className="text-white/80 max-w-xs leading-relaxed font-light">
               Discover comfort and luxury in the lap of the Himalayas. HillNest
               Stays offers curated hotel experiences to make every trip
               unforgettable.
             </p>
           </div>
 
-          {/* Explore Links */}
           <div>
-            <h3 className="text-xl font-semibold mb-6 text-white">Explore</h3>
-            <ul className="space-y-3 text-white font-extralight">
-              <li>
-                <Link href="/" className="hover:text-[#957C3D] transition">
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link href="/about" className="hover:text-[#957C3D] transition">
-                  About Us
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/listings"
-                  className="hover:text-[#957C3D] transition"
-                >
-                  Rooms & Suites
-                </Link>
-              </li>
-              <li></li>
-              <li>
-                <Link
-                  href="/gallery"
-                  className="hover:text-[#957C3D] transition"
-                >
-                  Gallery
-                </Link>
-              </li>
+            <h3 className="text-xl font-semibold mb-6 text-white tracking-wide">
+              Explore
+            </h3>
+            <ul className="space-y-3 font-light">
+              {[
+                { name: "Home", link: "/" },
+                { name: "About Us", link: "/about" },
+                { name: "Rooms & Suites", link: "/listings" },
+                { name: "Gallery", link: "/gallery" },
+              ].map((item, i) => (
+                <li key={i}>
+                  <Link
+                    href={item.link}
+                    className="text-white hover:text-[#d4af37] transition relative inline-block
+                      after:content-[''] after:absolute after:w-0 after:h-[1px] after:left-0 after:-bottom-1
+                      after:bg-[#d4af37] hover:after:w-full after:transition-all after:duration-300"
+                  >
+                    {item.name}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Support Links */}
           <div>
-            <h3 className="text-xl font-semibold mb-6 text-white">
+            <h3 className="text-xl font-semibold mb-6 text-white tracking-wide">
               Customer Support
             </h3>
-            <ul className="space-y-3 text-white font-extralight">
-              <li>
-                <Link
-                  href="/contact"
-                  className="hover:text-[#957C3D] transition"
-                >
-                  Contact Us
-                </Link>
-              </li>
-              <li>
-                <Link href="/faqs" className="hover:text-[#957C3D] transition">
-                  FAQs
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="/policies"
-                  className="hover:text-[#957C3D] transition"
-                >
-                  Policies
-                </Link>
-              </li>
+            <ul className="space-y-3 font-light">
+              {[
+                { name: "Contact Us", link: "/contact" },
+                { name: "FAQs", link: "/faqs" },
+                { name: "Policies", link: "/policies" },
+              ].map((item, i) => (
+                <li key={i}>
+                  <Link
+                    href={item.link}
+                    className="text-white/80 hover:text-[#d4af37] transition relative inline-block
+                      after:content-[''] after:absolute after:w-0 after:h-[1px] after:left-0 after:-bottom-1
+                      after:bg-[#d4af37] hover:after:w-full after:transition-all after:duration-300"
+                  >
+                    {item.name}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Contact Info and Socials */}
-          <div className="text-white">
-            <h3 className="text-xl font-semibold mb-6">Stay Connected</h3>
-            <div className="space-y-4 font-extralight">
+          <div>
+            <h3 className="text-xl font-semibold mb-6 text-white tracking-wide">
+              Stay Connected
+            </h3>
+            <div className="space-y-4 text-white font-light">
               <p className="flex items-center gap-3">
-                <FaPhoneAlt /> <span>+91 9758354290</span>
+                <FaPhoneAlt className="text-[#d4af37]" /> +91 9758354290
               </p>
               <p className="flex items-center gap-3">
-                <FaEnvelope /> <span>contact@hillneststays.com</span>
+                <FaEnvelope className="text-[#d4af37]" />{" "}
+                contact@hillneststays.com
               </p>
               <p className="flex items-center gap-3">
-                <FaMapMarkerAlt />{" "}
-                <span>
-                  HillNest Stays, Ghansali, Tehri Garhwal, Uttarakhand
-                </span>
+                <FaMapMarkerAlt className="text-[#d4af37]" /> HillNest Stays,
+                Ghansali, Tehri Garhwal, Uttarakhand
               </p>
             </div>
 
-            <div className="flex space-x-6 mt-6 text-2xl text-gray-300">
-              <a
-                href="#"
-                className="hover:text-white hover:scale-110 transition"
-                aria-label="Facebook"
-              >
-                <FaFacebookF />
-              </a>
-              <a
-                href="#"
-                className="hover:text-white hover:scale-110 transition"
-                aria-label="Instagram"
-              >
-                <FaInstagram />
-              </a>
-              <a
-                href="#"
-                className="hover:text-white hover:scale-110 transition"
-                aria-label="Twitter"
-              >
-                <FaTwitter />
-              </a>
+            <div className="flex space-x-4 mt-6">
+              {[FaFacebookF, FaInstagram, FaTwitter].map((Icon, i) => (
+                <a
+                  key={i}
+                  href="#"
+                  className="p-3 bg-white/10 rounded-full hover:bg-[#d4af37] hover:text-[#0e1732] transition transform hover:scale-110"
+                >
+                  <Icon />
+                </a>
+              ))}
             </div>
           </div>
         </div>
 
-        {/* Footer Bottom */}
-        <div className="mt-12 pt-8 border-t border-white text-center text-sm text-white">
+        <div className="mt-12 pt-6 border-t border-white/20 text-center text-sm text-white">
           <p>
             © {new Date().getFullYear()} HillNest Stays. All rights reserved.
           </p>
-          <p className="mt-2">Crafted with love in the hills of Uttarakhand.</p>
+          <p className="mt-1">Inspired by the beauty of Uttarakhand&apos;s hills.</p>
         </div>
       </div>
     </footer>

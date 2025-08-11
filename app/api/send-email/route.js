@@ -2,27 +2,36 @@ import nodemailer from "nodemailer";
 
 export async function POST(request) {
   try {
-    const { fullName, email, phone, message } = await request.json();
+    const { name, email, phone, message, roomName, roomPrice } =
+      await request.json();
 
     const transporter = nodemailer.createTransport({
       service: "gmail",
       auth: {
-        user: process.env.EMAIL_USER, // your Gmail address
-        pass: process.env.EMAIL_PASS, // app password
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS,
       },
     });
 
     const mailOptions = {
-      from: process.env.EMAIL_USER,
-      to: process.env.EMAIL_USER, // where you want to receive the mail
-      subject: `New Room Booking Inquiry from ${fullName}`,
-      text: `Name: ${fullName}\nEmail: ${email}\nPhone: ${
-        phone || "Not provided"
-      }\nMessage: ${message}`,
+      from: `HillNest Stays <${process.env.EMAIL_USER}>`,
+      to: process.env.EMAIL_USER,
+      subject: `New Room Booking Inquiry - ${roomName || "Unknown Room"}`,
+      text: `
+        Name: ${name}
+        Email: ${email}
+        Phone: ${phone || "Not provided"}
+        Room: ${roomName || "Not specified"}
+        Price: ₹${roomPrice || "Not specified"} /day
+        Message: ${message}
+      `,
       html: `
-        <p><strong>Name:</strong> ${fullName}</p>
+        <h2>New Room Booking Inquiry- ${roomName || "Unknown Room"}</h2>
+        <p><strong>Name:</strong> ${name}</p>
         <p><strong>Email:</strong> ${email}</p>
         <p><strong>Phone:</strong> ${phone || "Not provided"}</p>
+        <p><strong>Room:</strong> ${roomName || "Not specified"}</p>
+        <p><strong>Price:</strong> ₹${roomPrice || "Not specified"} /day</p>
         <p><strong>Message:</strong> ${message}</p>
       `,
     };

@@ -186,7 +186,12 @@ const RoomDetails = () => {
               </motion.button>
             </motion.div>
           </motion.section>
-          <Popup isOpen={isPopupOpen} onClose={() => setIsPopupOpen(false)} />
+          <Popup
+            isOpen={isPopupOpen}
+            onClose={() => setIsPopupOpen(false)}
+            roomName={room.name}
+            roomPrice={room.price}
+          />
 
           <motion.section
             variants={itemVariants}
@@ -209,7 +214,10 @@ const RoomDetails = () => {
           </motion.section>
         </motion.div>
       </div>
-      <motion.section variants={itemVariants} className="mt-24 font-serif px-20 py-20 shadow-2xl bg-[#0e1732]">
+      <motion.section
+        variants={itemVariants}
+        className="mt-24 font-serif px-20 py-20 shadow-2xl bg-[#0e1732]"
+      >
         <h2 className="text-3xl font-bold  text-white mb-8 text-center">
           Similar Rooms You Might Like
         </h2>
@@ -217,7 +225,7 @@ const RoomDetails = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
           {rooms
             .filter((r) => r.id !== room.id)
-            .sort(() => 1 - Math.random()) 
+            .sort(() => 1 - Math.random())
             .slice(0, 3)
             .map((similarRoom) => (
               <motion.div
@@ -261,8 +269,7 @@ const RoomDetails = () => {
             ))}
         </div>
       </motion.section>
-       <TestimonialsCarousel/>
-
+      <TestimonialsCarousel />
     </div>
   );
 };

@@ -54,7 +54,6 @@ const Rooms = () => {
     }
   }, [filteredRooms, totalPages, currentPage]);
 
-  // Animation variants
   const cardVariants = {
       hidden: { opacity: 0, y: 50 },
     visible: (i) => ({
@@ -72,7 +71,6 @@ const Rooms = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Banner */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -101,7 +99,6 @@ const Rooms = () => {
         </div>
       </motion.div>
 
-      {/* Search Bar */}
       <div className="px-4 sm:px-6 lg:px-8 py-8 max-w-7xl mx-auto">
         <motion.div
           variants={searchVariants}
@@ -121,7 +118,6 @@ const Rooms = () => {
           </div>
         </motion.div>
 
-        {/* Room Cards */}
         <motion.div
           className="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 font-serif"
           initial="hidden"
@@ -186,7 +182,6 @@ const Rooms = () => {
           </AnimatePresence>
         </motion.div>
 
-        {/* Pagination */}
         {filteredRooms.length > 0 && (
           <motion.div
             initial={{ opacity: 0 }}

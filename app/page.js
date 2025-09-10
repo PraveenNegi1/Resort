@@ -8,8 +8,6 @@ import ComfortSection from "@/components/Rooms";
 import RoomShowcase from "@/components/Ourrooms";
 import TestimonialsCarousel from "@/components/Testimonials";
 
-
-
 export default function Home() {
   return (
     <>
@@ -19,11 +17,12 @@ export default function Home() {
       <ComfortSection />
       <LocalAttraction />
       <Services />
-      <LaptopVideo />
+      <div className="w-full   md:h-[120vh]">
+        <LaptopVideo />
+      </div>
+
       <DiningSection />
-      <TestimonialsCarousel/>
-
-
+      <TestimonialsCarousel />
     </>
   );
 }

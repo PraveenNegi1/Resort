@@ -78,6 +78,7 @@ export default function LocalAttraction() {
   const [isVisible, setIsVisible] = useState(false);
   const componentRef = useRef(null);
 
+  // ✅ Intersection Observer (unchanged)
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -100,11 +101,20 @@ export default function LocalAttraction() {
     };
   }, []);
 
+  // ✅ Animation trigger
   useEffect(() => {
     setAnimateSlide(true);
     const timer = setTimeout(() => setAnimateSlide(false), 1000);
     return () => clearTimeout(timer);
   }, [currentSlide]);
+
+  // ✅ Auto-slide every 6s
+  useEffect(() => {
+    const autoSlide = setInterval(() => {
+      setCurrentSlide((prev) => (prev + 1) % attractions.length);
+    }, 6000); // 6s per slide
+    return () => clearInterval(autoSlide);
+  }, []);
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % attractions.length);
@@ -135,20 +145,23 @@ export default function LocalAttraction() {
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
           backgroundAttachment: "fixed",
+          transition: "background-image 1s ease-in-out", // ✅ smooth bg change
         }}
       >
         <div className="absolute inset-0 bg-gradient-to-br from-teal-900/50 to-purple-900/30 transition-opacity duration-1000 ease-[cubic-bezier(0.4,0,0.2,1)]"></div>
 
+        {/* Prev button */}
         <button
           onClick={prevSlide}
-          className="absolute left-8 md:left-28 top-1/2 transform -translate-y-1/2 bg-white/90 text-[#0e1732] p-4 rounded-full hover:bg-[#0e1732] hover:text-white transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] hover:scale-110 active:scale-95 focus:outline-none focus:ring-2 focus:ring-teal-400 z-20 shadow-lg"
+          className="absolute left-8 md:left-28 top-1/2 transform -translate-y-1/2 bg-white/90 text-[#0e1732] border border-[#0e1732] p-4 rounded-full hover:bg-[#0e1732] hover:text-white transition-all duration-500 ease-in-out hover:scale-110 active:scale-95 focus:outline-none focus:ring-2 focus:ring-teal-400 z-20 shadow-lg"
         >
           ←
         </button>
 
-        <div className="relative max-w-6xl w-full bg-white/95 backdrop-blur-sm shadow-xl rounded-xl overflow-hidden flex flex-col md:flex-row transition-all duration-300 hover:shadow-2xl hover:-translate-y-1">
+        <div className="relative max-w-6xl w-full bg-white/95 border border-[#0e1732] backdrop-blur-sm shadow-xl rounded-xl overflow-hidden flex flex-col md:flex-row transition-all duration-700 ease-in-out hover:shadow-2xl hover:-translate-y-1">
+          {/* Left image */}
           <div
-            className={`md:w-1/2 relative h-96 transition-all duration-1000 ease-[cubic-bezier(0.4,0,0.2,1)] ${
+            className={`md:w-1/2 relative h-96 transition-all duration-1000 ease-in-out ${
               isVisible
                 ? animateSlide
                   ? "animate-slide-in-left"
@@ -161,11 +174,13 @@ export default function LocalAttraction() {
               alt={attractions[currentSlide].title}
               layout="fill"
               objectFit="cover"
-              className="rounded-l-xl transition-transform duration-1000 ease-[cubic-bezier(0.4,0,0.2,1)] hover:scale-105"
+              className="rounded-l-xl transition-transform duration-1000 ease-in-out hover:scale-105"
             />
           </div>
+
+          {/* Right content */}
           <div
-            className={`md:w-1/2 p-10 flex flex-col justify-between transition-all duration-1000 ease-[cubic-bezier(0.4,0,0.2,1)] ${
+            className={`md:w-1/2 p-10 flex flex-col justify-between transition-all duration-1000 ease-in-out ${
               isVisible
                 ? animateSlide
                   ? "animate-slide-in-right"
@@ -182,21 +197,21 @@ export default function LocalAttraction() {
                 {attractions[currentSlide].title}
               </h2>
               <p
-                className={`text-gray-700 mb-6 text-lg  leading-relaxed ${
+                className={`text-gray-700 mb-6 text-lg leading-relaxed ${
                   animateSlide ? "animate-text-in delay-100" : ""
                 }`}
               >
                 {attractions[currentSlide].description}
               </p>
               <h3
-                className={`text-xl font-semibold  text-gray-900 mb-3 ${
+                className={`text-xl font-semibold text-gray-900 mb-3 ${
                   animateSlide ? "animate-text-in delay-200" : ""
                 }`}
               >
                 Highlights
               </h3>
               <ul
-                className={`list-disc list-inside text-gray-600 text-base  ${
+                className={`list-disc list-inside text-gray-600 text-base ${
                   animateSlide ? "animate-text-in delay-300" : ""
                 }`}
               >
@@ -210,13 +225,15 @@ export default function LocalAttraction() {
           </div>
         </div>
 
+        {/* Next button */}
         <button
           onClick={nextSlide}
-          className="absolute right-8 md:right-28 top-1/2 transform -translate-y-1/2 bg-white/90 text-[#0e1732] p-4 rounded-full hover:bg-[#0e1732] hover:text-white transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] hover:scale-110 active:scale-95 focus:outline-none focus:ring-2 focus:ring-teal-400 z-20 shadow-lg"
+          className="absolute right-8 md:right-28 top-1/2 transform -translate-y-1/2 bg-white/90 text-[#0e1732] p-4 rounded-full hover:bg-[#0e1732] hover:text-white border border-[#0e1732] transition-all duration-500 ease-in-out hover:scale-110 active:scale-95 focus:outline-none focus:ring-2 focus:ring-teal-400 z-20 shadow-lg"
         >
           →
         </button>
 
+        {/* Dots */}
         <div className="absolute bottom-8 flex space-x-2 z-20">
           {attractions.map((_, index) => (
             <button
@@ -231,15 +248,8 @@ export default function LocalAttraction() {
           ))}
         </div>
 
+        {/* Animations */}
         <style jsx>{`
-          @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500&display=swap");
-
-          .font-playfair {
-            font-family: "Playfair Display", serif;
-          }
-          .font-inter {
-            font-family: "Inter", sans-serif;
-          }
           @keyframes slide-in-left {
             from {
               transform: translateX(-100%);
@@ -270,25 +280,14 @@ export default function LocalAttraction() {
               opacity: 1;
             }
           }
-          @keyframes dot-pulse {
-            0% {
-              transform: scale(1);
-            }
-            50% {
-              transform: scale(1.25);
-            }
-            100% {
-              transform: scale(1);
-            }
-          }
           .animate-slide-in-left {
-            animation: slide-in-left 1s cubic-bezier(0.4, 0, 0.2, 1);
+            animation: slide-in-left 1s ease-in-out;
           }
           .animate-slide-in-right {
-            animation: slide-in-right 1s cubic-bezier(0.4, 0, 0.2, 1);
+            animation: slide-in-right 1s ease-in-out;
           }
           .animate-text-in {
-            animation: text-in 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+            animation: text-in 0.8s ease-in-out;
           }
           .delay-100 {
             animation-delay: 0.1s;
@@ -298,15 +297,6 @@ export default function LocalAttraction() {
           }
           .delay-300 {
             animation-delay: 0.3s;
-          }
-          @media (prefers-reduced-motion: reduce) {
-            .animate-slide-in-left,
-            .animate-slide-in-right,
-            .animate-text-in {
-              animation: none;
-              transform: translateX(0) translateY(0);
-              opacity: 1;
-            }
           }
         `}</style>
       </div>

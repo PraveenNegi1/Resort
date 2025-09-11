@@ -2,13 +2,14 @@
 
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import { collection, addDoc, Timestamp } from "firebase/firestore";
+import { db } from "@/lib/firebase";
 
 const Popup = ({
   isOpen,
   onClose,
   title = "Contact Us",
   subtitle = "Let's discuss your perfect stay",
-  apiEndpoint = "/api/send-email",
   roomName,
   roomPrice,
 }) => {
@@ -24,27 +25,20 @@ const Popup = ({
       email: form.email.value,
       phone: form.phone.value,
       message: form.message.value,
-      roomName, // ✅ added
-      roomPrice, // ✅ added
+      roomName,
+      roomPrice,
+      createdAt: Timestamp.now(),
     };
 
     try {
-      const res = await fetch(apiEndpoint, {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(data),
-      });
+      await addDoc(collection(db, "leads"), data);
 
-      if (res.ok) {
-        alert("Message sent successfully!");
-        form.reset();
-        onClose();
-      } else {
-        alert("Failed to send message.");
-      }
+      alert("Lead saved successfully!");
+      form.reset();
+      onClose();
     } catch (error) {
-      console.error("Error:", error);
-      alert("An error occurred.");
+      console.error("Error saving lead:", error);
+      alert("Failed to save lead.");
     } finally {
       setIsLoading(false);
     }
@@ -189,11 +183,11 @@ const Popup = ({
                     }}
                     className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full"
                   />
-                  Sending...
+                  Saving...
                 </>
               ) : (
                 <>
-                  Send Message{" "}
+                  Save Lead{" "}
                   <motion.span
                     animate={{ x: [0, 5, 0] }}
                     transition={{ duration: 1.5, repeat: Infinity }}

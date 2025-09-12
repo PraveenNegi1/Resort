@@ -41,7 +41,7 @@ const data = [
     rooms: 2,
 
     bed: "2 Queen beds",
-    capacity: "1-4 Persons",
+    capacity: "3-5 Persons",
     view: "Garden view",
     recommend: "Ideal for couples or small families",
     roomType: "DELUXE ROOM",

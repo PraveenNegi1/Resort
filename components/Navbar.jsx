@@ -63,19 +63,20 @@ export default function Navbar() {
         </button>
       </div>
 
-      {/* Mobile Sidebar */}
       {isOpen && (
         <>
+          {/* Overlay */}
           <div
             className="fixed inset-0 z-40  bg-opacity-40"
             onClick={toggleMenu}
           ></div>
 
-          <div className="fixed top-0 left-0 h-full w-64 bg-[#0e1732] text-white p-6 z-50 shadow-xl transform transition-transform duration-300 ease-in-out">
+          {/* Sidebar */}
+          <div className="fixed top-0 right-0 h-full w-64 bg-[#0e1732] text-white p-6 z-50 shadow-xl transform transition-transform duration-300 ease-in-out">
             <div className="mb-6 flex items-center justify-between">
               <h2 className="text-xl font-bold">Menu</h2>
               <button onClick={toggleMenu} aria-label="Close menu">
-                
+                <X size={28} /> {/* 👈 Cross button */}
               </button>
             </div>
             <nav className="space-y-4">

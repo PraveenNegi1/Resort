@@ -11,17 +11,16 @@ export default function LaptopVideo() {
 
   const { scrollYProgress } = useScroll({
     target: containerRef,
-    offset: ["start start", "end end"], // span full section
+    offset: ["start start", "end end"],
   });
 
-  // numeric MotionValues for transforms
+  // Laptop animations
   const laptopRotateY = useTransform(scrollYProgress, [0, 1], [15, 0]);
   const laptopRotateX = useTransform(scrollYProgress, [0, 1], [5, 0]);
   const laptopTranslateY = useTransform(scrollYProgress, [0, 1], [-20, 0]);
   const laptopScale = useTransform(scrollYProgress, [0, 1], [0.85, 1]);
   const screenRotateX = useTransform(scrollYProgress, [0, 1], [-95, 0]);
 
-  // shadow properties
   const shadowOpacity = useTransform(scrollYProgress, [0, 1], [0, 0.6]);
   const shadowScale = useTransform(scrollYProgress, [0, 1], [1, 1.5]);
   const shadowBox = useTransform(
@@ -30,10 +29,10 @@ export default function LaptopVideo() {
     ["0px 6px 8px rgba(0,0,0,0)", "0px 18px 36px rgba(0,0,0,0.45)"]
   );
 
-  // play video once open enough — subscribe in useEffect and cleanup
+  // Desktop video autoplay on scroll
   useEffect(() => {
     const unsubscribe = scrollYProgress.on("change", (v) => {
-      if (v > 0.95 && !isVideoPlaying && videoRef.current) {
+      if (v > 0.1 && videoRef.current && videoRef.current.paused) {
         videoRef.current
           .play()
           .then(() => setIsVideoPlaying(true))
@@ -41,28 +40,23 @@ export default function LaptopVideo() {
       }
     });
     return () => unsubscribe && unsubscribe();
-  }, [scrollYProgress, isVideoPlaying]);
+  }, [scrollYProgress]);
 
-  const handleManualPlay = () => {
-    if (videoRef.current) {
+  // Mobile autoplay on mount
+  useEffect(() => {
+    if (videoRef.current && videoRef.current.paused) {
       videoRef.current
         .play()
-        .then(() => {
-          setVideoError(false);
-          setIsVideoPlaying(true);
-        })
-        .catch((err) => {
-          console.error("Manual play failed:", err);
-        });
+        .then(() => setIsVideoPlaying(true))
+        .catch(() => setVideoError(true));
     }
-  };
+  }, []);
 
   return (
-    // 🔥 ADD this section wrapper for scroll space
     <section ref={containerRef} className="relative h-[200vh] bg-white">
-      {/* 🔥 sticky wrapper keeps laptop pinned until open */}
       <div className="sticky top-0 h-screen flex flex-col justify-center items-center">
-        <div className="hidden md:block font-serif bg-white pb-20 w-full">
+        <div className="font-serif bg-white pb-20 w-full">
+          {/* Header */}
           <div className="text-center pt-20 pb-14">
             <h1 className="text-4xl md:text-5xl font-bold text-[#0e1732] mb-6">
               HillNest Stays Hotels
@@ -74,13 +68,14 @@ export default function LaptopVideo() {
             </p>
           </div>
 
-          <div className="h-[100vh] flex items-center justify-center ">
+          {/* Desktop Laptop */}
+          <div className="hidden md:flex h-[100vh] items-center justify-center">
             <div className="w-full max-w-7xl px-4 mt-32">
               <div
                 className="relative w-full max-w-5xl mx-auto mt-80"
                 style={{ perspective: "2000px" }}
               >
-                {/* Laptop base (animated with MotionValues) */}
+                {/* Laptop base */}
                 <motion.div
                   style={{
                     rotateY: laptopRotateY,
@@ -102,7 +97,7 @@ export default function LaptopVideo() {
                   />
                 </motion.div>
 
-                {/* Screen */}
+                {/* Laptop Screen */}
                 <motion.div
                   style={{
                     rotateX: screenRotateX,
@@ -114,6 +109,7 @@ export default function LaptopVideo() {
                 >
                   <div className="relative w-full h-full rounded-t-2xl p-4 border-2">
                     <div className="relative w-full h-full rounded-lg overflow-hidden">
+                      {/* Laptop top bar */}
                       <div className="absolute top-0 left-0 right-0 flex items-center justify-center z-30">
                         <div className="relative w-6 h-4 mr-4">
                           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-3 h-3 bg-gray-600 rounded-full">
@@ -123,37 +119,60 @@ export default function LaptopVideo() {
                         <div className="w-2 h-2 bg-gray-700 rounded-full mr-2 opacity-60"></div>
                       </div>
 
+                      {/* Laptop video */}
                       <div className="absolute inset-0 top-8 rounded-b-lg overflow-hidden">
-                        {videoError ? (
-                          <div
-                            className="w-full h-full flex items-center justify-center cursor-pointer bg-black"
-                            onClick={handleManualPlay}
-                          >
-                            <p className="text-white text-sm">Click to Play</p>
-                          </div>
-                        ) : (
-                          <video
-                            ref={videoRef}
-                            className="w-full h-full object-cover cursor-pointer"
-                            src="/vedio/hotelvideo1.mp4"
-                            muted
-                            loop
-                            playsInline
-                            onClick={handleManualPlay}
-                          />
-                        )}
+                        <video
+                          ref={videoRef}
+                          className="w-full h-full object-cover"
+                          src="/vedio/hotelvideo1.mp4"
+                          muted
+                          loop
+                          playsInline
+                          autoPlay
+                        />
                         <div className="absolute inset-0 bg-gradient-to-br from-white via-transparent to-transparent opacity-10 pointer-events-none"></div>
                         <div className="absolute inset-0 border border-gray-700 rounded-b-lg pointer-events-none"></div>
                       </div>
                     </div>
                   </div>
-                  <div className="absolute bottom-0 left-1/2 text-white text-xs tracking-wider z-30">
+                  <div className="absolute bottom-0 left-1/2 -translate-x-1/2 text-white text-xs tracking-wider z-30">
                     HillNest
                   </div>
                 </motion.div>
               </div>
-
               <div className="bottom-0 left-0 right-0 h-6 bg-gray-900 rounded-b-xl"></div>
+            </div>
+          </div>
+
+          {/* Mobile Phone Design */}
+          <div className="block md:hidden px-4">
+            <div className="relative mx-auto w-[280px] h-[560px] rounded-3xl border-6 border-gray-800 shadow-xl bg-black overflow-hidden">
+              {/* Notch with camera dots */}
+              <div className="absolute top-1 left-1/2 -translate-x-1/2 w-24 h-8 bg-gray-900 rounded-2xl z-20 flex items-center justify-center gap-2">
+                <div className="w-3 h-3 bg-gray-800 rounded-full relative">
+                  <div className="absolute inset-0 m-auto w-1.5 h-1.5 bg-white rounded-full opacity-70"></div>
+                </div>
+                <div className="w-2 h-2 bg-gray-700 rounded-full"></div>
+              </div>
+
+              {/* Side Buttons */}
+              <div className="absolute top-20 -left-4 w-1.5 h-12 bg-gray-700 rounded-r-md"></div>
+              <div className="absolute top-40 -left-1 w-1.5 h-20 bg-gray-700 rounded-r-md"></div>
+              <div className="absolute top-24 -right-1 w-1.5 h-16 bg-gray-700 rounded-l-md"></div>
+
+              {/* Mobile video */}
+              <video
+                ref={videoRef}
+                className="w-full h-full object-cover"
+                src="/vedio/hotelvideo1.mp4"
+                muted
+                loop
+                playsInline
+                autoPlay
+              />
+
+              {/* Bottom Speaker Line */}
+              <div className="absolute bottom-2 left-1/2 -translate-x-1/2 w-24 h-1 bg-gray-700 rounded-full"></div>
             </div>
           </div>
         </div>

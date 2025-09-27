@@ -29,7 +29,6 @@ export default function LaptopVideo() {
     ["0px 6px 8px rgba(0,0,0,0)", "0px 18px 36px rgba(0,0,0,0.45)"]
   );
 
-  // Desktop video autoplay on scroll
   useEffect(() => {
     const unsubscribe = scrollYProgress.on("change", (v) => {
       if (v > 0.1 && videoRef.current && videoRef.current.paused) {
@@ -42,7 +41,6 @@ export default function LaptopVideo() {
     return () => unsubscribe && unsubscribe();
   }, [scrollYProgress]);
 
-  // Mobile autoplay on mount
   useEffect(() => {
     if (videoRef.current && videoRef.current.paused) {
       videoRef.current
@@ -68,7 +66,6 @@ export default function LaptopVideo() {
             </p>
           </div>
 
-          {/* Desktop Laptop */}
           <div className="hidden md:flex h-[100vh] items-center justify-center">
             <div className="w-full max-w-7xl px-4 mt-32">
               <div
@@ -97,7 +94,6 @@ export default function LaptopVideo() {
                   />
                 </motion.div>
 
-                {/* Laptop Screen */}
                 <motion.div
                   style={{
                     rotateX: screenRotateX,
@@ -147,7 +143,6 @@ export default function LaptopVideo() {
           {/* Mobile Phone Design */}
           <div className="block md:hidden px-4">
             <div className="relative mx-auto w-[280px] h-[560px] rounded-3xl border-6 border-gray-800 shadow-xl bg-black overflow-hidden">
-              {/* Notch with camera dots */}
               <div className="absolute top-1 left-1/2 -translate-x-1/2 w-24 h-8 bg-gray-900 rounded-2xl z-20 flex items-center justify-center gap-2">
                 <div className="w-3 h-3 bg-gray-800 rounded-full relative">
                   <div className="absolute inset-0 m-auto w-3 h-3 bg-white rounded-full opacity-70"></div>
@@ -155,12 +150,10 @@ export default function LaptopVideo() {
                 <div className="w-2 h-2 bg-gray-700 rounded-full"></div>
               </div>
 
-              {/* Side Buttons */}
               <div className="absolute top-20 -left-4 w-1.5 h-12 bg-gray-700 rounded-r-md"></div>
               <div className="absolute top-40 -left-1 w-1.5 h-20 bg-gray-700 rounded-r-md"></div>
               <div className="absolute top-24 -right-1 w-1.5 h-16 bg-gray-700 rounded-l-md"></div>
 
-              {/* Mobile video */}
               <video
                 ref={videoRef}
                 className="w-full h-full object-cover"
@@ -171,7 +164,6 @@ export default function LaptopVideo() {
                 autoPlay
               />
 
-              {/* Bottom Speaker Line */}
               <div className="absolute bottom-2 left-1/2 -translate-x-1/2 w-24 h-1 bg-gray-700 rounded-full"></div>
             </div>
           </div>

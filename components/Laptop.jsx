@@ -150,7 +150,7 @@ export default function LaptopVideo() {
               {/* Notch with camera dots */}
               <div className="absolute top-1 left-1/2 -translate-x-1/2 w-24 h-8 bg-gray-900 rounded-2xl z-20 flex items-center justify-center gap-2">
                 <div className="w-3 h-3 bg-gray-800 rounded-full relative">
-                  <div className="absolute inset-0 m-auto w-1.5 h-1.5 bg-white rounded-full opacity-70"></div>
+                  <div className="absolute inset-0 m-auto w-3 h-3 bg-white rounded-full opacity-70"></div>
                 </div>
                 <div className="w-2 h-2 bg-gray-700 rounded-full"></div>
               </div>

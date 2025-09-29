@@ -51,26 +51,15 @@ export default function LaptopVideo() {
   }, []);
 
   return (
-    <section ref={containerRef} className="relative h-[200vh] bg-white">
+    <section ref={containerRef} className="relative h-[210vh] bg-white">
       <div className="sticky top-0 h-screen flex flex-col justify-center items-center">
-        <div className="font-serif bg-white pb-20 w-full">
-          {/* Header */}
-          <div className="text-center pt-20 pb-14">
-            <h1 className="text-4xl md:text-5xl font-bold text-[#0e1732] mb-6">
-              HillNest Stays Hotels
-            </h1>
-            <p className="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto px-4 leading-relaxed">
-              Experience luxury at its finest with stunning ocean views,
-              world-class amenities, and unparalleled comfort at HillNest Stays
-              Hotels.
-            </p>
-          </div>
-
+        <div className="font-serif bg-white pt-28 w-full">
+         
           <div className="hidden md:flex h-[100vh] items-center justify-center">
             <div className="w-full max-w-7xl px-4 mt-32">
               <div
                 className="relative w-full max-w-5xl mx-auto mt-80"
-                style={{ perspective: "2000px" }}
+                style={{ perspective: "2400px" }}
               >
                 {/* Laptop base */}
                 <motion.div

@@ -88,7 +88,7 @@ export default function Footer() {
               </p>
               <p className="flex items-center gap-3">
                 <FaEnvelope className="text-[#d4af37]" />{" "}
-                contact@hillneststays.com
+               praveennegi700@gmail.com
               </p>
               <p className="flex items-center gap-3">
                 <FaMapMarkerAlt className="text-[#d4af37]" /> HillNest Stays,

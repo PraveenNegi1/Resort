@@ -7,6 +7,7 @@ import DiningSection from "@/components/Dishes";
 import ComfortSection from "@/components/Rooms";
 import RoomShowcase from "@/components/Ourrooms";
 import TestimonialsCarousel from "@/components/Testimonials";
+import FormOtp from "@/components/FormOtp";
 
 export default function Home() {
   return (
@@ -23,6 +24,7 @@ export default function Home() {
 
       <DiningSection />
       <TestimonialsCarousel />
+      {/* <FormOtp/> */}
     </>
   );
 }

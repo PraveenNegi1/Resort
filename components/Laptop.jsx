@@ -58,7 +58,7 @@ export default function LaptopVideo() {
           <div className="hidden md:flex h-[100vh] items-center justify-center">
             <div className="w-full max-w-7xl px-4 mt-32">
               <div
-                className="relative w-full max-w-5xl mx-auto mt-80"
+                className="relative w-full max-w-7xl mx-auto mt-80"
                 style={{ perspective: "2400px" }}
               >
                 {/* Laptop base */}
@@ -90,7 +90,7 @@ export default function LaptopVideo() {
                     backfaceVisibility: "hidden",
                     transformStyle: "preserve-3d",
                   }}
-                  className="absolute bottom-0 left-0 right-0 mx-auto w-full max-w-5xl h-[82vh] bg-gray-900 rounded-t-2xl shadow-2xl"
+                  className="absolute bottom-0 left-0 right-0 mx-auto w-full max-w-5xl h-[78vh] bg-gray-800 rounded-t-2xl shadow-2xl"
                 >
                   <div className="relative w-full h-full rounded-t-2xl p-4 border-2">
                     <div className="relative w-full h-full rounded-lg overflow-hidden">
@@ -125,14 +125,14 @@ export default function LaptopVideo() {
                   </div>
                 </motion.div>
               </div>
-              <div className="bottom-0 left-0 right-0 h-6 bg-gray-900 rounded-b-xl"></div>
+              <div className="bottom-0 left-0 right-0 h-6 bg-gray-800 rounded-b-xl"></div>
             </div>
           </div>
 
           {/* Mobile Phone Design */}
           <div className="block md:hidden px-4">
             <div className="relative mx-auto w-[280px] h-[560px] rounded-3xl border-6 border-gray-800 shadow-xl bg-black overflow-hidden">
-              <div className="absolute top-1 left-1/2 -translate-x-1/2 w-24 h-8 bg-gray-900 rounded-2xl z-20 flex items-center justify-center gap-2">
+              <div className="absolute top-1 left-1/2 -translate-x-1/2 w-24 h-8 bg-gray-800 rounded-2xl z-20 flex items-center justify-center gap-2">
                 <div className="w-3 h-3 bg-gray-800 rounded-full relative">
                   <div className="absolute inset-0 m-auto w-3 h-3 bg-white rounded-full opacity-70"></div>
                 </div>

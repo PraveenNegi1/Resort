@@ -21,62 +21,32 @@ const ContactPage = () => {
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
+// ...existing imports...
+// Remove Firebase imports
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  setIsSubmitting(true);
 
-    try {
-      // Save to Firebase
-      await addDoc(collection(db, "contacts"), {
-        ...formData,
-        createdAt: serverTimestamp(),
-      });
-
-      // Send Email
-      const emailRes = await fetch("/api/send-email", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
-
-      const emailData = await emailRes.json();
-      if (!emailRes.ok) {
-        throw new Error(emailData.message || "Email send failed");
-      }
-
-      // Send to Airtable (optional)
-      const airtableRes = await fetch("/api/send-to-airtable", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
-
-      const airtableData = await airtableRes.json();
-      if (!airtableRes.ok) {
-        toast.error("Airtable failed: " + airtableData.message);
-      } else {
-        toast.success("Saved in Airtable!");
-      }
-
+  try {
+    const res = await fetch("/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+    });
+    const data = await res.json();
+    if (res.ok) {
       toast.success("Query sent successfully!");
       setFormData({ fullName: "", email: "", phone: "", message: "" });
-
-      setTimeout(() => {
-        router.push("/");
-      }, 1500);
-    } catch (error) {
-      console.error(error);
-      toast.error("Error: " + error.message);
-    } finally {
-      setIsSubmitting(false);
+    } else {
+      toast.error(data.message);
     }
-  };
-
+  } catch (error) {
+    toast.error("Error: " + error.message);
+  } finally {
+    setIsSubmitting(false);
+  }
+};
   return (
     <div className="min-h-screen bg-white py-12 px-6 pt-40">
       <motion.div

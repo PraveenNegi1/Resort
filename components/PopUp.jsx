@@ -15,34 +15,72 @@ const Popup = ({
 }) => {
   const [isLoading, setIsLoading] = useState(false);
 
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+  //   setIsLoading(true);
+
+  //   const form = e.target;
+  //   const data = {
+  //     name: form.name.value,
+  //     email: form.email.value,
+  //     phone: form.phone.value,
+  //     message: form.message.value,
+  //     roomName,
+  //     roomPrice,
+  //     createdAt: Timestamp.now(),
+  //   };
+
+  //   try {
+  //     await addDoc(collection(db, "leads"), data);
+
+  //     alert("Lead saved successfully!");
+  //     form.reset();
+  //     onClose();
+  //   } catch (error) {
+  //     console.error("Error saving lead:", error);
+  //     alert("Failed to save lead.");
+  //   } finally {
+  //     setIsLoading(false);
+  //   }
+  // };
+
   const handleSubmit = async (e) => {
-    e.preventDefault();
-    setIsLoading(true);
+  e.preventDefault();
+  setIsLoading(true);
 
-    const form = e.target;
-    const data = {
-      name: form.name.value,
-      email: form.email.value,
-      phone: form.phone.value,
-      message: form.message.value,
-      roomName,
-      roomPrice,
-      createdAt: Timestamp.now(),
-    };
+  const form = e.target;
+  const data = {
+    name: form.name.value,
+    email: form.email.value,
+    phone: form.phone.value,
+    message: form.message.value,
+    roomName,
+    roomPrice,
+  };
 
-    try {
-      await addDoc(collection(db, "leads"), data);
+  try {
+    const res = await fetch("/api/lead", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    });
 
-      alert("Lead saved successfully!");
+    const result = await res.json();
+
+    if (res.ok) {
+      alert(result.message);
       form.reset();
       onClose();
-    } catch (error) {
-      console.error("Error saving lead:", error);
-      alert("Failed to save lead.");
-    } finally {
-      setIsLoading(false);
+    } else {
+      alert(result.message || "Failed to save lead");
     }
-  };
+  } catch (error) {
+    console.error("Error saving lead:", error);
+    alert("Failed to save lead");
+  } finally {
+    setIsLoading(false);
+  }
+};
 
   const modalVariants = {
     hidden: { opacity: 0, scale: 0.8, y: 50 },

@@ -39,12 +39,12 @@ export default function GalleryPage() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50 font-serif">
-      <div className="relative z-10 px-4 py-16 sm:px-6 lg:px-12">
+      <div className="relative z-10 px-4 py-16 sm:px-6 lg:px-12 mt-10">
         <div className="text-center mb-20">
-          <h1 className="text-5xl font-bold bg-gradient-to-r from-blue-700 to-purple-600 bg-clip-text text-transparent mb-6">
+          <h1 className="text-3xl font-bold bg-gradient-to-r from-blue-700 to-purple-600 bg-clip-text text-transparent mb-6">
             Visual Stories
           </h1>
-          <p className="text-lg text-slate-700 max-w-2xl mx-auto leading-relaxed">
+          <p className="md:text-lg text-[16px]  text-slate-700 max-w-2xl mx-auto leading-relaxed">
             A visual journey through our finest rooms—designed for your ultimate
             comfort and luxury.
           </p>

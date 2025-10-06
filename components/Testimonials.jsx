@@ -131,13 +131,13 @@ const TestimonialsCarousel = () => {
 
       <div className="max-w-6xl mx-auto px-4 relative z-10 font-serif">
         <div className="text-center mb-16">
-          <h2 className="text-5xl font-bold text-[#0e1732] mb-4 font-serif">
+          <h2 className="md:text-3xl text-2xl font-bold text-[#0e1732] mb-4 font-serif">
             What Our Guests Say
           </h2>
           <p className="text-xl text-gray-800 max-w-2xl mx-auto">
             Discover the experiences that make our resort truly special
           </p>
-          <div className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 mx-auto mt-6 rounded-full"></div>
+          <div className="w-24 h-1 bg-gradient-to-r from-[#0e1732] to-[#28418b] mx-auto mt-6 rounded-full"></div>
         </div>
 
         <div
@@ -161,7 +161,7 @@ const TestimonialsCarousel = () => {
                   <div className="flex flex-col lg:flex-row items-center h-full gap-8">
                     <div className="flex-shrink-0">
                       <div className="relative">
-                        <div className="w-32 h-32 rounded-full overflow-hidden shadow-xl ring-4 ring-white">
+                        <div className="md:w-32 md:h-32 w-16 h-16 rounded-full overflow-hidden shadow-xl ring-4 ring-white">
                           <img
                             src={testimonial.image}
                             alt={testimonial.name}
@@ -175,8 +175,8 @@ const TestimonialsCarousel = () => {
                     </div>
 
                     <div className="flex-1 text-center lg:text-left">
-                      <div className="mb-4">
-                        <h3 className="text-2xl font-bold text-white mb-1">
+                      <div className="mb-4 ">
+                        <h3 className="text-[16px] font-bold text-white mb-1">
                           {testimonial.name}
                         </h3>
                         <p className="text-sm text-white uppercase tracking-wide">
@@ -186,7 +186,7 @@ const TestimonialsCarousel = () => {
 
                       <StarRating rating={testimonial.rating} />
 
-                      <p className="text-white text-lg  max-w-2xl">
+                      <p className="text-white text-lg  text-[14px] md:text-[16px] max-w-2xl">
                         "{testimonial.review}"
                       </p>
                     </div>

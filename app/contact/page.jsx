@@ -21,8 +21,7 @@ const ContactPage = () => {
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
-// ...existing imports...
-// Remove Firebase imports
+
 
 const handleSubmit = async (e) => {
   e.preventDefault();

@@ -5,7 +5,7 @@ export default function DiningSection() {
   return (
     <div className="bg-[#F1EDE6]">
       <div className="w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 font-serif">
-        <h1 className="text-5xl font-semibold  text-[#0e1732] font-serif text-center mb-8">
+        <h1 className="text-3xl font-semibold  text-[#0e1732] font-serif text-center mb-8">
           Dining Area
         </h1>
         <div className="bg-white  rounded-lg border border-gray-200 shadow-lg p-6 flex flex-col md:flex-row items-center">
@@ -20,7 +20,7 @@ export default function DiningSection() {
           </div>
 
           <div className="w-full md:w-1/2">
-            <h2 className="text-3xl font-bold text-[#0e1732] mb-2">
+            <h2 className="text-2xl font-bold text-[#0e1732] mb-2">
               Exquisite Dining Experience
             </h2>
             <p className="text-gray-600 mb-4">

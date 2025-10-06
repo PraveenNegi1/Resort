@@ -132,7 +132,7 @@ export default function LocalAttraction() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <h1 className="text-4xl md:text-5xl font-serif text-center mb-12 pt-12 text-[#0e1732]">
+      <h1 className="text-3xl md:text-4xl font-serif text-center mb-12 pt-12 text-[#0e1732]">
         Top Local Attractions
         <span className="text-black"> to Explore</span>
       </h1>
@@ -145,12 +145,11 @@ export default function LocalAttraction() {
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
           backgroundAttachment: "fixed",
-          transition: "background-image 1s ease-in-out", // ✅ smooth bg change
+          transition: "background-image 1s ease-in-out", 
         }}
       >
         <div className="absolute inset-0 bg-gradient-to-br from-teal-900/50 to-purple-900/30 transition-opacity duration-1000 ease-[cubic-bezier(0.4,0,0.2,1)]"></div>
 
-        {/* Prev button */}
         <button
           onClick={prevSlide}
           className="absolute left-8 md:left-28 top-1/2 transform -translate-y-1/2 bg-white/90 text-[#0e1732] border border-[#0e1732] p-4 rounded-full hover:bg-[#0e1732] hover:text-white transition-all duration-500 ease-in-out hover:scale-110 active:scale-95 focus:outline-none focus:ring-2 focus:ring-teal-400 z-20 shadow-lg"
@@ -190,7 +189,7 @@ export default function LocalAttraction() {
           >
             <div>
               <h2
-                className={`text-4xl font-bold Merriweather text-[#0e1732] mb-4 tracking-tight ${
+                className={`text-2xl pt-6 font-bold Merriweather text-[#0e1732] mb-4 tracking-tight ${
                   animateSlide ? "animate-text-in" : ""
                 }`}
               >

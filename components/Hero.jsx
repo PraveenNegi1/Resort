@@ -75,10 +75,10 @@ export default function Home() {
 
       
       <section className="bg-[#0e1732] py-16 px-4 sm:px-8 md:px-20 text-center Merriweather ">
-        <h2 className="text-3xl md:text-4xl text-white mb-8">
+        <h2 className="text-2xl md:text-4xl text-white mb-8">
           Why Choose HillNest Stays?
         </h2>
-        <div className="max-w-4xl mx-auto text-white text-lg leading-relaxed">
+        <div className="max-w-4xl mx-auto text-[16px] text-white text-lg leading-relaxed">
           <p className="mb-4">
             At HillNest Stays, we blend luxury with nature. Whether you're
             waking up to birdsong, enjoying fresh organic meals, or soaking in

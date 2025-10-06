@@ -2,11 +2,28 @@ import pool from "@/lib/db";
 
 export async function POST(request) {
   try {
-    const { name, email, phone, message, roomName, roomPrice } = await request.json();
+    const { name, email, phone, message, roomName, roomPrice } =
+      await request.json();
 
     if (!name || !email || !message) {
-      return Response.json({ message: "Missing required fields" }, { status: 400 });
+      return Response.json(
+        { message: "Missing required fields" },
+        { status: 400 }
+      );
     }
+
+    await pool.query(`
+      CREATE TABLE IF NOT EXISTS leads (
+        id SERIAL PRIMARY KEY,
+        name VARCHAR(255),
+        email VARCHAR(255),
+        phone VARCHAR(20),
+        message TEXT,
+        room_name VARCHAR(255),
+        room_price NUMERIC,
+        created_at TIMESTAMP DEFAULT NOW()
+      )
+    `);
 
     const query = `
       INSERT INTO leads (name, email, phone, message, room_name, room_price)
@@ -18,7 +35,10 @@ export async function POST(request) {
     const result = await pool.query(query, values);
 
     return Response.json(
-      { id: result.rows[0].id, message: "Lead saved successfully in postgressSql!" },
+      {
+        id: result.rows[0].id,
+        message: "Lead saved successfully in PostgresSQL!",
+      },
       { status: 200 }
     );
   } catch (error) {

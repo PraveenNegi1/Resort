@@ -131,7 +131,7 @@ export default function LocalAttraction() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-white">
       <h1 className="text-3xl md:text-4xl font-serif text-center mb-12 pt-12 text-[#0e1732]">
         Top Local Attractions
         <span className="text-black"> to Explore</span>
@@ -145,7 +145,7 @@ export default function LocalAttraction() {
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
           backgroundAttachment: "fixed",
-          transition: "background-image 1s ease-in-out", 
+          transition: "background-image 1s ease-in-out",
         }}
       >
         <div className="absolute inset-0 bg-gradient-to-br from-teal-900/50 to-purple-900/30 transition-opacity duration-1000 ease-[cubic-bezier(0.4,0,0.2,1)]"></div>

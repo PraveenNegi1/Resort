@@ -36,9 +36,9 @@ export default function FormOtp() {
   const verifyOtp = () => {
     if (otp === serverOtp) {
       setVerified(true);
-      alert("✅ OTP Verified Successfully!");
+      alert(" OTP Verified Successfully!");
     } else {
-      alert("❌ Invalid OTP");
+      alert(" Invalid OTP");
     }
   };
 

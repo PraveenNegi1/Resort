@@ -25,7 +25,6 @@ export default function Home() {
 
   return (
     <div className="font-sans text-gray-800">
-      {/* Hero Section */}
       <section className="relative h-screen overflow-hidden">
         {backgroundImages.map((img, index) => (
           <div
@@ -60,7 +59,6 @@ export default function Home() {
           </Link>
         </div>
 
-        {/* Custom CSS for zoom animation */}
         <style jsx>{`
           @keyframes zoomIn {
             0% {
@@ -120,7 +118,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Our Rooms Section */}
       <section className="py-16 px-4 sm:px-8 md:px-16 bg-[#F1EDE6]">
         <h2 className="text-3xl md:text-4xl font-serif text-center mb-12 text-[#0e1732]">
           Our Rooms

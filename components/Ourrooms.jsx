@@ -62,7 +62,6 @@ export default function RoomShowcase() {
 
   return (
     <div className="bg-[#0e1732] text-white min-h-screen flex flex-col md:flex-row items-center md:px-40 px-4 gap-10 md:gap-36 py-12 relative overflow-hidden Merriweather ">
-      {/* Mobile frame - hidden on small screens */}
       <div className="absolute bottom-20 left-4 md:left-10 w-[200px] h-[250px] bg-white rounded-lg shadow-xl z-10 overflow-hidden border border-gray-300 hidden md:block">
         <AnimatePresence mode="wait">
           <motion.div
@@ -100,7 +99,6 @@ export default function RoomShowcase() {
         </AnimatePresence>
       </div>
 
-      {/* Main frame */}
       <div className="relative w-full md:w-[50%] border-[3px] border-white p-1 rounded-xl overflow-hidden z-0">
         <AnimatePresence mode="wait">
           <motion.div
@@ -143,7 +141,6 @@ export default function RoomShowcase() {
         </AnimatePresence>
       </div>
 
-      {/* Text content */}
       <div className="mt-12 md:mt-0 md:ml-10 w-full md:w-[30%] z-0">
         <h1 className="text-white text-2xl md:text-4xl font-normal mb-4">
           VERSATILE ROOM LISTS

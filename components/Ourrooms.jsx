@@ -146,10 +146,13 @@ export default function RoomShowcase() {
           VERSATILE ROOM LISTS
         </h1>
         <p className="text-white text-sm md:text-base mb-6 font-light">
-          Carsten equips your new website with a wide assortment of carefully
-          designed, practical & captivating list templates for showcasing all
-          the rooms your business offers.
+          Explore a variety of beautifully designed room layouts to present your
+          accommodations. From standard and simple lists to sliders and gallery
+          views, each template is crafted to highlight your rooms&apos; comfort,
+          style, and amenities while making it easy for guests to browse and
+          choose the perfect stay.
         </p>
+
         <div className="text-white text-xs md:text-sm grid grid-cols-2 gap-3 font-light">
           <span>STANDARD ROOM LIST</span>
           <span>ROOM SLIDER</span>

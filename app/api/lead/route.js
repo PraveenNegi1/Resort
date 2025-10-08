@@ -37,7 +37,7 @@ export async function POST(request) {
     return Response.json(
       {
         id: result.rows[0].id,
-        message: "Lead saved successfully in PostgresSQL!",
+        message: "Lead submit successfully",
       },
       { status: 200 }
     );

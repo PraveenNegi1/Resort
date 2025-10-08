@@ -18,11 +18,14 @@ export default function Home() {
       <ComfortSection />
       <LocalAttraction />
       <Services />
-      <div className="w-full   md:h-[120vh]">
+      <div className="w-full   ">
         <LaptopVideo />
       </div>
 
-      <DiningSection />
+   
+   <div className="w-full  mt-20 ">
+       <DiningSection />
+   </div>
       <TestimonialsCarousel />
       {/* <FormOtp/> */}
     </>

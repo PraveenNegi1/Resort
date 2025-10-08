@@ -90,7 +90,7 @@ export default function LaptopVideo() {
                     backfaceVisibility: "hidden",
                     transformStyle: "preserve-3d",
                   }}
-                  className="absolute bottom-0 left-0 right-0 mx-auto w-full max-w-5xl h-[78vh] bg-gray-800 rounded-t-2xl shadow-2xl"
+                  className="absolute bottom-0 left-0 right-0 mx-auto w-[630px] lg:w-[850px] xl:w-full max-w-5xl lg:h-[550px] md:h-[400px] bg-gray-800 rounded-t-2xl shadow-2xl"
                 >
                   <div className="relative w-full h-full rounded-t-2xl p-4 border-2">
                     <div className="relative w-full h-full rounded-lg overflow-hidden">

@@ -9,11 +9,11 @@ const data = [
   {
     imageLarge: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c",
     imageMobile: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c",
-    price: "₹8840",
-    rooms: 5,
+    price: "₹840",
+    rooms: 1,
 
-    bed: "King bed, 3 single beds",
-    capacity: "1-5 Persons",
+    bed: "King bed, 2 single beds",
+    capacity: "1-3 Persons",
     view: "City view",
     recommend: "Great for business or family trip",
     roomType: "PRIME SUITE",
@@ -23,7 +23,7 @@ const data = [
       "https://images.unsplash.com/photo-1740446568845-eb3258a78734?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     imageMobile:
       "https://images.unsplash.com/photo-1740446568845-eb3258a78734?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    price: "₹2640",
+    price: "1500",
     rooms: 2,
 
     bed: "2 Queen beds",
@@ -37,7 +37,7 @@ const data = [
       "https://images.unsplash.com/photo-1612965607446-25e1332775ae?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     imageMobile:
       "https://images.unsplash.com/photo-1612965607446-25e1332775ae?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    price: "₹3640",
+    price: "₹2540",
     rooms: 2,
 
     bed: "2 Queen beds",
@@ -62,11 +62,11 @@ export default function RoomShowcase() {
 
   return (
     <div className="bg-[#0e1732] text-white min-h-screen flex flex-col md:flex-row items-center md:px-40 px-4 gap-10 md:gap-36 py-12 relative overflow-hidden Merriweather ">
-      <div className="absolute bottom-20 left-4 md:left-10 w-[200px] h-[250px] bg-white rounded-lg shadow-xl z-10 overflow-hidden border border-gray-300 hidden md:block">
+      <div className="absolute bottom-20 left-4 md:left-10 lg:w-[200px] lg:h-[250px] bg-white rounded-lg shadow-xl z-10 overflow-hidden border border-gray-300 hidden md:block">
         <AnimatePresence mode="wait">
           <motion.div
             key={index}
-            initial={{ x: 200, opacity: 0 }}
+            initial={{ x: 200, opacity: 0 }} 
             animate={{ x: 0, opacity: 1 }}
             exit={{ x: -200, opacity: 0 }}
             transition={{ duration: 0.8 }}

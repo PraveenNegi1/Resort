@@ -78,7 +78,7 @@ export default function LocalAttraction() {
   const [isVisible, setIsVisible] = useState(false);
   const componentRef = useRef(null);
 
-  // ✅ Intersection Observer (unchanged)
+  // Intersection Observer
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -89,83 +89,67 @@ export default function LocalAttraction() {
       },
       { threshold: 0.1 }
     );
-
-    if (componentRef.current) {
-      observer.observe(componentRef.current);
-    }
-
-    return () => {
-      if (componentRef.current) {
-        observer.unobserve(componentRef.current);
-      }
-    };
+    if (componentRef.current) observer.observe(componentRef.current);
+    return () => observer.disconnect();
   }, []);
 
-  // ✅ Animation trigger
+  // Slide animation
   useEffect(() => {
     setAnimateSlide(true);
     const timer = setTimeout(() => setAnimateSlide(false), 1000);
     return () => clearTimeout(timer);
   }, [currentSlide]);
 
-  // ✅ Auto-slide every 6s
-  useEffect(() => {
-    const autoSlide = setInterval(() => {
-      setCurrentSlide((prev) => (prev + 1) % attractions.length);
-    }, 6000); // 6s per slide
-    return () => clearInterval(autoSlide);
-  }, []);
+  // ❌ Removed auto-slide for user control only
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % attractions.length);
   };
-
   const prevSlide = () => {
     setCurrentSlide(
       (prev) => (prev - 1 + attractions.length) % attractions.length
     );
   };
-
-  const goToSlide = (index) => {
-    setCurrentSlide(index);
-  };
+  const goToSlide = (index) => setCurrentSlide(index);
 
   return (
-    <div className="min-h-screen bg-white">
-      <h1 className="text-3xl md:text-4xl font-serif text-center mb-12 pt-12 text-[#0e1732]">
-        Top Local Attractions
-        <span className="text-black"> to Explore</span>
+    <div className="bg-white font-serif">
+      <h1 className="text-3xl md:text-5xl font-serif text-center mb-10 pt-12 text-[#0e1732]">
+        Top Local Attractions <span className="text-[#0e1732]">to Explore</span>
       </h1>
+
       <div
         ref={componentRef}
-        className="h-[100vh] flex items-center justify-center p-4 Merriweather  relative overflow-hidden"
+        className="relative min-h-[100vh] flex items-center justify-center px-4 sm:px-6 md:px-12 py-8 overflow-hidden"
         style={{
           backgroundImage: `url(${attractions[currentSlide].image})`,
           backgroundSize: "cover",
           backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
           backgroundAttachment: "fixed",
           transition: "background-image 1s ease-in-out",
         }}
       >
-        <div className="absolute inset-0 bg-gradient-to-br from-teal-900/50 to-purple-900/30 transition-opacity duration-1000 ease-[cubic-bezier(0.4,0,0.2,1)]"></div>
+        {/* Dark overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/30"></div>
 
+        {/* Prev Button */}
         <button
           onClick={prevSlide}
-          className="absolute left-8 md:left-28 top-1/2 transform -translate-y-1/2 bg-white/90 text-[#0e1732] border border-[#0e1732] p-4 rounded-full hover:bg-[#0e1732] hover:text-white transition-all duration-500 ease-in-out hover:scale-110 active:scale-95 focus:outline-none focus:ring-2 focus:ring-teal-400 z-20 shadow-lg"
+          className="absolute left-4 sm:left-8 top-1/2 transform -translate-y-1/2 bg-white/20 backdrop-blur-md text-white p-3 sm:p-4 rounded-full hover:bg-white/40 transition-all duration-500 shadow-lg z-20"
         >
           ←
         </button>
 
-        <div className="relative max-w-6xl w-full bg-white/95 border border-[#0e1732] backdrop-blur-sm shadow-xl rounded-xl overflow-hidden flex flex-col md:flex-row transition-all duration-700 ease-in-out hover:shadow-2xl hover:-translate-y-1">
-          {/* Left image */}
+        {/* Content Card */}
+        <div className="relative max-w-6xl w-full bg-white/95 border border-gray-200 backdrop-blur-sm shadow-2xl rounded-2xl overflow-hidden flex flex-col md:flex-row transition-all duration-700 ease-in-out hover:shadow-3xl">
+          {/* Image */}
           <div
-            className={`md:w-1/2 relative h-96 transition-all duration-1000 ease-in-out ${
+            className={`md:w-1/2 relative h-64 md:h-auto ${
               isVisible
                 ? animateSlide
                   ? "animate-slide-in-left"
-                  : "translate-x-0 opacity-100"
-                : "translate-x-[-100%] opacity-0"
+                  : "opacity-100"
+                : "opacity-0"
             }`}
           >
             <Image
@@ -173,75 +157,49 @@ export default function LocalAttraction() {
               alt={attractions[currentSlide].title}
               layout="fill"
               objectFit="cover"
-              className="rounded-l-xl transition-transform duration-1000 ease-in-out hover:scale-105"
+              className="rounded-t-2xl md:rounded-l-2xl md:rounded-tr-none transition-transform duration-1000 ease-in-out hover:scale-105"
             />
           </div>
 
-          {/* Right content */}
-          <div
-            className={`md:w-1/2 p-10 flex flex-col justify-between transition-all duration-1000 ease-in-out ${
-              isVisible
-                ? animateSlide
-                  ? "animate-slide-in-right"
-                  : "translate-x-0 opacity-100"
-                : "translate-x-[100%] opacity-0"
-            }`}
-          >
+          {/* Text Content */}
+          <div className="md:w-1/2 p-6 sm:p-10 flex flex-col justify-between">
             <div>
-              <h2
-                className={`text-2xl pt-6 font-bold Merriweather text-[#0e1732] mb-4 tracking-tight ${
-                  animateSlide ? "animate-text-in" : ""
-                }`}
-              >
+              <h2 className="text-2xl sm:text-3xl font-bold text-[#0e1732] mb-3">
                 {attractions[currentSlide].title}
               </h2>
-              <p
-                className={`text-gray-700 mb-6 text-lg leading-relaxed ${
-                  animateSlide ? "animate-text-in delay-100" : ""
-                }`}
-              >
+              <p className="text-gray-700 mb-6 text-base sm:text-lg leading-relaxed">
                 {attractions[currentSlide].description}
               </p>
-              <h3
-                className={`text-xl font-semibold text-gray-900 mb-3 ${
-                  animateSlide ? "animate-text-in delay-200" : ""
-                }`}
-              >
+              <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-3">
                 Highlights
               </h3>
-              <ul
-                className={`list-disc list-inside text-gray-600 text-base ${
-                  animateSlide ? "animate-text-in delay-300" : ""
-                }`}
-              >
-                {attractions[currentSlide].features.map((feature, index) => (
-                  <li key={index} className="mb-2">
-                    {feature}
-                  </li>
+              <ul className="list-disc list-inside text-gray-600 text-sm sm:text-base space-y-2">
+                {attractions[currentSlide].features.map((feature, i) => (
+                  <li key={i}>{feature}</li>
                 ))}
               </ul>
             </div>
           </div>
         </div>
 
-        {/* Next button */}
+        {/* Next Button */}
         <button
           onClick={nextSlide}
-          className="absolute right-8 md:right-28 top-1/2 transform -translate-y-1/2 bg-white/90 text-[#0e1732] p-4 rounded-full hover:bg-[#0e1732] hover:text-white border border-[#0e1732] transition-all duration-500 ease-in-out hover:scale-110 active:scale-95 focus:outline-none focus:ring-2 focus:ring-teal-400 z-20 shadow-lg"
+          className="absolute right-4 sm:right-8 top-1/2 transform -translate-y-1/2 bg-white/20 backdrop-blur-md text-white p-3 sm:p-4 rounded-full hover:bg-white/40 transition-all duration-500 shadow-lg z-20"
         >
           →
         </button>
 
         {/* Dots */}
-        <div className="absolute bottom-8 flex space-x-2 z-20">
+        <div className="absolute bottom-6 flex space-x-2 z-20">
           {attractions.map((_, index) => (
             <button
               key={index}
               onClick={() => goToSlide(index)}
-              className={`w-3 h-3 rounded-full transition-all duration-300 ${
+              className={`w-3 h-3 sm:w-4 sm:h-4 rounded-full transition-all duration-300 ${
                 currentSlide === index
-                  ? "bg-[#0e1732] scale-125"
-                  : "bg-white hover:bg-white/80"
+                  ? "bg-[#0e1732] scale-125 shadow-md"
+                  : "bg-white/60 hover:bg-white/80"
               }`}
             ></button>
           ))}
@@ -259,43 +217,8 @@ export default function LocalAttraction() {
               opacity: 1;
             }
           }
-          @keyframes slide-in-right {
-            from {
-              transform: translateX(100%);
-              opacity: 0;
-            }
-            to {
-              transform: translateX(0);
-              opacity: 1;
-            }
-          }
-          @keyframes text-in {
-            from {
-              transform: translateY(20px);
-              opacity: 0;
-            }
-            to {
-              transform: translateY(0);
-              opacity: 1;
-            }
-          }
           .animate-slide-in-left {
-            animation: slide-in-left 1s ease-in-out;
-          }
-          .animate-slide-in-right {
-            animation: slide-in-right 1s ease-in-out;
-          }
-          .animate-text-in {
-            animation: text-in 0.8s ease-in-out;
-          }
-          .delay-100 {
-            animation-delay: 0.1s;
-          }
-          .delay-200 {
-            animation-delay: 0.2s;
-          }
-          .delay-300 {
-            animation-delay: 0.3s;
+            animation: slide-in-left 0.8s ease-in-out;
           }
         `}</style>
       </div>

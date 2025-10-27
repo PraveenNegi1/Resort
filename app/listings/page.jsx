@@ -44,7 +44,6 @@ const Rooms = () => {
     if (currentPage > totalPages) setCurrentPage(totalPages);
   }, [filteredRooms, totalPages, currentPage]);
 
-  // ✅ Scroll to top when page changes
   useEffect(() => {
     window.scrollTo({
       top: 0,
@@ -85,14 +84,13 @@ const Rooms = () => {
         </div>
       </motion.div>
 
-      {/* Search */}
       <motion.div
         variants={searchVariants}
         initial="hidden"
         animate="visible"
         className="px-4 sm:px-6 lg:px-8 py-8 max-w-7xl mx-auto"
       >
-        <div className="relative w-full max-w-md mx-auto border border-[#0e1732] rounded-lg shadow-sm overflow-hidden">
+        <div className="relative w-full tracking-wider font-light font-serif max-w-md mx-auto border border-[#0e1732] rounded-lg shadow-sm overflow-hidden">
           <FaSearch className="absolute left-3 top-1/2 transform -translate-y-1/2 text-[#0e1732]" />
           <input
             type="text"
@@ -104,7 +102,6 @@ const Rooms = () => {
         </div>
       </motion.div>
 
-      {/* Rooms List */}
       <motion.div
         className="space-y-8 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 font-serif"
         initial="hidden"
@@ -127,7 +124,6 @@ const Rooms = () => {
                   href={`/rooms/${room.id}`}
                   className="flex flex-col md:flex-row"
                 >
-                  {/* Image Section */}
                   <div className="relative w-full md:w-2/5 h-64 md:h-auto">
                     <Image
                       src={room.image}
@@ -137,7 +133,6 @@ const Rooms = () => {
                     />
                   </div>
 
-                  {/* Details Section */}
                   <div className="flex flex-col md:w-3/5 p-6 justify-between">
                     <div>
                    
@@ -169,7 +164,6 @@ const Rooms = () => {
                       </div>
                     </div>
 
-                    {/* Price + Button */}
                     <div className="flex flex-col sm:flex-row sm:items-center justify-between mt-6 border-t pt-4">
                       <div>
                         <p className="text-sm text-gray-500">EXCLUSIVE RATE</p>
@@ -197,13 +191,12 @@ const Rooms = () => {
         </AnimatePresence>
       </motion.div>
 
-      {/* Pagination */}
       {filteredRooms.length > 0 && (
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.5 }}
-          className="flex justify-center mt-12 items-center gap-3"
+          className="flex justify-center mt-10 mb-10 items-center gap-3"
         >
           <motion.button
             onClick={handlePrev}

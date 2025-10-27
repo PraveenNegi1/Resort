@@ -144,14 +144,9 @@ const RoomDetails = () => {
 
               <div className="grid grid-cols-2 gap-3 sm:gap-4 mb-6 sm:mb-8">
                 {[
-                  { icon: "🛏️", label: "Beds", value: room.beds },
-                  { icon: "🛁", label: "Baths", value: room.baths },
-                  { icon: "🚗", label: "Garage", value: room.garage || 1 },
-                  {
-                    icon: "📐",
-                    label: "Area",
-                    value: room.area || "1500 sqft",
-                  },
+                  { label: "Beds", value: room.beds },
+                  { label: "Baths", value: room.baths },
+                 
                 ].map((item, index) => (
                   <motion.div
                     key={index}

@@ -22,10 +22,9 @@ export default function Home() {
         <LaptopVideo />
       </div>
 
-   
-   <div className="w-full  mt-20 ">
-       <DiningSection />
-   </div>
+      <div className="w-full  mt-20 ">
+        <DiningSection />
+      </div>
       <TestimonialsCarousel />
       {/* <FormOtp/> */}
     </>

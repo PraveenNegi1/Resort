@@ -128,14 +128,14 @@ const Rooms = () => {
                     <Image
                       src={room.image}
                       alt={room.name}
-                      fill
-                      className="object-cover"
+                      width={1000}
+                      height={600}
+                      className="object-cover md:h-[330px] h-64"
                     />
                   </div>
 
                   <div className="flex flex-col md:w-3/5 p-6 justify-between">
                     <div>
-                   
                       <h2 className="text-2xl font-semibold text-gray-900 mb-3">
                         {room.name}
                       </h2>
@@ -148,18 +148,11 @@ const Rooms = () => {
                         {room.amenities.slice(0, 3).map((item, i) => (
                           <li key={i}>{item}</li>
                         ))}
-                        <li>Inclusive of breakfast and airport transfer</li>
                       </ul>
 
                       <div className="flex items-center gap-4 text-gray-700 text-sm">
                         <span className="flex items-center gap-1">
-                          <TbRulerMeasure /> {room.size || "55 sq m"}
-                        </span>
-                        <span className="flex items-center gap-1">
-                          <Users /> Up to {room.capacity || 2} guests
-                        </span>
-                        <span className="flex items-center gap-1">
-                          <IoBedOutline /> King Bed
+                          <Users /> Up to {room.capacity} guests
                         </span>
                       </div>
                     </div>

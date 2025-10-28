@@ -21,6 +21,7 @@ export default function Footer() {
               width={140}
               height={140}
               className="object-contain mb-4"
+              priority
             />
             <p className="text-white/80 max-w-xs leading-relaxed font-light">
               Discover comfort and luxury in the lap of the Himalayas. HillNest
@@ -88,7 +89,7 @@ export default function Footer() {
               </p>
               <p className="flex items-center gap-3">
                 <FaEnvelope className="text-[#d4af37]" />{" "}
-               praveennegi700@gmail.com
+                praveennegi700@gmail.com
               </p>
               <p className="flex items-center gap-3">
                 <FaMapMarkerAlt className="text-[#d4af37]" /> HillNest Stays,
@@ -114,7 +115,9 @@ export default function Footer() {
           <p>
             © {new Date().getFullYear()} HillNest Stays. All rights reserved.
           </p>
-          <p className="mt-1">Inspired by the beauty of Uttarakhand&apos;s hills.</p>
+          <p className="mt-1">
+            Inspired by the beauty of Uttarakhand&apos;s hills.
+          </p>
         </div>
       </div>
     </footer>

@@ -69,6 +69,11 @@ const RoomDetails = () => {
 
   const [isPopupOpen, setIsPopupOpen] = useState(false);
 
+  const roomSpecs = [
+    { icon: "👥", label: "Max Guests", value: room.capacity },
+    { icon: "⭐", label: "Rating", value: "4.8" },
+  ];
+
   return (
     <div>
       <div className="min-h-screen font-serif bg-gradient-to-br from-slate-50 via-white to-slate-100 flex flex-col md:flex-row justify-between px-4 md:px-8 lg:px-36 py-10">
@@ -143,11 +148,7 @@ const RoomDetails = () => {
               </div>
 
               <div className="grid grid-cols-2 gap-3 sm:gap-4 mb-6 sm:mb-8">
-                {[
-                  { label: "Beds", value: room.beds },
-                  { label: "Baths", value: room.baths },
-                 
-                ].map((item, index) => (
+                {roomSpecs.map((item, index) => (
                   <motion.div
                     key={index}
                     whileHover={{ scale: 1.05 }}
@@ -256,7 +257,7 @@ const RoomDetails = () => {
 
                     <div className="flex justify-between items-center pt-2 sm:pt-4">
                       <div className="text-xs sm:text-sm text-slate-500">
-                        🛏 {similarRoom.beds} Beds • 🛁 {similarRoom.baths} Baths
+                        👥 {similarRoom.capacity} Guests • ⭐ 4.8
                       </div>
                       <button className="text-[#0e1732] text-xs sm:text-sm font-medium hover:underline">
                         View Details →

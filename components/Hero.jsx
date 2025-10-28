@@ -2,13 +2,13 @@
 
 import Link from "next/link";
 import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 export default function Home() {
   const backgroundImages = [
     "https://images.unsplash.com/photo-1680503146476-abb8c752e1f4?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0",
     "https://images.unsplash.com/photo-1729605411476-defbdab14c54?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0",
     "https://images.unsplash.com/photo-1687180497323-0750d6fe0124?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0",
-    "https://images.unsplash.com/photo-1741506131058-533fcf894483?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0",
     "https://images.unsplash.com/photo-1583845112203-29329902332e?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0",
   ];
 
@@ -19,154 +19,142 @@ export default function Home() {
       setCurrentImageIndex((prevIndex) =>
         prevIndex === backgroundImages.length - 1 ? 0 : prevIndex + 1
       );
-    }, 4000);
+    }, 6000);
     return () => clearInterval(interval);
   }, []);
 
   return (
     <div className="font-sans text-gray-800">
+      {/* HERO SECTION */}
       <section className="relative h-screen overflow-hidden">
-        {backgroundImages.map((img, index) => (
-          <div
-            key={index}
-            className={`absolute inset-0 bg-cover bg-center transition-all duration-1000 ease-in-out ${
-              index === currentImageIndex
-                ? "opacity-100 z-10 scale-110"
-                : "opacity-0 z-0 scale-100"
-            }`}
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={currentImageIndex}
+            initial={{ opacity: 0, scale: 1.1 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 1.1 }}
+            transition={{ duration: 1.5 }}
+            className="absolute inset-0 bg-cover bg-center"
             style={{
-              backgroundImage: `url('${img}')`,
-              animation:
-                index === currentImageIndex
-                  ? "zoomIn 4000ms ease-out backword"
-                  : "none",
+              backgroundImage: `url(${backgroundImages[currentImageIndex]})`,
             }}
           />
-        ))}
+        </AnimatePresence>
 
-        <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-black/30 flex flex-col justify-center items-center text-white px-4 text-center z-20">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-serif mb-4 drop-shadow-lg">
-            Welcome to HillNest Stays
-          </h1>
-          <p className="text-lg sm:text-xl md:text-2xl mb-4 max-w-xl font-serif">
-            Experience luxury and comfort in the heart of nature
-          </p>
-          <Link
-            href="/listings"
-            className="mt-4 inline-block px-6 py-3 font-serif bg-white text-[#0e1732] font-semibold rounded-full hover:bg-[#0e1732] hover:text-white transition duration-300"
+        <div className="absolute inset-0 bg-gradient-to-b from-black/80 via-black/50 to-black/70 flex flex-col justify-center items-center text-center text-white px-6 z-20">
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1 }}
+            className="md:text-5xl text-2xl  font-serif font-bold mb-6  drop-shadow-lg"
           >
-            Explore Rooms
-          </Link>
+            Welcome to HillNest Stays
+          </motion.h1>
+
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1.2 }}
+            className="text-lg md:text-2xl max-w-2xl font-light Merriweather text-gray-200 mb-8 leading-relaxed"
+          >
+            Experience luxury and comfort in the heart of the Himalayas — where
+            nature meets sophistication.
+          </motion.p>
+
+          <motion.div
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1.4 }}
+          >
+            <Link
+              href="/listings"
+              className="mt-4 inline-block px-8 py-3 text-lg font-semibold rounded-full bg-white/90 text-[#0e1732] hover:bg-[#0e1732] hover:text-white shadow-md hover:shadow-lg transition-all duration-300"
+            >
+              Explore Rooms
+            </Link>
+          </motion.div>
         </div>
 
-        <style jsx>{`
-          @keyframes zoomIn {
-            0% {
-              transform: scale(3);
-            }
-            100% {
-              transform: scale(1.1);
-            }
-          }
-        `}</style>
+        <div className="absolute bottom-6 w-full flex justify-center gap-3 z-30">
+          {backgroundImages.map((_, i) => (
+            <div
+              key={i}
+              className={`w-3 h-3 rounded-full transition-all duration-500 ${
+                i === currentImageIndex ? "bg-white" : "bg-white/40"
+              }`}
+            />
+          ))}
+        </div>
       </section>
 
-      
-      <section className="bg-[#0e1732] py-16 px-4 sm:px-8 md:px-20 text-center Merriweather ">
-        <h2 className="text-2xl md:text-4xl text-white mb-8">
+      {/* WHY CHOOSE US */}
+      <section className="bg-[#0e1732] text-white py-20 px-6 md:px-16 text-center">
+        <h2 className="text-3xl md:text-5xl font-serif mb-10 text-[#d4af37]">
           Why Choose HillNest Stays?
         </h2>
-        <div className="max-w-4xl mx-auto text-[16px] text-white text-lg leading-relaxed">
-          <p className="mb-4">
-            At HillNest Stays, we blend luxury with nature. Whether you're
-            waking up to birdsong, enjoying fresh organic meals, or soaking in
-            the view from your private balcony, every detail is curated for your
-            comfort.
+        <div className="max-w-4xl mx-auto font-serif space-y-6 text-lg leading-relaxed text-white/90">
+          <p>
+            At HillNest Stays, we blend{" "}
+            <span className="text-[#d4af37]">luxury</span> with{" "}
+            <span className="text-[#d4af37]">nature</span>. Wake up to the
+            melody of birds, relish fresh organic meals, and unwind amid
+            breathtaking mountain views — every detail crafted for your comfort.
           </p>
-          <p className="mb-4">
-            Explore nearby nature trails, indulge in spa therapies, or simply
-            relax in our serene ambiance. Our eco-conscious ethos ensures your
-            stay is both relaxing and sustainable.
+          <p>
+            Explore nearby trails, rejuvenate at our spa, or relax under starlit
+            skies. Our eco-conscious philosophy ensures a luxurious yet
+            sustainable escape.
           </p>
-          <p className="mb-4">
-            Discover the beauty of the wild — without compromising on comfort.
-            Whether it's a romantic retreat, a solo escape, or a family
-            adventure, HillNest Stay is your ideal getaway.
-          </p>
-          <p className="mb-4">
-            Each of our rooms is crafted with natural materials and modern
-            amenities, providing a harmonious balance of elegance and rustic
-            charm. Floor-to-ceiling windows invite the outdoors in, while plush
-            bedding ensures a restful night's sleep.
-          </p>
-          <p className="mb-4">
-            Our commitment to sustainability goes beyond aesthetics.
-            Solar-powered infrastructure, rainwater harvesting, and a zero-waste
-            kitchen reflect our dedication to the environment.
-          </p>
-          <p className="mb-4">
-            Unwind with yoga at sunrise, gather around bonfires under starlit
-            skies, or join our curated local excursions for an immersive
-            cultural experience. From adventure to serenity, there's something
-            for everyone.
-          </p>
-          <p className="mb-4">
-            HillNest Stays isn't just a destination — it's a feeling. A place
-            where the noise of the world fades away and peace takes center
-            stage. Come for the view, stay for the experience.
+          <p>
+            Every room is an architectural poem — blending wood, stone, and
+            modern elegance with expansive views and premium amenities.
           </p>
         </div>
       </section>
 
-      <section className="py-16 px-4 sm:px-8 md:px-16 bg-[#F1EDE6]">
-        <h2 className="text-3xl md:text-4xl font-serif text-center mb-12 text-[#0e1732]">
+      {/* ROOMS SECTION */}
+      <section className="py-20 px-6 md:px-16 bg-[#F7F5F0]">
+        <h2 className="text-3xl md:text-5xl font-serif text-center mb-12 text-[#0e1732]">
           Our Rooms
         </h2>
-        <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-3 font-serif">
+        <div className="grid gap-10 sm:grid-cols-2 md:grid-cols-3">
           {[
             {
               title: "Deluxe Room",
               image:
                 "https://images.unsplash.com/photo-1729605411476-defbdab14c54?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0",
-              desc: "Modern room with king-size bed, balcony & great views.",
-              detail:
-                "Enjoy a peaceful retreat with plush bedding, private balcony, and panoramic views of lush surroundings — perfect for a romantic escape or solo reset.",
+              desc: "Modern comfort with balcony & mountain views.",
             },
             {
-              title: "Suite",
+              title: "Luxury Suite",
               image:
                 "https://images.unsplash.com/photo-1590490359854-dfba19688d70?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.1.0",
-              desc: "Spacious suite with living area, luxury bath & amenities.",
-              detail:
-                "Our suites offer indulgence and privacy. Unwind in a separate living space, soak in a lavish tub, and enjoy premium amenities for a luxurious stay.",
+              desc: "Spacious living area, jacuzzi bath & premium amenities.",
             },
             {
               title: "Family Room",
               image:
                 "https://images.unsplash.com/photo-1560448204-603b3fc33ddc?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0",
-              desc: "Comfortable room perfect for families, with extra beds.",
-              detail:
-                "Designed for comfort and bonding, our family rooms feature extra sleeping space, cozy furnishings, and easy access to resort activities for all ages.",
+              desc: "Designed for families — warm, inviting, and spacious.",
             },
           ].map((room, index) => (
             <Link
               href="/listings"
               key={index}
-              className="group block bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition"
+              className="group block bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300"
             >
               <div className="overflow-hidden">
                 <img
                   src={room.image}
                   alt={room.title}
-                  className="w-full h-60 object-cover transform group-hover:scale-105 transition duration-300"
+                  className="w-full h-64 object-cover transform group-hover:scale-110 transition duration-700"
                 />
               </div>
-              <div className="p-5">
-                <h3 className="text-xl font-semibold mb-2 text-gray-500 group-hover:text-[#0e1732] transition">
+              <div className="p-6">
+                <h3 className="text-2xl font-semibold mb-3 text-[#0e1732] group-hover:text-gold transition">
                   {room.title}
                 </h3>
-                <p className="text-gray-600 text-[18px]">{room.desc}</p>
-                <p className="text-[16px] text-gray-700 mt-2">{room.detail}</p>
+                <p className="text-gray-700 text-[18px]">{room.desc}</p>
               </div>
             </Link>
           ))}

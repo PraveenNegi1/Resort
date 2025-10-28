@@ -142,7 +142,7 @@ export default function RoomShowcase() {
       </div>
 
       <div className="mt-12 md:mt-0 md:ml-10 w-full md:w-[30%] z-0">
-        <h1 className="text-white text-2xl md:text-4xl font-normal mb-4">
+        <h1 className="text-gold text-[#d4af37] text-2xl md:text-4xl font-normal mb-4">
           VERSATILE ROOM LISTS
         </h1>
         <p className="text-white text-sm md:text-base mb-6 font-light">

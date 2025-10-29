@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import Image from "next/image";
-import { Menu, X } from "lucide-react"; // Optional: you can use any icon or SVG
+import { Menu, X } from "lucide-react"; 
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -47,7 +47,6 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Topbar */}
       <div className="md:hidden fixed top-0 left-0 w-full h-16 px-4 bg-[#0e1732] flex items-center justify-between text-white z-50">
         <Link href="/" aria-label="Go to homepage">
           <Image
@@ -65,13 +64,11 @@ export default function Navbar() {
 
       {isOpen && (
         <>
-          {/* Overlay */}
           <div
             className="fixed inset-0 z-40  bg-opacity-40"
             onClick={toggleMenu}
           ></div>
 
-          {/* Sidebar */}
           <div className="fixed top-0 right-0 h-full w-64 bg-[#0e1732] text-white p-6 z-50 shadow-xl transform transition-transform duration-300 ease-in-out">
             <div className="mb-6 flex items-center justify-between">
               <h2 className="text-xl font-bold">Menu</h2>

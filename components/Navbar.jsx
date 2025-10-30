@@ -22,7 +22,6 @@ export default function Navbar() {
 
   return (
     <nav className="relative z-50">
-      {/* Desktop Navbar */}
       <div className="hidden md:flex px-14 xl:px-20 bg-[#0e1732] py-5 justify-between items-center rounded-2xl absolute z-40 w-[90vw] h-24 top-5 text-white left-1/2 -translate-x-1/2">
         <Link href="/" aria-label="Go to homepage">
           <Image
@@ -73,7 +72,7 @@ export default function Navbar() {
             <div className="mb-6 flex items-center justify-between">
               <h2 className="text-xl font-bold">Menu</h2>
               <button onClick={toggleMenu} aria-label="Close menu">
-                <X size={28} /> {/* 👈 Cross button */}
+                <X size={28} /> 
               </button>
             </div>
             <nav className="space-y-4">

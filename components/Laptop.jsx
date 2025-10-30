@@ -61,7 +61,6 @@ export default function LaptopVideo() {
                 className="relative w-full max-w-7xl mx-auto mt-80"
                 style={{ perspective: "2400px" }}
               >
-                {/* Laptop base */}
                 <motion.div
                   style={{
                     rotateY: laptopRotateY,
@@ -94,7 +93,6 @@ export default function LaptopVideo() {
                 >
                   <div className="relative w-full h-full rounded-t-2xl p-4 border-2">
                     <div className="relative w-full h-full rounded-lg overflow-hidden">
-                      {/* Laptop top bar */}
                       <div className="absolute top-0 left-0 right-0 flex items-center justify-center z-30">
                         <div className="relative w-6 h-4 mr-4">
                           <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-3 h-3 bg-gray-600 rounded-full">
@@ -104,7 +102,6 @@ export default function LaptopVideo() {
                         <div className="w-2 h-2 bg-gray-700 rounded-full mr-2 opacity-60"></div>
                       </div>
 
-                      {/* Laptop video */}
                       <div className="absolute inset-0 top-8 rounded-b-lg overflow-hidden">
                         <video
                           ref={videoRef}
@@ -129,7 +126,6 @@ export default function LaptopVideo() {
             </div>
           </div>
 
-          {/* Mobile Phone Design */}
           <div className="block md:hidden px-4">
             <div className="relative mx-auto w-[280px] h-[560px] rounded-3xl border-6 border-gray-800 shadow-xl bg-black overflow-hidden">
               <div className="absolute top-1 left-1/2 -translate-x-1/2 w-24 h-8 bg-gray-800 rounded-2xl z-20 flex items-center justify-center gap-2">

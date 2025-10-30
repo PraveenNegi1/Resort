@@ -129,10 +129,8 @@ export default function LocalAttraction() {
           transition: "background-image 1s ease-in-out",
         }}
       >
-        {/* Dark overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/30"></div>
 
-        {/* Prev Button */}
         <button
           onClick={prevSlide}
           className="absolute left-4 sm:left-8 top-1/2 transform -translate-y-1/2 bg-white/20 backdrop-blur-md text-white p-3 sm:p-4 rounded-full hover:bg-white/40 transition-all duration-500 shadow-lg z-20"
@@ -140,9 +138,7 @@ export default function LocalAttraction() {
           ←
         </button>
 
-        {/* Content Card */}
         <div className="relative max-w-6xl w-full bg-white/95 border border-gray-200 backdrop-blur-sm shadow-2xl rounded-2xl overflow-hidden flex flex-col md:flex-row transition-all duration-700 ease-in-out hover:shadow-3xl">
-          {/* Image */}
           <div
             className={`md:w-1/2 relative h-64 md:h-auto ${
               isVisible
@@ -161,7 +157,6 @@ export default function LocalAttraction() {
             />
           </div>
 
-          {/* Text Content */}
           <div className="md:w-1/2 p-6 sm:p-10 flex flex-col justify-between">
             <div>
               <h2 className="text-2xl sm:text-3xl font-bold text-[#0e1732] mb-3">
@@ -182,7 +177,6 @@ export default function LocalAttraction() {
           </div>
         </div>
 
-        {/* Next Button */}
         <button
           onClick={nextSlide}
           className="absolute right-4 sm:right-8 top-1/2 transform -translate-y-1/2 bg-white/20 backdrop-blur-md text-white p-3 sm:p-4 rounded-full hover:bg-white/40 transition-all duration-500 shadow-lg z-20"
@@ -190,7 +184,6 @@ export default function LocalAttraction() {
           →
         </button>
 
-        {/* Dots */}
         <div className="absolute bottom-6 flex space-x-2 z-20">
           {attractions.map((_, index) => (
             <button
@@ -205,7 +198,6 @@ export default function LocalAttraction() {
           ))}
         </div>
 
-        {/* Animations */}
         <style jsx>{`
           @keyframes slide-in-left {
             from {

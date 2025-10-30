@@ -87,7 +87,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* WHY CHOOSE US */}
       <section className="bg-[#0e1732] text-white py-20 px-6 md:px-16 text-center">
         <h2 className="text-3xl md:text-5xl font-serif mb-10 text-[#d4af37]">
           Why Choose HillNest Stays?
@@ -112,7 +111,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ROOMS SECTION */}
       <section className="py-20 px-6 md:px-16 bg-[#F7F5F0]">
         <h2 className="text-3xl md:text-5xl font-serif text-center mb-12 text-[#0e1732]">
           Our Rooms

@@ -18,7 +18,6 @@ export default function WineSelection() {
       ref={sectionRef}
       className="relative w-full flex flex-col lg:flex-row justify-center items-center py-16 sm:py-20 lg:py-24 bg-[#faf8f8] overflow-hidden min-h-screen"
     >
-      {/* Left floating image */}
       <motion.img
         src="https://images.unsplash.com/photo-1612965607446-25e1332775ae?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3"
         alt="Wine Pouring"
@@ -26,7 +25,6 @@ export default function WineSelection() {
         style={{ y: yLeft }}
       />
 
-      {/* Text box */}
       <div className="text-center bg-[#eae3e3] w-[95%] sm:w-[85%] md:w-[70%] lg:w-[50%] xl:w-[40%] px-4 sm:px-6 font-serif h-auto lg:h-[700px] xl:h-[800px] bg-opacity-90 backdrop-blur-md rounded-lg p-6 sm:p-8 shadow-lg z-10 mt-8 sm:mt-10 lg:mt-0">
         <div className="h-8 sm:h-10 w-px bg-gray-300 mx-auto mb-3 sm:mb-4" />
         <h1 className="text-xl sm:text-2xl md:text-3xl font-light uppercase text-black leading-snug mb-3 sm:mb-4">

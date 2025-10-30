@@ -21,7 +21,7 @@ export default function FormOtp() {
 
       const data = await res.json();
       if (data.success) {
-        setServerOtp(data.otp.toString()); // Save OTP (for demo only)
+        setServerOtp(data.otp.toString()); 
         alert("OTP sent to your email!");
       } else {
         alert("Error sending OTP: " + data.error);

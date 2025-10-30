@@ -66,7 +66,6 @@ const page = () => {
         `}</style>
       </section>
 
-      {/* Header Section */}
       <div className="bg-[#0e1732] py-16 px-4">
         <div className="container mx-auto max-w-6xl">
           <h2 className="text-3xl md:text-4xl  font-light text-white text-center mb-12 leading-tight">
@@ -105,11 +104,9 @@ const page = () => {
         </div>
       </div>
 
-      {/* Image Gallery Section */}
       <div className="bg-white py-8">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-6xl mx-auto">
-            {/* First Image - Restaurant Exterior */}
             <div className="relative h-64 md:h-80 rounded-lg overflow-hidden shadow-lg">
               <Image
                 src="https://images.unsplash.com/photo-1643913591623-4335627a1677?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -119,7 +116,6 @@ const page = () => {
               />
             </div>
 
-            {/* Second Image - Restaurant Interior */}
             <div className="relative h-64 md:h-80 rounded-lg overflow-hidden shadow-lg">
               <Image
                 src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=400&h=320&auto=format&fit=crop"
@@ -129,7 +125,6 @@ const page = () => {
               />
             </div>
 
-            {/* Third Image - Terrace Dining */}
             <div className="relative h-64 md:h-80 rounded-lg overflow-hidden shadow-lg">
               <Image
                 src="https://images.unsplash.com/photo-1664138218128-2dcf791a9d27?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
@@ -166,7 +161,6 @@ const page = () => {
         </div>
       </div>
 
-      {/* Signature Dishes Section */}
       <div className="bg-white py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto text-center">

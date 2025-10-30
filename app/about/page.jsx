@@ -10,7 +10,6 @@ import {
 export default function About() {
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Hero Section */}
       <div
         className="relative bg-cover bg-center h-[300px] flex items-center justify-center"
         style={{ backgroundImage: "url('/hotel-bg.jpg')" }}
@@ -37,7 +36,6 @@ export default function About() {
 
         <div className="border-t border-gray-300 my-8" />
 
-        {/* Our Hotels */}
         <section className="mb-10">
           <h3 className="text-2xl font-semibold mb-3 text-[#0e1732]">
             Our Hotels
@@ -49,20 +47,18 @@ export default function About() {
           </p>
         </section>
 
-        {/* Rooms & Suites */}
         <section className="mb-10">
           <h3 className="text-2xl font-semibold mb-3 text-[#0e1732]">
             Rooms & Suites
           </h3>
           <p className="text-gray-600 md:text-lg">
-            Whether it’s a cozy corner for a weekend escape or a spacious suite
+            Whether it&apos;s a cozy corner for a weekend escape or a spacious suite
             for your long stay, all our rooms are equipped with high-speed
             Wi-Fi, plush bedding, flat-screen TVs, and scenic views to elevate
             your experience.
           </p>
         </section>
 
-        {/* Facilities */}
         <section className="mb-10">
           <h3 className="text-2xl font-semibold mb-3 text-[#0e1732]">
             Facilities & Services
@@ -91,7 +87,6 @@ export default function About() {
           </ul>
         </section>
 
-        {/* Why Choose Us */}
         <section className="mb-16">
           <h3 className="text-2xl font-semibold mb-3 text-[#0e1732]">
             Why Choose HillNest Stays
@@ -104,7 +99,6 @@ export default function About() {
           </p>
         </section>
 
-        {/* CTA */}
         <div className="bg-[#0e1732] p-8 rounded-lg text-center text-white shadow-lg">
           <h4 className="text-2xl font-semibold mb-2">
             Ready to Book Your Stay?

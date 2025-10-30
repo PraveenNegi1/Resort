@@ -66,7 +66,6 @@ const handleSubmit = async (e) => {
             />
           </div>
 
-          {/* Form Section */}
           <div className="lg:w-1/2">
             <h1 className="md:text-4xl text-2xl font-bold text-center font-serif text-[#0e1732] mb-6">
               Contact Us for Your Dream Room Booking

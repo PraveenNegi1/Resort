@@ -51,14 +51,12 @@ export default function FAQsPage() {
 
   return (
     <main className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50 py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
-      {/* Background decorations */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-0 left-0 w-72 h-72 bg-gradient-to-br from-[#957C3D]/10 to-transparent rounded-full blur-3xl transform -translate-x-1/2 -translate-y-1/2"></div>
         <div className="absolute bottom-0 right-0 w-72 h-72 bg-gradient-to-tl from-[#0e1732]/10 to-transparent rounded-full blur-3xl transform translate-x-1/2 translate-y-1/2"></div>
       </div>
 
       <div className="relative max-w-4xl mx-auto mt-20 font-serif">
-        {/* Header */}
         <div className="text-center mb-12 sm:mb-16">
           <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-[#0e1732] mb-4 sm:mb-6 leading-tight">
             Frequently Asked Questions
@@ -70,7 +68,6 @@ export default function FAQsPage() {
           </p>
         </div>
 
-        {/* FAQ Grid */}
         <div className="grid gap-4 sm:gap-6 lg:gap-8 mb-12 sm:mb-16">
           {faqs.map((faq, index) => (
             <div
@@ -97,7 +94,6 @@ export default function FAQsPage() {
           ))}
         </div>
 
-        {/* Contact Section */}
         <div className="bg-gradient-to-r from-[#0e1732] via-[#1e293b] to-[#0e1732] rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-12 text-center shadow-2xl">
           <div className="max-w-2xl mx-auto">
             <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4 sm:mb-6">

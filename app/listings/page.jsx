@@ -68,7 +68,6 @@ const Rooms = () => {
 
   return (
     <div className="min-h-screen">
-      {/* Page Title Section */}
       <motion.div
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}

@@ -59,7 +59,6 @@ export default function FAQsPage() {
 
   return (
     <main className="relative min-h-screen pt-32 bg-gradient-to-br from-[#f5f3ef] via-[#faf9f6] to-[#f8f7f3] py-16 px-4 sm:px-6 lg:px-8 font-serif overflow-hidden">
-      {/* Background gradient glows */}
       <div className="absolute top-0 left-0 w-96 h-96 bg-[#bfa86f]/20 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#0e1732]/10 rounded-full blur-3xl translate-x-1/3 translate-y-1/3" />
 

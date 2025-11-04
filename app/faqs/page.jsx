@@ -64,7 +64,6 @@ export default function FAQsPage() {
       <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#0e1732]/10 rounded-full blur-3xl translate-x-1/3 translate-y-1/3" />
 
       <div className="relative max-w-4xl mx-auto">
-        {/* Header */}
         <div className="text-center mb-16">
           <h1 className="text-4xl sm:text-5xl  font-bold text-[#0e1732] mb-6 leading-tight">
             Frequently Asked Questions
@@ -76,7 +75,6 @@ export default function FAQsPage() {
           </p>
         </div>
 
-        {/* FAQ List */}
         <div className="grid gap-6 sm:gap-8 mb-20">
           {faqs.map((faq, index) => (
             <motion.div
@@ -119,12 +117,10 @@ export default function FAQsPage() {
           ))}
         </div>
 
-        {/* Contact Section */}
         <motion.div
           className="relative bg-gradient-to-r from-[#0e1732] via-[#1a2140] to-[#0e1732] rounded-3xl shadow-2xl p-8 sm:p-10 lg:p-14 text-center overflow-hidden"
           whileHover={{ scale: 1.02 }}
         >
-          {/* subtle gradient glow */}
           <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-20" />
           <div className="relative z-10 max-w-2xl mx-auto">
             <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4 sm:mb-6">

@@ -1,8 +1,14 @@
+"use client";
+
+import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { ChevronDown } from "lucide-react";
+
 export default function FAQsPage() {
   const faqs = [
     {
       question: "What time is check-in and check-out?",
-      answer: "Check-in starts at 11:00 PM and check-out is by 11:00 AM.",
+      answer: "Check-in starts at 11:00 AM and check-out is by 11:00 AM.",
     },
     {
       question: "Do you allow pets at the resort?",
@@ -49,76 +55,101 @@ export default function FAQsPage() {
     },
   ];
 
-  return (
-    <main className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50 py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-0 left-0 w-72 h-72 bg-gradient-to-br from-[#957C3D]/10 to-transparent rounded-full blur-3xl transform -translate-x-1/2 -translate-y-1/2"></div>
-        <div className="absolute bottom-0 right-0 w-72 h-72 bg-gradient-to-tl from-[#0e1732]/10 to-transparent rounded-full blur-3xl transform translate-x-1/2 translate-y-1/2"></div>
-      </div>
+  const [openIndex, setOpenIndex] = useState(null);
 
-      <div className="relative max-w-4xl mx-auto mt-20 font-serif">
-        <div className="text-center mb-12 sm:mb-16">
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-[#0e1732] mb-4 sm:mb-6 leading-tight">
+  return (
+    <main className="relative min-h-screen pt-32 bg-gradient-to-br from-[#f5f3ef] via-[#faf9f6] to-[#f8f7f3] py-16 px-4 sm:px-6 lg:px-8 font-serif overflow-hidden">
+      {/* Background gradient glows */}
+      <div className="absolute top-0 left-0 w-96 h-96 bg-[#bfa86f]/20 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2" />
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-[#0e1732]/10 rounded-full blur-3xl translate-x-1/3 translate-y-1/3" />
+
+      <div className="relative max-w-4xl mx-auto">
+        {/* Header */}
+        <div className="text-center mb-16">
+          <h1 className="text-4xl sm:text-5xl  font-bold text-[#0e1732] mb-6 leading-tight">
             Frequently Asked Questions
           </h1>
           <div className="w-24 h-1 bg-gradient-to-r from-[#957C3D] to-[#B8A055] mx-auto rounded-full mb-6"></div>
-          <p className="text-slate-600 text-lg sm:text-xl max-w-2xl mx-auto leading-relaxed">
-            Find answers to common questions about our resort services and
-            amenities
+          <p className="text-gray-600 text-lg sm:text-xl max-w-2xl mx-auto leading-relaxed">
+            Find quick answers about your stay, amenities, and services at
+            HillNest Stays
           </p>
         </div>
 
-        <div className="grid gap-4 sm:gap-6 lg:gap-8 mb-12 sm:mb-16">
+        {/* FAQ List */}
+        <div className="grid gap-6 sm:gap-8 mb-20">
           {faqs.map((faq, index) => (
-            <div
+            <motion.div
               key={index}
-              className="group bg-white/80 backdrop-blur-sm border border-slate-200/60 rounded-2xl sm:rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 p-6 sm:p-8 lg:p-10 transform hover:-translate-y-2 hover:scale-[1.02]"
+              className="bg-white border border-[#e8e6e1] rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 overflow-hidden"
+              whileHover={{ y: -2 }}
             >
-              <div className="flex items-start gap-4 sm:gap-6">
-                <div className="flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-gradient-to-br from-[#957C3D] to-[#B8A055] rounded-xl sm:rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-110">
-                  <span className="text-xl sm:text-2xl lg:text-3xl font-bold text-white">
-                    {String(index + 1).padStart(2, "0")}
-                  </span>
-                </div>
-                <div className="flex-1 min-w-0">
-                  <h2 className="text-lg sm:text-xl lg:text-2xl font-bold text-[#0e1732] mb-3 sm:mb-4 group-hover:text-[#957C3D] transition-colors duration-300 leading-tight">
-                    {faq.question}
-                  </h2>
-                  <div className="w-full h-px bg-gradient-to-r from-[#957C3D]/30 to-transparent mb-3 sm:mb-4"></div>
-                  <p className="text-slate-600 text-sm sm:text-base lg:text-lg leading-relaxed">
-                    {faq.answer}
-                  </p>
-                </div>
-              </div>
-            </div>
+              <button
+                onClick={() => setOpenIndex(openIndex === index ? null : index)}
+                className="w-full flex justify-between items-center text-left px-6 sm:px-8 py-5 sm:py-6 focus:outline-none"
+              >
+                <h2 className="text-lg sm:text-xl font-semibold text-[#0e1732] leading-snug">
+                  {faq.question}
+                </h2>
+                <motion.div
+                  animate={{ rotate: openIndex === index ? 180 : 0 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <ChevronDown className="w-6 h-6 text-[#957C3D]" />
+                </motion.div>
+              </button>
+
+              <AnimatePresence initial={false}>
+                {openIndex === index && (
+                  <motion.div
+                    key="content"
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.4, ease: "easeInOut" }}
+                    className="overflow-hidden border-t border-[#f2eee9]"
+                  >
+                    <p className="text-gray-600 text-base sm:text-lg leading-relaxed px-6 sm:px-8 py-4 bg-[#fdfcfb]">
+                      {faq.answer}
+                    </p>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </motion.div>
           ))}
         </div>
 
-        <div className="bg-gradient-to-r from-[#0e1732] via-[#1e293b] to-[#0e1732] rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-12 text-center shadow-2xl">
-          <div className="max-w-2xl mx-auto">
+        {/* Contact Section */}
+        <motion.div
+          className="relative bg-gradient-to-r from-[#0e1732] via-[#1a2140] to-[#0e1732] rounded-3xl shadow-2xl p-8 sm:p-10 lg:p-14 text-center overflow-hidden"
+          whileHover={{ scale: 1.02 }}
+        >
+          {/* subtle gradient glow */}
+          <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-20" />
+          <div className="relative z-10 max-w-2xl mx-auto">
             <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4 sm:mb-6">
               Still Have Questions?
             </h3>
-            <p className="text-slate-300 text-sm sm:text-base lg:text-lg mb-6 sm:mb-8 leading-relaxed">
-              Can't find your question? Our friendly team is here to help you
-              24/7
+            <p className="text-slate-300 text-base sm:text-lg mb-8 leading-relaxed">
+              Can’t find your question? Our friendly team is available around
+              the clock to help you.
             </p>
-            <div className="inline-flex flex-col sm:flex-row gap-4 sm:gap-6">
+            <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6">
               <a
                 href="/contact"
-                className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-[#957C3D] to-[#B8A055] text-white font-semibold rounded-xl sm:rounded-2xl hover:shadow-lg hover:shadow-[#957C3D]/25 transition-all duration-300 transform hover:scale-105 text-sm sm:text-base"
+                className="inline-flex items-center justify-center px-8 py-3 bg-gradient-to-r from-[#957C3D] to-[#B8A055] text-white font-semibold rounded-full hover:shadow-lg hover:shadow-[#957C3D]/40 transition-all duration-300 text-base sm:text-lg"
               >
                 Contact Us
               </a>
               <a
                 href="tel:+1234567890"
-                className="inline-flex items-center justify-center px-6 sm:px-8 py-3 sm:py-4 bg-white/10 backdrop-blur-sm border border-white/20 text-white font-semibold rounded-xl sm:rounded-2xl hover:bg-white/20 transition-all duration-300 transform hover:scale-105 text-sm sm:text-base"
+                className="inline-flex items-center justify-center px-8 py-3 border border-white/30 text-white font-semibold rounded-full hover:bg-white/10 transition-all duration-300 text-base sm:text-lg"
               >
                 Call Now
               </a>
             </div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </main>
   );

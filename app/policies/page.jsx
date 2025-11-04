@@ -11,7 +11,7 @@ export default function PolicyPage() {
       <div className="relative max-w-4xl mx-auto mt-20 font-serif">
         {/* Header */}
         <div className="text-center mb-12 sm:mb-16">
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-[#0e1732] mb-4 sm:mb-6 leading-tight">
+          <h1 className="text-3xl md:text-5xl   font-bold text-[#0e1732] mb-4 sm:mb-6 leading-tight">
             Resort Policies
           </h1>
           <div className="w-24 h-1 bg-gradient-to-r from-[#957C3D] to-[#B8A055] mx-auto rounded-full mb-6"></div>

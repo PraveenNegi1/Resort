@@ -77,7 +77,7 @@ const Rooms = () => {
         <div className="flex items-center justify-center w-full max-w-4xl px-4">
           <div className="flex-1 h-[1px] bg-gray-300"></div>
           <h1 className="text-3xl sm:text-4xl text-gray-800 tracking-widest font-light px-6 text-center">
-            PLAN YOUR STAY
+            Plan Your Journey to Serenity{" "}
           </h1>
           <div className="flex-1 h-[1px] bg-gray-300"></div>
         </div>

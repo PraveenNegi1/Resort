@@ -1,7 +1,6 @@
 export default function PolicyPage() {
   return (
     <main className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-blue-50 py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
-      {/* Background decorations */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-0 right-0 w-72 h-72 bg-gradient-to-bl from-[#957C3D]/10 to-transparent rounded-full blur-3xl transform translate-x-1/2 -translate-y-1/2"></div>
         <div className="absolute bottom-0 left-0 w-72 h-72 bg-gradient-to-tr from-[#0e1732]/10 to-transparent rounded-full blur-3xl transform -translate-x-1/2 translate-y-1/2"></div>
@@ -9,7 +8,6 @@ export default function PolicyPage() {
       </div>
 
       <div className="relative max-w-4xl mx-auto mt-20 font-serif">
-        {/* Header */}
         <div className="text-center mb-12 sm:mb-16">
           <h1 className="text-3xl md:text-5xl   font-bold text-[#0e1732] mb-4 sm:mb-6 leading-tight">
             Resort Policies
@@ -21,7 +19,6 @@ export default function PolicyPage() {
         </div>
 
         <div className="space-y-6 sm:space-y-8 lg:space-y-10">
-          {/* Cancellation Policy */}
           <section className="group bg-white/80 backdrop-blur-sm border border-slate-200/60 rounded-2xl sm:rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 p-6 sm:p-8 lg:p-10 transform hover:-translate-y-2 hover:scale-[1.02]">
             <div className="flex items-start gap-4 sm:gap-6 mb-4 sm:mb-6">
               <div className="flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-gradient-to-br from-red-500 to-red-600 rounded-xl sm:rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-110"></div>
@@ -45,7 +42,6 @@ export default function PolicyPage() {
             </div>
           </section>
 
-          {/* House Rules */}
           <section className="group bg-white/80 backdrop-blur-sm border border-slate-200/60 rounded-2xl sm:rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 p-6 sm:p-8 lg:p-10 transform hover:-translate-y-2 hover:scale-[1.02]">
             <div className="flex items-start gap-4 sm:gap-6 mb-4 sm:mb-6">
               <div className="flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl sm:rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-110"></div>
@@ -95,7 +91,6 @@ export default function PolicyPage() {
             </div>
           </section>
 
-          {/* Privacy Policy */}
           <section className="group bg-white/80 backdrop-blur-sm border border-slate-200/60 rounded-2xl sm:rounded-3xl shadow-lg hover:shadow-2xl transition-all duration-500 p-6 sm:p-8 lg:p-10 transform hover:-translate-y-2 hover:scale-[1.02]">
             <div className="flex items-start gap-4 sm:gap-6 mb-4 sm:mb-6">
               <div className="flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-xl sm:rounded-2xl flex items-center justify-center shadow-lg group-hover:shadow-xl transition-all duration-300 group-hover:scale-110"></div>
@@ -118,7 +113,6 @@ export default function PolicyPage() {
           </section>
         </div>
 
-        {/* Contact Section */}
         <div className="bg-gradient-to-r from-[#0e1732] via-[#1e293b] to-[#0e1732] rounded-2xl sm:rounded-3xl p-6 sm:p-8 lg:p-12 text-center shadow-2xl mt-12 sm:mt-16">
           <div className="max-w-2xl mx-auto">
             <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-4 sm:mb-6">
@@ -145,7 +139,6 @@ export default function PolicyPage() {
           </div>
         </div>
 
-        {/* Bottom decoration */}
         <div className="text-center mt-8 sm:mt-12">
           <div className="inline-flex items-center gap-2 text-slate-400">
             <div className="w-8 h-px bg-gradient-to-r from-transparent to-slate-300"></div>

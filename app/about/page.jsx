@@ -25,9 +25,9 @@ export default function About() {
 
         <div className="relative z-10 text-center px-4">
           <h1 className="text-white text-4xl sm:text-5xl md:text-6xl font-bold tracking-wide drop-shadow-lg">
-            About <span className="text-amber-400">HillNest Stays</span>
+            About <span className="text-[#d4af37]">HillNest Stays</span>
           </h1>
-          <p className="text-gray-200 mt-4 text-lg sm:text-xl max-w-2xl mx-auto">
+          <p className="text-[#d4af37] mt-4 text-lg sm:text-xl max-w-2xl mx-auto">
             Where luxury meets nature, and every stay feels like a homecoming.
           </p>
         </div>
@@ -175,11 +175,11 @@ export default function About() {
           </p>
           <a
             href="/listings"
-            className="inline-block px-10 py-4 bg-amber-600 text-[#0e1732] font-semibold rounded-md shadow-md hover:scale-105 hover:bg-amber-300 transition-all duration-300"
+            className="inline-block px-10 py-4 bg-[#d4af37] text-[#0e1732] font-semibold rounded-md shadow-md hover:scale-105 hover:bg-amber-300 transition-all duration-300"
           >
             Explore Our Rooms
           </a>
-        </motion.div>
+        </motion.div> 
       </div>
     </div>
   );

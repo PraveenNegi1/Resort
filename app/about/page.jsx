@@ -175,7 +175,7 @@ export default function About() {
           </p>
           <a
             href="/listings"
-            className="inline-block px-10 py-4 bg-amber-400 text-[#0e1732] font-semibold rounded-md shadow-md hover:scale-105 hover:bg-amber-300 transition-all duration-300"
+            className="inline-block px-10 py-4 bg-amber-600 text-[#0e1732] font-semibold rounded-md shadow-md hover:scale-105 hover:bg-amber-300 transition-all duration-300"
           >
             Explore Our Rooms
           </a>

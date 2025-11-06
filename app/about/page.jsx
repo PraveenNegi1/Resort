@@ -47,7 +47,7 @@ export default function About() {
           <p className="text-lg sm:text-xl text-gray-600 leading-relaxed max-w-3xl mx-auto">
             At{" "}
             <span className="font-semibold text-[#0e1732]">HillNest Stays</span>
-            , we don’t just provide rooms — we curate experiences. Each property
+            , we don&apos;t just provide rooms — we curate experiences. Each property
             embodies elegance, warmth, and local charm, designed to make your
             stay unforgettable.
           </p>
@@ -85,7 +85,7 @@ export default function About() {
           <p className="text-gray-600 text-base sm:text-lg leading-relaxed max-w-4xl mx-auto">
             Choose from cozy retreats with mountain views to spacious suites
             with modern elegance. Every room includes plush bedding, Wi-Fi, and
-            fine amenities, wrapped in HillNest’s signature warmth.
+            fine amenities, wrapped in HillNest&apos;s signature warmth.
           </p>
         </motion.section>
 
@@ -141,7 +141,6 @@ export default function About() {
           </ul>
         </motion.section>
 
-        {/* 🌿 Why Choose */}
         <motion.section
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -160,7 +159,6 @@ export default function About() {
           </p>
         </motion.section>
 
-        {/* 🌅 Call to Action */}
         <motion.div
           initial={{ opacity: 0, y: 60 }}
           whileInView={{ opacity: 1, y: 0 }}

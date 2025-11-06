@@ -1,4 +1,3 @@
-// pages/about.js
 "use client";
 import {
   FaBed,
@@ -12,7 +11,6 @@ import { motion } from "framer-motion";
 export default function About() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 via-white to-amber-50 font-serif text-gray-700 overflow-hidden">
-      {/* 🌄 Hero Section */}
       <section className="relative h-[350px] sm:h-[450px] md:h-[550px] flex items-center justify-center overflow-hidden">
         <motion.img
           src="https://images.unsplash.com/photo-1631049035182-249067d7618e?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1600"
@@ -23,7 +21,6 @@ export default function About() {
           className="absolute inset-0 w-full h-full object-cover object-center"
         />
 
-        {/* dark overlay */}
         <div className="absolute inset-0 " />
 
         <div className="relative z-10 text-center px-4">
@@ -36,9 +33,7 @@ export default function About() {
         </div>
       </section>
 
-      {/* 🪶 Main Content */}
       <div className="max-w-6xl mx-auto px-4 sm:px-8 lg:px-12 py-20 space-y-20">
-        {/* Intro */}
         <motion.section
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -58,10 +53,8 @@ export default function About() {
           </p>
         </motion.section>
 
-        {/* ✨ Divider */}
         <div className="w-2/3 mx-auto h-[2px] bg-gradient-to-r from-transparent via-amber-400 to-transparent" />
 
-        {/* Our Hotels */}
         <motion.section
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -79,7 +72,6 @@ export default function About() {
           </p>
         </motion.section>
 
-        {/* 🛏️ Rooms */}
         <motion.section
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -97,7 +89,6 @@ export default function About() {
           </p>
         </motion.section>
 
-        {/* 🏋️‍♀️ Facilities */}
         <motion.section
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}

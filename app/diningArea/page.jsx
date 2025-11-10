@@ -136,6 +136,7 @@ const page = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {[
+                // Existing dishes
                 {
                   name: "Butter Chicken",
                   desc: "Creamy tomato-based curry with tender marinated chicken, a North Indian classic.",
@@ -184,8 +185,49 @@ const page = () => {
                   name: "Garhwali Aloo Ke Gutke",
                   desc: "Spiced boiled potatoes sautéed with mountain spices — a local Uttarakhand favorite.",
                 },
+
+                // 🌄 Added Uttarakhandi Dishes
+                {
+                  name: "Chainsoo",
+                  desc: "A traditional Garhwali dish made from roasted black gram (urad dal) cooked into a thick, earthy curry.",
+                },
+                {
+                  name: "Kafuli",
+                  desc: "A nutritious spinach and fenugreek leaf curry cooked with local spices — Uttarakhand’s signature dish.",
+                },
+                {
+                  name: "Jhangora Ki Kheer",
+                  desc: "A sweet pudding made from barnyard millet, milk, and dry fruits — a festive dessert from the hills.",
+                },
+                {
+                  name: "Gahat (Kulthi) Ki Dal",
+                  desc: "Protein-rich horse gram lentil curry, slow-cooked with local spices and herbs.",
+                },
+                {
+                  name: "Bhaang Ki Chutney",
+                  desc: "A tangy and nutty chutney made from roasted hemp seeds, often served with traditional meals.",
+                },
+                {
+                  name: "Arsa",
+                  desc: "A festive sweet made from rice flour and jaggery, deep-fried to golden perfection.",
+                },
+                {
+                  name: "Singodi",
+                  desc: "A cone-shaped Kumaoni sweet made with grated coconut and khoya wrapped in a mallu leaf.",
+                },
+                {
+                  name: "Baadi",
+                  desc: "A simple yet wholesome meal made from roasted wheat flour, served with ghee and local curries.",
+                },
+                {
+                  name: "Mandua Ki Roti",
+                  desc: "Flatbread made from finger millet flour, rich in fiber and minerals, served with ghee or chutney.",
+                },
               ].map((dish, i) => (
-                <div key={i} className="bg-[#F1EDE6] p-6 rounded-lg shadow-sm">
+                <div
+                  key={i}
+                  className="bg-[#F1EDE6] p-6 rounded-lg shadow-sm hover:shadow-md transition"
+                >
                   <h3 className="text-xl font-medium text-gray-800 mb-2">
                     {dish.name}
                   </h3>

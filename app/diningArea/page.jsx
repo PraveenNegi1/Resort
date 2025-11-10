@@ -26,7 +26,6 @@ const Page = () => {
 
   return (
     <div className="min-h-screen bg-gray-50 font-serif text-[#0e1732]">
-      {/* 🌄 Hero Section */}
       <section className="relative h-screen overflow-hidden">
         {backgroundImages.map((img, index) => (
           <div
@@ -59,7 +58,6 @@ const Page = () => {
         </div>
       </section>
 
-      {/* 🍷 Dining Intro */}
       <section className="bg-[#0e1732] text-white py-20 px-6 text-center relative">
         <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-amber-500 to-yellow-300"></div>
         <div className="max-w-5xl mx-auto">
@@ -82,7 +80,6 @@ const Page = () => {
         </div>
       </section>
 
-      {/* 🖼️ Image Gallery */}
       <section className="bg-white py-12">
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5 max-w-6xl mx-auto">
@@ -105,7 +102,6 @@ const Page = () => {
         </div>
       </section>
 
-      {/* 🍛 Dishes Section */}
       <section className="bg-gradient-to-b from-[#F1EDE6] to-white py-20">
         <div className="container mx-auto px-4 max-w-6xl text-center">
           <h2 className="text-3xl md:text-4xl font-light mb-12">

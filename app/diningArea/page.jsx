@@ -95,7 +95,12 @@ const Page = () => {
                 key={i}
                 className="relative h-64 md:h-80 rounded-xl overflow-hidden shadow-lg hover:scale-105 transition-transform duration-500"
               >
-                <Image src={src} alt="Dining view" fill className="object-cover" />
+                <Image
+                  src={src}
+                  alt="Dining view"
+                  fill
+                  className="object-cover"
+                />
               </div>
             ))}
           </div>
@@ -110,28 +115,58 @@ const Page = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { name: "Butter Chicken", desc: "Creamy tomato-based curry with tender marinated chicken, a North Indian classic." },
-              { name: "Rogan Josh", desc: "A rich and aromatic lamb curry from Kashmir, cooked with yogurt and traditional spices." },
-              { name: "Momos", desc: "Steamed dumplings filled with spiced vegetables or meat, served with spicy chutney." },
-              { name: "Himalayan Trout", desc: "Locally sourced river trout grilled with herbs and lemon — a mountain delicacy." },
-              { name: "Kafuli", desc: "A nutritious spinach and fenugreek leaf curry cooked with local spices — Uttarakhand’s signature dish." },
-              { name: "Chainsoo", desc: "A traditional Garhwali dish made from roasted black gram cooked into a thick, earthy curry." },
-              { name: "Pahadi Chicken Curry", desc: "Traditional Uttarakhand-style chicken curry with local herbs and mustard oil." },
-              { name: "Jhangora Ki Kheer", desc: "Sweet barnyard millet pudding with milk and dry fruits — a festive dessert from the hills." },
-              { name: "Mandua Ki Roti", desc: "Flatbread made from finger millet flour, rich in fiber and minerals, served with ghee or chutney." },
+              {
+                name: "Butter Chicken",
+                desc: "Creamy tomato-based curry with tender marinated chicken, a North Indian classic.",
+              },
+              {
+                name: "Rogan Josh",
+                desc: "A rich and aromatic lamb curry from Kashmir, cooked with yogurt and traditional spices.",
+              },
+              {
+                name: "Momos",
+                desc: "Steamed dumplings filled with spiced vegetables or meat, served with spicy chutney.",
+              },
+              {
+                name: "Himalayan Trout",
+                desc: "Locally sourced river trout grilled with herbs and lemon — a mountain delicacy.",
+              },
+              {
+                name: "Kafuli",
+                desc: "A nutritious spinach and fenugreek leaf curry cooked with local spices — Uttarakhand’s signature dish.",
+              },
+              {
+                name: "Chainsoo",
+                desc: "A traditional Garhwali dish made from roasted black gram cooked into a thick, earthy curry.",
+              },
+              {
+                name: "Pahadi Chicken Curry",
+                desc: "Traditional Uttarakhand-style chicken curry with local herbs and mustard oil.",
+              },
+              {
+                name: "Jhangora Ki Kheer",
+                desc: "Sweet barnyard millet pudding with milk and dry fruits — a festive dessert from the hills.",
+              },
+              {
+                name: "Mandua Ki Roti",
+                desc: "Flatbread made from finger millet flour, rich in fiber and minerals, served with ghee or chutney.",
+              },
             ].map((dish, i) => (
               <div
                 key={i}
                 className="bg-white rounded-xl p-6 shadow hover:shadow-xl transition duration-300 border border-[#F1EDE6]"
               >
-                <h3 className="text-xl font-medium text-[#0e1732] mb-2">{dish.name}</h3>
-                <p className="text-gray-600 text-sm leading-relaxed">{dish.desc}</p>
+                <h3 className="text-xl font-medium text-[#0e1732] mb-2">
+                  {dish.name}
+                </h3>
+                <p className="text-gray-600 text-sm leading-relaxed">
+                  {dish.desc}
+                </p>
               </div>
             ))}
           </div>
         </div>
       </section>
-
     </div>
   );
 };

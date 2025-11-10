@@ -114,7 +114,7 @@ export default function Home() {
               views that touch the clouds.
             </p>
             <p>
-              Whether it’s a tranquil escape or an adventure-filled weekend,
+              Whether it&apos;s a tranquil escape or an adventure-filled weekend,
               HillNest offers an eco-conscious retreat that inspires and
               rejuvenates.
             </p>

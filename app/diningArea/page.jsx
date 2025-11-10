@@ -126,7 +126,6 @@ const page = () => {
         </div>
       </div>
 
-      {/* Signature Dishes */}
       <div className="bg-white py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto text-center">
@@ -136,7 +135,6 @@ const page = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {[
-                // Existing dishes
                 {
                   name: "Butter Chicken",
                   desc: "Creamy tomato-based curry with tender marinated chicken, a North Indian classic.",
@@ -186,7 +184,6 @@ const page = () => {
                   desc: "Spiced boiled potatoes sautéed with mountain spices — a local Uttarakhand favorite.",
                 },
 
-                // 🌄 Added Uttarakhandi Dishes
                 {
                   name: "Chainsoo",
                   desc: "A traditional Garhwali dish made from roasted black gram (urad dal) cooked into a thick, earthy curry.",

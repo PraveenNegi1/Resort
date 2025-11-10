@@ -55,7 +55,7 @@ export default function Home() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1.2 }}
-            className="text-lg md:text-2xl max-w-2xl font-light Merriweather text-gray-200 mb-8 leading-relaxed"
+            className="text-lg md:text-2xl max-w-2xl font-light font-serif text-gray-200 mb-8 leading-relaxed"
           >
             Experience luxury and comfort in the heart of the Himalayas — where
             nature meets sophistication.
@@ -68,7 +68,7 @@ export default function Home() {
           >
             <Link
               href="/listings"
-              className="mt-4 inline-block px-8 py-3 text-lg font-semibold rounded-full bg-white/90 text-[#0e1732] hover:bg-[#0e1732] hover:text-white shadow-md hover:shadow-lg transition-all duration-300"
+              className="mt-4 inline-block font-serif px-8 py-3 text-lg font-semibold rounded-full bg-white/90 text-[#0e1732] hover:bg-[#0e1732] hover:text-white shadow-md hover:shadow-lg transition-all duration-300"
             >
               Explore Rooms
             </Link>

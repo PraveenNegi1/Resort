@@ -136,12 +136,6 @@ const Page = () => {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-[#0e1732] text-white py-10 text-center">
-        <p className="text-sm text-white/80">
-          © {new Date().getFullYear()} HillNest Stays. All rights reserved.
-        </p>
-      </footer>
     </div>
   );
 };

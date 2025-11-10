@@ -47,7 +47,7 @@ const page = () => {
         ))}
 
         <div className="absolute inset-0 bg-gradient-to-b from-black/60 to-black/30 flex flex-col justify-center items-center text-white px-4 text-center z-20">
-          <h1 className="text-3xl md:text-4xl font-serif mb-4 drop-shadow-lg">
+          <h1 className="text-3xl md:text-5xl font-serif mb-4 drop-shadow-lg">
             Welcome to HillNest Stays
           </h1>
           <p className="text-lg sm:text-xl md:text-2xl mb-4 max-w-xl font-serif">

@@ -77,7 +77,7 @@ export default function FormOtp() {
         Verify OTP
       </button>
 
-      {verified && <p className="text-green-600 font-bold">✅ Verified!</p>}
+      {verified && <p className="text-green-600 font-bold"> Verified!</p>}
     </div>
   );
 }

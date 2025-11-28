@@ -99,7 +99,6 @@ export default function LocalAttraction() {
     return () => clearTimeout(timer);
   }, [currentSlide]);
 
-  // ❌ Removed auto-slide for user control only
 
   const nextSlide = () => {
     setCurrentSlide((prev) => (prev + 1) % attractions.length);

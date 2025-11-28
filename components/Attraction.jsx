@@ -92,7 +92,6 @@ export default function LocalAttraction() {
     return () => observer.disconnect();
   }, []);
 
-  // Slide animation
   useEffect(() => {
     setAnimateSlide(true);
     const timer = setTimeout(() => setAnimateSlide(false), 1000);

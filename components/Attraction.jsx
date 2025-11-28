@@ -78,7 +78,6 @@ export default function LocalAttraction() {
   const [isVisible, setIsVisible] = useState(false);
   const componentRef = useRef(null);
 
-  // Intersection Observer
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {

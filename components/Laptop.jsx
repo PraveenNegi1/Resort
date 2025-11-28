@@ -14,7 +14,6 @@ export default function LaptopVideo() {
     offset: ["start start", "end end"],
   });
 
-  // Laptop animations
   const laptopRotateY = useTransform(scrollYProgress, [0, 1], [15, 0]);
   const laptopRotateX = useTransform(scrollYProgress, [0, 1], [5, 0]);
   const laptopTranslateY = useTransform(scrollYProgress, [0, 1], [-20, 0]);

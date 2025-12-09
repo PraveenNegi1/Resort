@@ -74,11 +74,11 @@ export default function FormOtp() {
         onClick={verifyOtp}
         className="bg-green-500 text-white px-4 py-2 rounded"
       >
-        Verify OTP
+        Verify OTP number
       </button>
 
       {verified && <p className="text-green-600 font-bold"> Verified!</p>}
     </div>
   );
 }
- 
+   

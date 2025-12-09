@@ -24,7 +24,7 @@ export default function Footer() {
               priority
             />
             <p className="text-white/80 max-w-xs leading-relaxed font-light">
-              Discover comfort and luxury in the lap of the Himalayas. HillNest
+              Discover comfort and luxury for your Stays in the lap of the Himalayas. HillNest
               Stays offers curated hotel experiences to make every trip
               unforgettable.
             </p>

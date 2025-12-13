@@ -154,7 +154,6 @@ export default function RoomShowcase() {
         </p>
 
         <div className="text-white text-xs md:text-sm grid grid-cols-2 gap-3 font-light">
-          <span>STANDARD ROOM LIST</span>
           <span>ROOM SLIDER</span>
           <span>CENTERED ROOM LIST</span>
           <span>SIMPLE ROOM LIST</span>

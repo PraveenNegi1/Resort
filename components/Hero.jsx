@@ -128,10 +128,10 @@ export default function Home() {
 
       {/* 🛏️ ROOMS SECTION */}
       <section className="py-24 px-6 md:px-16 bg-[#f7f5f0] text-center">
-        <h2 className="text-3xl md:text-5xl font-serif text-[#0e1732] mb-14">
+        <h2 className="text-3xl md:text-4xl tracking-widest font-light  text-[#0e1732] mb-14">
           Our Rooms
         </h2>
-        <div className="grid gap-10 sm:grid-cols-2 md:grid-cols-3">
+        <div className="grid gap-10  text-gray-800 tracking-widest font-light  sm:grid-cols-2 md:grid-cols-3">
           {[
             {
               title: "Deluxe Room",

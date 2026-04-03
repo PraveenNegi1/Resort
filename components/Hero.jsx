@@ -98,7 +98,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 🏔️ WHY CHOOSE SECTION */}
       <section className="bg-[#0e1732] text-white py-24 px-6 md:px-16 text-center relative">
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1612277795421-5b7fdd9e9d02?q=80&w=2070&auto=format&fit=crop')] bg-cover bg-center opacity-10" />
         <div className="relative z-10">

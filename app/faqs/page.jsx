@@ -126,7 +126,7 @@ export default function FAQsPage() {
               Still Have Questions?
             </h3>
             <p className="text-slate-300 text-base sm:text-lg mb-8 leading-relaxed">
-              Can’t find your question? Our friendly team is available around
+              Can&apos;t find your question? Our friendly team is available around
               the clock to help you.
             </p>
             <div className="flex flex-col sm:flex-row justify-center gap-4 sm:gap-6">

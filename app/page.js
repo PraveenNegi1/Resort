@@ -8,11 +8,14 @@ import ComfortSection from "@/components/Rooms";
 import RoomShowcase from "@/components/Ourrooms";
 import TestimonialsCarousel from "@/components/Testimonials";
 import FormOtp from "@/components/FormOtp";
+import Testcomp from "@/components/Testcomp";
 
 export default function Home() {
   return (
     <>
+   
       <Hero />
+       {/* <Testcomp /> */}
       {/* <ActivitiesPage /> */}
       <RoomShowcase />
       <ComfortSection />

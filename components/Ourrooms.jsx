@@ -141,9 +141,9 @@ export default function RoomShowcase() {
         </AnimatePresence>
       </div>
 
-      <div className="mt-12 md:mt-0 md:ml-10 w-full md:w-[30%] z-0">
+      <div className="mt-12 tracking-widest font-light md:mt-0 md:ml-10 w-full md:w-[30%] z-0">
         <h1 className="text-gold text-[#d4af37] text-2xl md:text-4xl font-normal mb-4">
-          VERSATILE ROOM LISTS
+          VERSATILE ROOM LISTS 
         </h1>
         <p className="text-white text-sm md:text-base mb-6 font-light">
           Explore a variety of beautifully designed room layouts to present your

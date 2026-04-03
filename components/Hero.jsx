@@ -44,7 +44,6 @@ export default function Home() {
         {/* Overlay */}
         <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-black/60 to-black/80 z-10" />
 
-        {/* Hero Text */}
         <div className="absolute inset-0 z-20 flex flex-col justify-center items-center text-center text-white px-6">
           <motion.h1
             initial={{ opacity: 0, y: 30 }}

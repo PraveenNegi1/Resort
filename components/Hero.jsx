@@ -126,7 +126,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 🛏️ ROOMS SECTION */}
       <section className="py-24 px-6 md:px-16 bg-[#f7f5f0] text-center">
         <h2 className="text-3xl md:text-5xl font-serif text-[#0e1732] mb-14">
           Our Rooms

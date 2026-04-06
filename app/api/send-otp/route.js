@@ -8,7 +8,6 @@ export async function POST(req) {
       return new Response(JSON.stringify({ error: "Email is required" }), { status: 400 });
     }
 
-    // Generate 6-digit OTP
     const otp = Math.floor(100000 + Math.random() * 900000);
 
     // Configure Nodemailer

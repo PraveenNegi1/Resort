@@ -81,7 +81,6 @@ export default function Home() {
           </motion.div>
         </div>
 
-        {/* Dots */}
         <div className="absolute bottom-8 w-full flex justify-center gap-3 z-30">
           {backgroundImages.map((_, i) => (
             <div

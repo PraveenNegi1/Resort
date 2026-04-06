@@ -18,7 +18,6 @@ export async function POST(req) {
       },
     });
 
-    // Send Mail
     await transporter.sendMail({
       from: `"My App" <${process.env.EMAIL_USER}>`,
       to: email,

@@ -5,7 +5,7 @@ const Testcomp = () => {
         <div>
             <p>
 
-                When families begin their educational journey, understanding schools in Dehradun can feel overwhelming. Dehradun has long been recognised as one of India’s most respected education hubs, known for its academic legacy, reputed <strong><a href="https://edulistindia.com/category/boarding-schools-in-dehradun">boarding schools</a></strong>,top notch <strong><a href="https://edulistindia.com/category/international-schools-in-dehradun">international schools</a> </strong>and well-rounded day institutions. For parents and students, exploring schools in Dehradun is not just about shortlisting names — it is about finding an environment where learning, values, and personal growth come together. This guide is designed to help you navigate what truly matters and how EdulistIndia supports confident decision-making.
+                When families begin their educational journey, understanding schools in Dehradun can feel overwhelming. Dehradun has long been recognised as one of India&apos;s most respected education hubs, known for its academic legacy, reputed <strong><a href="https://edulistindia.com/category/boarding-schools-in-dehradun">boarding schools</a></strong>,top notch <strong><a href="https://edulistindia.com/category/international-schools-in-dehradun">international schools</a> </strong>and well-rounded day institutions. For parents and students, exploring schools in Dehradun is not just about shortlisting names — it is about finding an environment where learning, values, and personal growth come together. This guide is designed to help you navigate what truly matters and how EdulistIndia supports confident decision-making.
             </p>
             <h2>
                 <strong>Understanding the Educational Landscape</strong></h2>
@@ -13,7 +13,7 @@ const Testcomp = () => {
 
             <p>
 
-                Dehradun’s education ecosystem offers a wide range of options, including CBSE, ICSE, ISC, and international curricula. Parents often look for schools that balance academic rigour with co-curricular exposure and emotional development. The appeal of boarding schools in Dehradun lies in their structured routines, independence-building approach, and immersive campus life. Day schools, meanwhile, focus on strong academics while keeping students closely connected to family and community.
+                Dehradun&apos;s education ecosystem offers a wide range of options, including CBSE, ICSE, ISC, and international curricula. Parents often look for schools that balance academic rigour with co-curricular exposure and emotional development. The appeal of boarding schools in Dehradun lies in their structured routines, independence-building approach, and immersive campus life. Day schools, meanwhile, focus on strong academics while keeping students closely connected to family and community.
             </p>
             <p>
 
@@ -29,7 +29,7 @@ const Testcomp = () => {
 
             <p>
 
-                Selecting from the many schools in Dehradun goes far beyond reputation or word of mouth. Thoughtful parents usually evaluate schools across multiple dimensions that shape a child’s long-term growth.
+                Selecting from the many schools in Dehradun goes far beyond reputation or word of mouth. Thoughtful parents usually evaluate schools across multiple dimensions that shape a child&apos;s long-term growth.
             </p>
             <h3>
                 <strong>Academic Excellence & Learning Outcomes</strong></h3>
@@ -101,7 +101,7 @@ const Testcomp = () => {
 
             <p>
 
-                A child’s learning environment plays a crucial role in daily experience and well-being. Infrastructure should support both academic and non-academic development.
+                A child&apos;s learning environment plays a crucial role in daily experience and well-being. Infrastructure should support both academic and non-academic development.
             </p>
             <p>
 
@@ -205,7 +205,7 @@ const Testcomp = () => {
 
             <p>
 
-                Exploring schools in Dehradun requires understanding how different boards function, how boarding life shapes students, and what factors matter at each stage of schooling — from early years to senior secondary. EdulistIndia focuses on explaining these aspects in a clear, conversational manner, helping families align school choices with a child’s strengths, interests, and aspirations.
+                Exploring schools in Dehradun requires understanding how different boards function, how boarding life shapes students, and what factors matter at each stage of schooling — from early years to senior secondary. EdulistIndia focuses on explaining these aspects in a clear, conversational manner, helping families align school choices with a child&apos;s strengths, interests, and aspirations.
             </p>
             <h2>
                 <strong>Final Thoughts</strong></h2>
